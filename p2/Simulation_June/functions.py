@@ -1,12 +1,12 @@
 import numpy as np
 
 
-def flatten(nest_list):
+def flatten(in_put):
     """Flatten recurrent time to an array"""
 
     flatten_ = np.array([])
 
-    for i in nest_list:
+    for i in in_put:
         flatten_ = np.append(flatten_, i)
 
     flatten_ = np.sort(flatten_)

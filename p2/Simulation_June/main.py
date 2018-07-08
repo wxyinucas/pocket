@@ -1,12 +1,12 @@
-from generator import *
-from value_estimator import *
+from generator_file import *
+from estimator_file import *
 from scipy.optimize import fsolve
 
 result_alpha = np.array([0, 0])
 result_beta = np.array([0, 0])
 
 for _ in range(200):
-    df, r = generate()
+    df, r = generator()
 
     result_alpha = np.append(result_alpha, np.array(fsolve(s_n, [initial(-1, 0.02), initial(1, 0.02)])))
     lambda_hat = lam_a(result_alpha[-2:])
