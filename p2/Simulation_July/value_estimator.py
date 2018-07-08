@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 from generator import *
+from utils import *
 
 
 def pre_process(a):
@@ -9,7 +10,7 @@ def pre_process(a):
     """
     global df, r, df_star, r_star
 
-    df, r = generate()
+    df, r = generate(PARAS['SIZE'])
 
     # 乘法因子
     e_star = np.exp(np.array([df.x1, df.x2]).T @ a)
@@ -34,14 +35,14 @@ def compute_lambda(a):
     global lambda_a
 
     # N
-    N = np.sum(df.m)
+    n = np.sum(df.m)
 
     # Next to sort {sl}
     sl = flatten(r_star)
 
     # {rl}
     compare = df_star.y.values.reshape((1, -1)) < sl.reshape((-1, 1))
-    rl = np.arange(N) + 1 - compare @ df.m.values
+    rl = np.arange(n) + 1 - compare @ df.m.values
 
     # index
     index = np.sum((1 - compare).T, axis=1)
@@ -55,12 +56,15 @@ def compute_lambda(a):
     lambda_a = lambda_[[index]]
 
 
-# def compute_mu(a):
+def compute_mu(a):
+    global mu_z
+
+    mu_z = df_star.m @ (1 / lambda_a) / size
 
 
 def s_n(a):
     pre_process(a)
     compute_lambda(a)
-    part2 = df.m @ (1 / lambda_a) / size
-    result = [df.x1.values @ (df.m / lambda_a - part2).values, df.x2.values @ (df.m / lambda_a - part2).values]
-    return np.array(result) / size
+    compute_mu(a)
+    result = [df.x1.values @ (df.m / lambda_a - mu_z).values, df.x2.values @ (df.m / lambda_a - mu_z).values]
+    return np.array(result) / PARAS['SIZE']

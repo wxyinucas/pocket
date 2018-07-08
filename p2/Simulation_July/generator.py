@@ -3,16 +3,18 @@ import pandas as pd
 
 
 def set_paras(alpha0=[-1, 1], alpha1=[-1, 1],
-              beta0=[-1, 1], beta1=[-1, 1]):
-    global ALPHA0, ALPHA1, BETA0, BETA1, PARAS
+              beta0=[-1, 1], beta1=[-1, 1], size=200):
+    global ALPHA0, ALPHA1, BETA0, BETA1, SIZE, PARAS
     ALPHA0 = np.array(alpha0)
     ALPHA1 = np.array(alpha1)
     BETA0 = np.array(beta0)
     BETA1 = np.array(beta1)
+    SIZE = size
     PARAS = {'alpha0': ALPHA0,
              'alpha1': ALPHA1,
              'beta0': BETA0,
-             'beta1': BETA1}
+             'beta1': BETA1,
+             'size': SIZE}
 
 
 def show_paras(visual=False):
@@ -22,7 +24,7 @@ def show_paras(visual=False):
     return PARAS
 
 
-def generate(size=200):
+def generate(size):
     """
     While in generate procedure, we put PARAS in function,
         and set Covariances variables 'x'.
