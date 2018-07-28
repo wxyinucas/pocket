@@ -1,0 +1,105 @@
+========================================
+Scores (Un-adjusted)
+========================================
+Pos. class accuracy: 0.959
+Neg. class accuracy: 0.99
+Precision            0.979
+Recall               0.959
+F1                   0.969
+----------------------------------------
+TP: 281 | FP: 6 | TN: 596 | FN: 12
+========================================
+
+删除了neg_dis
+========================================
+Scores (Un-adjusted)
+========================================
+Pos. class accuracy: 0.976
+Neg. class accuracy: 0.98
+Precision            0.96
+Recall               0.976
+F1                   0.968
+----------------------------------------
+TP: 286 | FP: 12 | TN: 590 | FN: 7
+========================================
+
+
+下面是对start的测试
+========================================
+Scores (Un-adjusted)
+========================================
+Pos. class accuracy: 0.941
+Neg. class accuracy: 0.971
+Precision            0.964
+Recall               0.941
+F1                   0.952
+----------------------------------------
+TP: 80 | FP: 3 | TN: 101 | FN: 5
+========================================
+
+
+进行了新的lf写作策略：pos大范围匹配，neg针对性改正
+gen_model.train(L_train, epochs=200, decay=0.9, step_size=0.005/L_train.shape[0], reg_param=0.1)
+========================================
+Scores (Un-adjusted)
+========================================
+Pos. class accuracy: 0.988
+Neg. class accuracy: 0.894
+Precision            0.884
+Recall               0.988
+F1                   0.933
+----------------------------------------
+TP: 84 | FP: 11 | TN: 93 | FN: 1
+========================================
+
+gen_model.train(L_train, epochs=500, decay=0.9, step_size=0.005/L_train.shape[0], reg_param=0.1)
+========================================
+Scores (Un-adjusted)
+========================================
+Pos. class accuracy: 0.988
+Neg. class accuracy: 0.894
+Precision            0.884
+Recall               0.988
+F1                   0.933
+----------------------------------------
+TP: 84 | FP: 11 | TN: 93 | FN: 1
+========================================
+
+
+
+gen_model.train(L_train, epochs=100, decay=0.9, step_size=0.005/L_train.shape[0], reg_param=0.1)
+========================================
+Scores (Un-adjusted)
+========================================
+Pos. class accuracy: 0.988
+Neg. class accuracy: 0.894
+Precision            0.884
+Recall               0.988
+F1                   0.933
+----------------------------------------
+TP: 84 | FP: 11 | TN: 93 | FN: 1
+========================================
+
+
+gen_model.train(L_train, epochs=10, decay=0.9, step_size=0.005/L_train.shape[0], reg_param=0.1)
+========================================
+Scores (Un-adjusted)
+========================================
+Pos. class accuracy: 0.988
+Neg. class accuracy: 0.894
+Precision            0.884
+Recall               0.988
+F1                   0.933
+----------------------------------------
+TP: 84 | FP: 11 | TN: 93 | FN: 1
+========================================
+
+decay的影响对迭代次数明显
+
+注意：
+gen_model.train(L_train, epochs=500, decay=1, step_size=1/L_train.shape[0], reg_param=0.1, labels=np.array([-1]*len(sup)), label_prior_weight=np.exp(1)
+时， 结果表现出对负例强大的拟合度
+
+decay越小越快，step_size越小越快
+
+labels影响最终无效

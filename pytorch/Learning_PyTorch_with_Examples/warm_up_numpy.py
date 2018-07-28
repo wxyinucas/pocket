@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import numpy as np
-import tqdm
+from examples import write_file_example
 
 # N is batch size; D_in is input dimension;
 # H is hidden dimension; D_out is output dimension.
@@ -15,7 +15,7 @@ w1 = np.random.randn(D_in, H)
 w2 = np.random.randn(H, D_out)
 
 learning_rate = 1e-6
-for t in tqdm.tqdm(range(500)):
+for t in write_file_example.tqdm(range(500)):
     # Forward pass: compute predicted y
     h = x.dot(w1)
     h_relu = np.maximum(h, 0)
