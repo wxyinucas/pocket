@@ -1,11 +1,5 @@
-from generator import *
+from p2.Simulation_July.true_value import *
 
-PARAS = {'alpha0': [-1, 1],
-         'alpha1': [-1, 1],
-         'beta0': [-1, 1],
-         'beta1': [-1, -1]}
+aaa = TrueValue()
 
-set_paras(**PARAS)
-show_paras(1)
-
-df_tmp, r_tmp = generate()
+print(aaa.alpha1)

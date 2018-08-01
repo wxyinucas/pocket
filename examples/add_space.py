@@ -9,6 +9,4 @@ with open(file_path, 'r+') as f:
     f.seek(os.SEEK_SET)
     f.write(txt)
 
-# with open(file_path, 'w+') as f:
-#     txt = f.write(txt)
 
