@@ -112,9 +112,9 @@ def df_b_transform(b: np.array, a_hat: np.array):
 
 
 def cal_z_hat():
-    global df_b, z_hat
+    global df_1b, z_hat
 
-    z_hat = df_b.m / df_b.lambda_a
+    z_hat = df_1b.m / df_1b.lambda_a
 
 
 def raw_u_n(b, a_hat):
@@ -125,13 +125,13 @@ def raw_u_n(b, a_hat):
     df_b_transform(b, a_hat)
     cal_z_hat()
 
-    compare = df_b.y.values.reshape((-1, 1)) < df_1b.y.values.reshape((1, -1))
+    compare = df_1b.y.values.reshape((-1, 1)) < df_1b.y.values.reshape((1, -1))
 
     part11 = np.sum(df_1b.x1) / SIZE
     part21 = np.sum(df_1b.x2) / SIZE
 
-    part12 = np.sum((df.x1 * z_hat @ compare) / ((z_hat @ compare) + 1)) / SIZE
-    part22 = np.sum((df.x2 * z_hat @ compare) / ((z_hat @ compare) + 1)) / SIZE
+    part12 = np.sum((df_1b.x1 * z_hat @ compare) / (z_hat @ compare)) / SIZE
+    part22 = np.sum((df_1b.x2 * z_hat @ compare) / (z_hat @ compare)) / SIZE
 
     result = np.array([part11 - part12, part21 - part22])
 
@@ -141,4 +141,5 @@ def raw_u_n(b, a_hat):
 def tmp_u_n(a_hat):
     def u_n(b):
         return raw_u_n(b, a_hat)
+
     return u_n

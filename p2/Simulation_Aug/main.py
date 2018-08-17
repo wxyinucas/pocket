@@ -20,6 +20,7 @@ for _ in tqdm(range(20)):
 
     # beta
     u_n = tmp_u_n(a_hat_cur)
+    # b_hat_cur = np.array(fsolve(u_n, np.array([initial(-1), initial(1)])))
     b_hat_cur = np.array(fsolve(u_n, np.array([initial(-1), initial(1)])))
     b_hat_seq = np.append(b_hat_seq, b_hat_cur)
 
