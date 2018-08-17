@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-from p2.Simulation_Aug.true_value import *
+from p2.Simulation_Aug.true_value import ALPHA0, BETA0, SIZE
 
 
 def generate(size):
@@ -22,10 +22,11 @@ def generate(size):
     tau = 10
 
     # Covariances
-    x1 = np.random.binomial(1, 0.95, size)
-    # x1 = np.array([1] * size)
-    x2 = np.random.uniform(0, 1, size)
-    # x2 = np.array([1] * size)
+    # x1 = np.random.binomial(1, 0.95, size)
+    x1 = np.random.binomial(1, 0.5, size)
+
+    # x2 = np.random.uniform(0, 1, size)
+    x2 = np.array([0] * size)
     x = np.array([x1, x2]).T
 
     # Latent

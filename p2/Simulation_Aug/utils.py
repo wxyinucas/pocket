@@ -27,7 +27,7 @@ def exp_star_transform(df, a):
     return df_star
 
 
-def initial(x, scale):
+def initial(x, scale=0.2):
 
     x = x + np.random.uniform(-scale, scale)
 

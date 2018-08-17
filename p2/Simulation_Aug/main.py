@@ -1,21 +1,24 @@
-from generator import *
-from value_estimator import *
+from p2.Simulation_Aug.generator import generate
+from p2.Simulation_Aug.value_estimator import s_n, df_b_transform, load
+from p2.Simulation_Aug.true_value import SIZE
+from p2.Simulation_Aug.utils import initial
 from scipy.optimize import fsolve
+from tqdm import tqdm
 
-PARAS = {'alpha0': [-1, 1],
-         'alpha1': [-1, 1],
-         'beta0': [-1, 1],
-         'beta1': [-1, -1],
-         'size': 200}
+import numpy as np
+
+# 估计a_hat
+a_hat_seq = []
+for _ in tqdm(range(20)):
+    df, r = generate(SIZE)
+    load(df, r)
+
+    # alpha
+    a_hat_cur = np.array(fsolve(s_n, np.array([initial(-1), initial(1)])))
+    a_hat_seq = np.append(a_hat_seq, a_hat_cur)
+
+    # beta
 
 
-set_paras(**PARAS)
-print('The parameters setting is as follows:')
-show_paras(1)
-print('-------------------------')
-
-
-a_hat = np.array([np.nan, np.nan])
-for _ in range(50):
-    df, r = generate(PARAS['size'])
-    s_n([-1, 1])
+a_hat_seq = a_hat_seq.reshape([-1, 2])
+a_hat = np.mean(a_hat_seq, axis=0)
