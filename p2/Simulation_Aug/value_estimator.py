@@ -112,9 +112,9 @@ def df_b_transform(b: np.array, a_hat: np.array):
 
 
 def cal_z_hat():
-    global df_1b, z_hat
+    global df_b, z_hat
 
-    z_hat = df_1b.m / df_1b.lambda_a
+    z_hat = df_b.m / df_b.lambda_a
 
 
 def raw_u_n(b, a_hat):
