@@ -23,8 +23,8 @@ def generate(size):
 
     # Covariances
     x1 = np.random.binomial(1, 0.5, size)
-    # x2 = np.random.uniform(0, 1, size)
-    x2 = np.array([0] * size)
+    x2 = np.random.uniform(0, 1, size)
+    # x2 = np.array([0] * size)
     x = np.array([x1, x2]).T
 
     # Latent

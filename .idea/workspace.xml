@@ -1,10 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="60c4694b-06da-43a8-9d14-236c9f8b1baf" name="Default" comment="7_30">
+    <list default="true" id="60c4694b-06da-43a8-9d14-236c9f8b1baf" name="Default" comment="change to df_1b version">
+      <change afterPath="$PROJECT_DIR$/examples/example.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/simAnneal_dev.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/p2/Simulation_Aug/value_estimator_backup818.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/p2/Simulation_Aug_cal/.idea/Simulation_June.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/p2/Simulation_Aug_cal/.idea/markdown-navigator/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/p2/Simulation_Aug_cal/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/p2/Simulation_Aug_cal/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/p2/Simulation_Aug_cal/.idea/other.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/p2/Simulation_Aug_cal/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/p2/Simulation_Aug_cal/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/p2/Simulation_Aug_cal/.ipynb_checkpoints/bias-checkpoint.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/p2/Simulation_Aug_cal/generator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/p2/Simulation_Aug_cal/graph.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/p2/Simulation_Aug_cal/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/p2/Simulation_Aug_cal/main_cal.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/p2/Simulation_Aug_cal/true_value.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/p2/Simulation_Aug_cal/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/p2/Simulation_Aug_cal/value_estimator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/p2/Simulation_Aug_cal/value_estimator_backup818.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/p2/Simulation_Aug_cal/variance_estimator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p2/Simulation_Aug/generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/p2/Simulation_Aug/generator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/p2/Simulation_Aug/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/p2/Simulation_Aug/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/p2/Simulation_Aug/value_estimator.py" beforeDir="false" afterPath="$PROJECT_DIR$/p2/Simulation_Aug/value_estimator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wxy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/wxy.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,10 +50,26 @@
     <SUITE FILE_PATH="coverage/WXY_Project$what_is_input.coverage" NAME="what_is_input Coverage Results" MODIFIED="1532962196961" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/WXY_Projects$test.coverage" NAME="test Coverage Results" MODIFIED="1531308685675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytorch/60_minutes" />
     <SUITE FILE_PATH="coverage/WXY_Projects$high_order_func.coverage" NAME="high_order_func Coverage Results" MODIFIED="1533372990237" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
+    <SUITE FILE_PATH="coverage/WXY_Projects$example.coverage" NAME="example Coverage Results" MODIFIED="1534567730680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/WXY_Projects$value_estimator.coverage" NAME="value_estimator Coverage Results" MODIFIED="1534398025376" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p2/Simulation_Aug" />
-    <SUITE FILE_PATH="coverage/WXY_Projects$main.coverage" NAME="main Coverage Results" MODIFIED="1534490574496" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p2/Simulation_Aug" />
+    <SUITE FILE_PATH="coverage/WXY_Projects$main.coverage" NAME="main Coverage Results" MODIFIED="1534569357595" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p2/Simulation_Aug" />
+    <SUITE FILE_PATH="coverage/WXY_Projects$main_cal.coverage" NAME="main_cal Coverage Results" MODIFIED="1534568208637" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p2/Simulation_Aug" />
     <SUITE FILE_PATH="coverage/WXY_Projects$warm_up_numpy.coverage" NAME="warm_up_numpy Coverage Results" MODIFIED="1531317202853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytorch/Learning_PyTorch_with_Examples" />
     <SUITE FILE_PATH="coverage/WXY_Projects$frame.coverage" NAME="frame Coverage Results" MODIFIED="1533361766429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="362341437">
@@ -119,7 +158,7 @@
     <session id="-1034320959">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
+          <entry key="project.closed" value="10" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.5" value="6" />
@@ -129,39 +168,58 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="42" />
-          <entry key="xml" value="1" />
+          <entry key="py" value="49" />
+          <entry key="xml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="42" />
-          <entry key="XML" value="1" />
+          <entry key="Python" value="49" />
+          <entry key="XML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Python Console" value="512" />
+          <entry key="Python Console" value="594" />
           <entry key="dummy" value="2" />
-          <entry key="py" value="2022" />
+          <entry key="py" value="2301" />
+          <entry key="txt" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="2534" />
+          <entry key="PLAIN_TEXT" value="27" />
+          <entry key="Python" value="2895" />
         </counts>
       </usages-collector>
     </session>
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="WXY_Projects" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/p2/Simulation_Aug/main.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/p2/Simulation_Aug_cal/value_estimator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="22" column="69" lean-forward="true" selection-start-line="22" selection-start-column="69" selection-end-line="22" selection-end-column="69" />
+            <state relative-caret-position="27">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+                <marker date="1534569568646" expanded="true" signature="187:231" ph="..." />
+                <marker date="1534569568646" expanded="true" signature="2340:2343" ph="..." />
+                <marker date="1534569568646" expanded="true" signature="2922:2927" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/p2/Simulation_Aug_cal/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="27">
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
               </folding>
@@ -170,31 +228,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/anaconda3/envs/wxy/lib/python3.7/site-packages/pandas/core/series.py">
+        <entry file="file://$PROJECT_DIR$/p2/Simulation_Aug_cal/main_cal.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="2042" selection-start-line="2042" selection-end-line="2042" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/p2/Simulation_Aug/value_estimator.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-116">
-              <caret line="116" column="24" selection-start-line="116" selection-start-column="24" selection-end-line="116" selection-end-column="24" />
+            <state relative-caret-position="1232">
+              <caret line="56" selection-start-line="56" selection-end-line="56" />
               <folding>
-                <element signature="e#0#18#0" expanded="true" />
-                <marker date="1534490000671" expanded="true" signature="198:242" ph="..." />
-                <marker date="1534490000671" expanded="true" signature="2342:2345" ph="..." />
-                <marker date="1534490000671" expanded="true" signature="2923:2928" ph="..." />
+                <element signature="e#0#48#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/p2/Simulation_Aug/true_value.py">
+        <entry file="file://$PROJECT_DIR$/p2/Simulation_Aug_cal/true_value.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="132">
               <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
@@ -203,10 +249,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/p2/Simulation_Aug/generator.py">
+        <entry file="file://$PROJECT_DIR$/p2/Simulation_Aug_cal/generator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1002">
-              <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
+            <state relative-caret-position="132">
+              <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -215,7 +261,31 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/p2/Simulation_Aug/utils.py">
+        <entry file="file://$PROJECT_DIR$/examples/simAnneal_dev.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="164">
+              <caret line="43" selection-start-line="43" selection-end-line="43" />
+              <folding>
+                <element signature="e#450#475#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/examples/example.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="134">
+              <caret line="56" selection-start-line="38" selection-start-column="4" selection-end-line="56" />
+              <folding>
+                <element signature="e#200#225#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/p2/Simulation_Aug_cal/utils.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="216">
               <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
@@ -246,12 +316,14 @@
       <find>beta.</find>
       <find>size</find>
       <find>a_hat</find>
+      <find>soulution</find>
     </findStrings>
     <replaceStrings>
       <replace>product</replace>
       <replace>[-1, 1]</replace>
       <replace>SIZE</replace>
       <replace>a_hat_seq</replace>
+      <replace>solution</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -292,12 +364,16 @@
         <option value="$PROJECT_DIR$/examples/newton_method.py" />
         <option value="$PROJECT_DIR$/p2/Simulation_July/generator.py" />
         <option value="$PROJECT_DIR$/p2/Simulation_Aug/main_origin.py" />
-        <option value="$PROJECT_DIR$/p2/Simulation_Aug/generator.py" />
         <option value="$PROJECT_DIR$/p2/Simulation_Aug/utils.py" />
         <option value="$PROJECT_DIR$/p2/Simulation_Aug/hi.py" />
+        <option value="$PROJECT_DIR$/p2/Simulation_Aug/true_value.py" />
+        <option value="$PROJECT_DIR$/examples/simAnneal_dev.py" />
+        <option value="$PROJECT_DIR$/examples/example.py" />
+        <option value="$PROJECT_DIR$/p2/Simulation_Aug/generator.py" />
+        <option value="$PROJECT_DIR$/p2/Simulation_Aug/main_cal.py" />
         <option value="$PROJECT_DIR$/p2/Simulation_Aug/value_estimator.py" />
         <option value="$PROJECT_DIR$/p2/Simulation_Aug/main.py" />
-        <option value="$PROJECT_DIR$/p2/Simulation_Aug/true_value.py" />
+        <option value="$PROJECT_DIR$/p2/Simulation_Aug_cal/value_estimator.py" />
       </list>
     </option>
   </component>
@@ -307,10 +383,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="22" />
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="1440" />
-    <option name="height" value="878" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -330,13 +405,12 @@
             <path>
               <item name="WXY_Projects" type="b2602c69:ProjectViewProjectNode" />
               <item name="WXY_Projects" type="462c0819:PsiDirectoryNode" />
-              <item name="p2" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="WXY_Projects" type="b2602c69:ProjectViewProjectNode" />
               <item name="WXY_Projects" type="462c0819:PsiDirectoryNode" />
               <item name="p2" type="462c0819:PsiDirectoryNode" />
-              <item name="Simulation_Aug" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -356,7 +430,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -370,11 +444,13 @@
     <option name="myShowDebugConsoleByDefault" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/p2/Simulation_Aug" />
+      <recent name="$PROJECT_DIR$/examples" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/p2" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/examples" />
+      <recent name="$PROJECT_DIR$/p2/Simulation_Aug" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -404,6 +480,25 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/p2/Simulation_July/utils.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="example" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="WXY_Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/examples" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/examples/example.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -475,6 +570,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="main_cal" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="WXY_Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/p2/Simulation_Aug" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/p2/Simulation_Aug/main_cal.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="newton_method" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="WXY_Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -489,28 +606,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/examples/newton_method.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="r_frame" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="WXY_Project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/examples" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/examples/r_frame.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -541,43 +636,24 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Doctest sum_naturals" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
-      <module name="WXY_Project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/examples" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/examples/doc__test.py" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="sum_naturals" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_FUNCTION" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Python.main_test" />
       <item itemvalue="Python.Unnamed" />
       <item itemvalue="Python.high_order_func" />
       <item itemvalue="Python.main" />
       <item itemvalue="Python.generator" />
-      <item itemvalue="Python.r_frame" />
       <item itemvalue="Python.newton_method" />
-      <item itemvalue="Python tests.Doctest sum_naturals" />
       <item itemvalue="Python.value_estimator" />
+      <item itemvalue="Python.example" />
+      <item itemvalue="Python.main_cal" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main_cal" />
+        <item itemvalue="Python.example" />
         <item itemvalue="Python.value_estimator" />
         <item itemvalue="Python.generator" />
         <item itemvalue="Python.newton_method" />
-        <item itemvalue="Python tests.Doctest sum_naturals" />
-        <item itemvalue="Python.r_frame" />
       </list>
     </recent_temporary>
   </component>
@@ -599,7 +675,14 @@
       <option name="project" value="LOCAL" />
       <updated>1532919374967</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="change to df_1b version">
+      <created>1534490444241</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1534490444241</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -620,33 +703,32 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49896482" visible="true" weight="0.1416309" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49808916" visible="true" weight="0.1416309" />
       <window_info id="Structure" order="1" sideWeight="0.5010352" side_tool="true" weight="0.090521835" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Favorites" order="2" sideWeight="0.5019108" side_tool="true" weight="0.1416309" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32951653" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.31082803" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3121019" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.8433735" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32919255" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32866243" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32951653" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32866243" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49928468" weight="0.13630573" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5007153" side_tool="true" weight="0.74554706" />
-      <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49946752" weight="0.41146496" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5007153" side_tool="true" weight="0.7452229" />
+      <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49946752" weight="0.41084337" />
       <window_info anchor="right" id="Key Promoter X" sideWeight="0.4968153" weight="0.3297568" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Remote Host" order="3" sideWeight="0.49506903" weight="0.32904148" />
-      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Database" order="4" weight="0.3297568" />
       <window_info anchor="right" x="0" y="0" width="430" height="858" id="Documentation" order="5" sideWeight="0.50318474" side_tool="true" weight="0.3297568" />
-      <window_info anchor="right" id="SciView" order="6" weight="0.2827476" />
+      <window_info anchor="right" id="SciView" order="6" weight="0.2825465" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -694,7 +776,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="7_30" />
-    <option name="LAST_COMMIT_MESSAGE" value="7_30" />
+    <MESSAGE value="change to df_1b version" />
+    <option name="LAST_COMMIT_MESSAGE" value="change to df_1b version" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -716,17 +799,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/anaconda3/envs/wxy/lib/python3.6/site-packages/tqdm/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/examples/test.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pytorch/60_minutes/what_is_pytorch.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pytorch/60_minutes/Autograd.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
@@ -880,7 +952,7 @@
     <entry file="file://$PROJECT_DIR$/p2/Simulation_July/miaomiao.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/p2/Simulation_Aug/.idea/vcs.xml">
+    <entry file="file://$PROJECT_DIR$/p2/Simulation_Aug_cal/.idea/vcs.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/p2/Simulation_July/true_value.py">
@@ -933,7 +1005,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/p2/Simulation_Aug/utils.py">
+    <entry file="file://$PROJECT_DIR$/p2/Simulation_Aug_cal/utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
@@ -947,6 +1019,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/p2/Simulation_Aug_cal/true_value.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/p2/Simulation_Aug_cal/value_estimator_backup818.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/wxy/April/generator_file.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1043" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/example.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="56" selection-start-line="38" selection-start-column="4" selection-end-line="56" />
+          <folding>
+            <element signature="e#200#225#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/p2/Simulation_Aug_cal/generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/p2/Simulation_Aug/.idea/vcs.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/simAnneal_dev.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+          <folding>
+            <element signature="e#450#475#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$USER_HOME$/anaconda3/envs/wxy/lib/python3.7/site-packages/pandas/core/series.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -954,42 +1074,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/p2/Simulation_Aug/generator.py">
+    <entry file="file://$PROJECT_DIR$/p2/Simulation_Aug_cal/main_cal.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1002">
-          <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/p2/Simulation_Aug/true_value.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/p2/Simulation_Aug/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="22" column="69" lean-forward="true" selection-start-line="22" selection-start-column="69" selection-end-line="22" selection-end-column="69" />
+        <state relative-caret-position="1232">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
           <folding>
             <element signature="e#0#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/p2/Simulation_Aug/value_estimator.py">
+    <entry file="file://$PROJECT_DIR$/p2/Simulation_Aug_cal/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-116">
-          <caret line="116" column="24" selection-start-line="116" selection-start-column="24" selection-end-line="116" selection-end-column="24" />
+        <state relative-caret-position="27">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/p2/Simulation_Aug_cal/value_estimator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <marker date="1534490000671" expanded="true" signature="198:242" ph="..." />
-            <marker date="1534490000671" expanded="true" signature="2342:2345" ph="..." />
-            <marker date="1534490000671" expanded="true" signature="2923:2928" ph="..." />
+            <marker date="1534569568646" expanded="true" signature="187:231" ph="..." />
+            <marker date="1534569568646" expanded="true" signature="2340:2343" ph="..." />
+            <marker date="1534569568646" expanded="true" signature="2922:2927" ph="..." />
           </folding>
         </state>
       </provider>

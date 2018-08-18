@@ -1,7 +1,8 @@
 import numpy as np
 import pandas as pd
-from p2.Simulation_Aug.utils import flatten
-from p2.Simulation_Aug.true_value import SIZE
+from numpy.linalg import norm
+from p2.Simulation_Aug_cal.utils import flatten
+from p2.Simulation_Aug_cal.true_value import SIZE
 
 
 def load(_df, _r):
@@ -75,7 +76,7 @@ def s_n(a):
     compute_lambda(a)
     compute_mu(a)
     result = [df.x1.values @ (df.m / lambda_a - mu_z).values, df.x2.values @ (df.m / lambda_a - mu_z).values]
-    return np.array(result) / SIZE
+    return norm(np.array(result) / SIZE)
 
 
 ###################
@@ -134,7 +135,7 @@ def raw_u_n(b, a_hat):
 
     result = np.array([part11 - part12, part21 - part22])
 
-    return result
+    return norm(result)
 
 
 def tmp_u_n(a_hat):

@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
-from p2.Simulation_Aug.utils import flatten
-from p2.Simulation_Aug.true_value import SIZE
+from p2.Simulation_Aug_cal.utils import flatten
+from p2.Simulation_Aug_cal.true_value import SIZE
 
 
 def load(_df, _r):
