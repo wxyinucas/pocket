@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-from p2.Simulation_Aug.true_value import ALPHA1, BETA1, SIZE
+from p2.Simulation_Aug.true_value import ALPHA0, BETA0, SIZE
 
 
 def generate(size):
@@ -42,7 +42,7 @@ def generate(size):
 
     # failure time
     d = np.random.exponential(1 / (z * h0 *
-                                   np.exp(x @ BETA1)),
+                                   np.exp(x @ BETA0)),
                               size)
 
     # indicator
@@ -53,15 +53,13 @@ def generate(size):
 
     # recurrent time
     m = np.random.poisson(z * lambda0 *
-                          np.exp(x @ ALPHA1) * y,
+                          np.exp(x @ ALPHA0) * y,
                           size)
     r = []
     for i in range(size):
         r.append(np.random.uniform(0, y[i], m[i]))
     r = np.array(r)
 
-    # names = ['x1', 'x2', 'x', 'z', 'c', 'd', 'delta', 'y', 'm']
-    # values = [x1, x2, x, z, c, d, delta, y, m]
     names = ['x1', 'x2', 'z', 'c', 'd', 'delta', 'y', 'm']
     values = [x1, x2, z, c, d, delta, y, m]
 

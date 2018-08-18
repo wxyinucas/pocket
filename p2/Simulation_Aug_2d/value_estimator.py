@@ -1,6 +1,5 @@
 import numpy as np
 import pandas as pd
-from numpy.linalg import norm
 from p2.Simulation_Aug.utils import flatten
 from p2.Simulation_Aug.true_value import SIZE
 
@@ -11,14 +10,16 @@ def load(_df, _r):
     r = _r
 
 
-def pre_process(a1: np.array):
+def pre_process(a: np.array):
     """
-    a1: estimate parameter
+    a: estimate parameter
     """
     global df, r, df_star, r_star
 
+    # df, r = generate(SIZE)
+
     # 乘法因子
-    e_star = np.exp(np.array([df.x1, df.x2]).T @ a1)
+    e_star = np.exp(np.array([df.x1, df.x2]).T @ a)
 
     # justify df^*
     df_star = df.copy()
@@ -26,16 +27,16 @@ def pre_process(a1: np.array):
     df_star.c = df.c * e_star
     df_star.d = df.d * e_star
 
-    # {t_ij^*(a1)}
+    # {t_ij^*(a)}
     r_star = r * e_star
 
 
 #     return df, r, df_star, r_star
 
 
-def compute_lambda(a1):
+def compute_lambda(a):
     """
-    a1: estimate parameter
+    a: estimate parameter
     """
     global lambda_a, df
 
@@ -57,41 +58,22 @@ def compute_lambda(a1):
     factor = np.append(factor, 1)
     lambda_ = np.cumprod(factor[::-1])[::-1]
 
-    # vector{\lambda(Y^*(a1))}
+    # vector{\lambda(Y^*(a))}
     lambda_a = lambda_[tuple([index])]
 
 
-def compute_mu(a1: np.array, a2: np.array):
+def compute_mu(a):
     global mu_z
 
-    mu_z = df_star.m * np.exp(- df[['x1', 'x2']] @ (a2 - a1)) @ (1 / lambda_a) / SIZE
+    mu_z = df_star.m @ (1 / lambda_a) / SIZE
 
 
-def equ_a_1(a1, a2):
-    result = [df.x1.values @ (df.m * np.exp(- df[['x1', 'x2']] @ (a2 - a1)) / lambda_a - mu_z).values,
-              df.x2.values @ (df.m * np.exp(- df[['x1', 'x2']] @ (a2 - a1)) / lambda_a - mu_z).values]
+def s_n(a):
+    pre_process(a)
+    compute_lambda(a)
+    compute_mu(a)
+    result = [df.x1.values @ (df.m / lambda_a - mu_z).values, df.x2.values @ (df.m / lambda_a - mu_z).values]
     return np.array(result) / SIZE
-
-
-def equ_a_2(a1: np.array, a2: np.array):
-    """
-    Also known as g_2(t;X, a)
-    """
-    r_sum = np.array([sum(row) for row in r])
-    result = [r_sum * df.x1.values ** 2 @ (df.m * np.exp(- df[['x1', 'x2']] @ (a2 - a1)) / lambda_a - mu_z).values,
-              r_sum * df.x2.values ** 2 @ (df.m * np.exp(- df[['x1', 'x2']] @ (a2 - a1)) / lambda_a - mu_z).values]
-    return np.array(result) / SIZE
-
-
-def s_n(a: np.array):
-    a1 = a[:2]
-    a2 = a[-2:]
-    pre_process(a1)
-    compute_lambda(a1)
-    compute_mu(a1, a2)
-    result_vec = np.array([equ_a_1(a1, a2), equ_a_2(a1, a2)])
-    result_vec_named = pd.DataFrame(result_vec, index=['equation1', 'equation2'], columns=['a1', 'a2'])
-    return flatten(result_vec)
 
 
 ###################
@@ -103,21 +85,21 @@ def s_n(a: np.array):
 ####################
 
 
-def df_b_transform(b1: np.array, a1_hat: np.array):
+def df_b_transform(b: np.array, a_hat: np.array):
     global df, df_b, df_1b
     df_b = df.copy()
 
-    # e_star is vector {exp(x @ a1)}
-    e_star = np.exp(np.array([df.x1, df.x2]).T @ b1)
+    # e_star is vector {exp(x @ a)}
+    e_star = np.exp(np.array([df.x1, df.x2]).T @ b)
 
     # justify df^*
     df_b.y = df.y * e_star
     df_b.c = df.c * e_star
     df_b.d = df.d * e_star
 
-    # calculate \Lambda_n{\Y_i^*(\hat{a1})}
-    pre_process(a1_hat)
-    compute_lambda(a1_hat)
+    # calculate \Lambda_n{\Y_i^*(\hat{a})}
+    pre_process(a_hat)
+    compute_lambda(a_hat)
     _lambda_a = pd.Series(lambda_a, name='lambda_a')
     df_b = pd.concat([df_b, _lambda_a], axis=1)
 
@@ -132,12 +114,12 @@ def cal_z_hat():
     z_hat = df_1b.m / df_1b.lambda_a
 
 
-def raw_u_n(b1, a1_hat):
+def raw_u_n(b, a_hat):
     """Make sure calling df_b_transform() before this function"""
 
     global df, df_b, df_1b
 
-    df_b_transform(b1, a1_hat)
+    df_b_transform(b, a_hat)
     cal_z_hat()
 
     compare = df_1b.y.values.reshape((-1, 1)) < df_1b.y.values.reshape((1, -1))
@@ -153,8 +135,8 @@ def raw_u_n(b1, a1_hat):
     return result
 
 
-def tmp_u_n(a1_hat):
-    def u_n(b1):
-        return raw_u_n(b1, a1_hat)
+def tmp_u_n(a_hat):
+    def u_n(b):
+        return raw_u_n(b, a_hat)
 
     return u_n
