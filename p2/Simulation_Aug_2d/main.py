@@ -1,7 +1,7 @@
-from p2.Simulation_Aug.generator import generate
+from p2.Simulation_Aug_2d.generator import generate
 from p2.Simulation_Aug_2d.value_estimator import s_n,  load, tmp_u_n
 from p2.Simulation_Aug_2d.true_value import SIZE, ALPHA0, BETA0
-from p2.Simulation_Aug.utils import initial
+from p2.Simulation_Aug_2d.utils import initial
 from scipy.optimize import fsolve
 from tqdm import tqdm
 from time import time

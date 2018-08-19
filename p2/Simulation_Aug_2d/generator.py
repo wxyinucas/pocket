@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-from p2.Simulation_Aug.true_value import ALPHA0, BETA0, SIZE
+from p2.Simulation_Aug_2d.true_value import ALPHA0, BETA0, SIZE
 
 
 def generate(size):

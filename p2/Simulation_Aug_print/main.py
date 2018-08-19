@@ -4,16 +4,18 @@ from p2.Simulation_Aug_print.true_value import SIZE, ALPHA1, BETA1, ALPHA2, BETA
 from p2.Simulation_Aug_print.utils import initial
 from scipy.optimize import fsolve
 from tqdm import tqdm
-from time import time
+import time
 
 import numpy as np
+
+replicate = 100
 
 # 估计a_hat
 a_hat_seq = []
 b_hat_seq = []
 
-start_time = time()
-for _ in tqdm(range(20)):
+start_time = time.time()
+for _ in tqdm(range(replicate)):
     df, r = generate(SIZE)
     load(df, r)
 
@@ -29,16 +31,22 @@ for _ in tqdm(range(20)):
     b_hat_cur = np.array(fsolve(u_n, initial(b0)))
     b_hat_seq = np.append(b_hat_seq, b_hat_cur)
 
-print(f'The running time is {time() - start_time:.2f}s.')
+end_time = time.time()
+print(f'The running time is {end_time - start_time:.2f}s.')
 a_hat_seq = a_hat_seq.reshape([-1, 4])
 b_hat_seq = b_hat_seq.reshape([-1, 4])
 a_hat = np.mean(a_hat_seq, axis=0)
 b_hat = np.mean(b_hat_seq, axis=0)
 
 with open('./table.txt', 'a+') as f:
-    tmp = np.append(a_hat, b_hat)
+    ALPHA = np.append(ALPHA1, ALPHA2)
+    BETA = np.append(BETA1, BETA2)
+    tmp = np.append(a_hat-ALPHA, b_hat-BETA)
     string = [f'{num:.4f}' for num in tmp]
 
-    print(*string, sep=' & ', file=f)
+    time_stamp = time.asctime(time.localtime(end_time))
+    print(f'\nThe settings:\nAlpha1={ALPHA1}, Alpha2={ALPHA2}, Beta1={BETA1}, Beta2={BETA2}.\n'
+          f'Samples={SIZE}, replicate={replicate}.\nTime stamp: {time_stamp}', file=f)
+    print(*string, sep=' & ', file=f, end='\n')
     f.seek(0)
     print(f.readlines())

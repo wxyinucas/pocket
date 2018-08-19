@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
-from p2.Simulation_Aug.utils import flatten
-from p2.Simulation_Aug.true_value import SIZE
+from p2.Simulation_Aug_print.utils import flatten
+from p2.Simulation_Aug_print.true_value import SIZE
 
 
 def load(_df, _r):
@@ -114,6 +114,13 @@ def cal_z_hat():
     z_hat = df_1b.m / df_1b.lambda_a
 
 
+def equ_b_1(b, compare):
+    result = [
+        np.sum(df_1b.x1 - (df_1b.x1 * z_hat  @ compare) / (z_hat @ compare)),
+        np.sum(df_1b.x2 - (df_1b.x2 * z_hat  @ compare) / (z_hat @ compare))]
+    return np.array(result) / SIZE
+
+
 def raw_u_n(b, a_hat):
     """Make sure calling df_b_transform() before this function"""
 
@@ -127,12 +134,14 @@ def raw_u_n(b, a_hat):
     part11 = np.sum(df_1b.x1) / SIZE
     part21 = np.sum(df_1b.x2) / SIZE
 
+    #  不想报错就调整回去，把nan变成sum
     part12 = np.sum((df_1b.x1 * z_hat @ compare) / (z_hat @ compare)) / SIZE
-    part22 = np.sum((df_1b.x2 * z_hat @ compare) / (z_hat @ compare)) / SIZE
+    part22 = np.nansum((df_1b.x2 * z_hat @ compare) / (z_hat @ compare)) / SIZE
 
     result = np.array([part11 - part12, part21 - part22])
+    result1 = equ_b_1(b, compare)
 
-    return result
+    return result1
 
 
 def tmp_u_n(a_hat):
