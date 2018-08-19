@@ -2,32 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60c4694b-06da-43a8-9d14-236c9f8b1baf" name="Default" comment="change to df_1b version">
-      <change afterPath="$PROJECT_DIR$/p2/Simulation_Aug_print/.idea/Simulation_June.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/p2/Simulation_Aug_print/.idea/markdown-navigator/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/p2/Simulation_Aug_print/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/p2/Simulation_Aug_print/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/p2/Simulation_Aug_print/.idea/other.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/p2/Simulation_Aug_print/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/p2/Simulation_Aug_print/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/p2/Simulation_Aug_print/.ipynb_checkpoints/bias-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/p2/Simulation_Aug_print/generator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/p2/Simulation_Aug_print/graph.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/p2/Simulation_Aug_print/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/p2/Simulation_Aug_print/table.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/p2/Simulation_Aug_print/true_value.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/p2/Simulation_Aug_print/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/p2/Simulation_Aug_print/value_estimator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/p2/Simulation_Aug_print/variance_estimator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/p2/Simulation_Aug_print/__table.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/p2/Simulation_Aug_print/change_to_tex.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/p2/Simulation_Aug/generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/p2/Simulation_Aug/generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/p2/Simulation_Aug/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/p2/Simulation_Aug/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/p2/Simulation_Aug/table.txt" beforeDir="false" afterPath="$PROJECT_DIR$/p2/Simulation_Aug/table.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/p2/Simulation_Aug/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/p2/Simulation_Aug/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/p2/Simulation_Aug/value_estimator.py" beforeDir="false" afterPath="$PROJECT_DIR$/p2/Simulation_Aug/value_estimator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/p2/Simulation_Aug_2d/generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/p2/Simulation_Aug_2d/generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/p2/Simulation_Aug_2d/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/p2/Simulation_Aug_2d/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/p2/Simulation_Aug_2d/table.txt" beforeDir="false" afterPath="$PROJECT_DIR$/p2/Simulation_Aug_2d/table.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/p2/Simulation_Aug_2d/value_estimator.py" beforeDir="false" afterPath="$PROJECT_DIR$/p2/Simulation_Aug_2d/value_estimator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p2/Simulation_Aug_print/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/p2/Simulation_Aug_print/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p2/Simulation_Aug_print/table.txt" beforeDir="false" afterPath="$PROJECT_DIR$/p2/Simulation_Aug_print/table.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,6 +33,7 @@
     <SUITE FILE_PATH="coverage/WXY_Projects$value_estimator.coverage" NAME="value_estimator Coverage Results" MODIFIED="1534595582387" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p2/Simulation_Aug" />
     <SUITE FILE_PATH="coverage/WXY_Projects$main.coverage" NAME="main Coverage Results" MODIFIED="1534647097553" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p2/Simulation_Aug" />
     <SUITE FILE_PATH="coverage/WXY_Projects$main_cal.coverage" NAME="main_cal Coverage Results" MODIFIED="1534568208637" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p2/Simulation_Aug" />
+    <SUITE FILE_PATH="coverage/WXY_Projects$change_to_tex.coverage" NAME="change_to_tex Coverage Results" MODIFIED="1534691788952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p2/Simulation_Aug_print" />
     <SUITE FILE_PATH="coverage/WXY_Projects$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1534571978489" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p2/Simulation_Aug_cal" />
     <SUITE FILE_PATH="coverage/WXY_Projects$main__3_.coverage" NAME="main (3) Coverage Results" MODIFIED="1534651722132" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p2/Simulation_Aug_print" />
     <SUITE FILE_PATH="coverage/WXY_Projects$main__2_.coverage" NAME="main (2) Coverage Results" MODIFIED="1534646943408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p2/Simulation_Aug_2d" />
@@ -161,42 +141,42 @@
     <session id="-1034320959">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="11" />
+          <entry key="project.closed" value="12" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.5" value="6" />
-          <entry key="project.open.time.6" value="4" />
-          <entry key="project.opened" value="13" />
+          <entry key="project.open.time.6" value="5" />
+          <entry key="project.opened" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="113" />
-          <entry key="txt" value="8" />
+          <entry key="py" value="115" />
+          <entry key="txt" value="9" />
           <entry key="xml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PLAIN_TEXT" value="8" />
-          <entry key="Python" value="113" />
+          <entry key="PLAIN_TEXT" value="9" />
+          <entry key="Python" value="115" />
           <entry key="XML" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Python Console" value="1951" />
+          <entry key="Python Console" value="2081" />
           <entry key="dummy" value="4" />
-          <entry key="py" value="4257" />
-          <entry key="txt" value="113" />
+          <entry key="py" value="5309" />
+          <entry key="txt" value="123" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="117" />
-          <entry key="Python" value="6208" />
+          <entry key="PLAIN_TEXT" value="127" />
+          <entry key="Python" value="7390" />
         </counts>
       </usages-collector>
     </session>
@@ -206,11 +186,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/p2/Simulation_Aug_print/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="28" column="26" lean-forward="true" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+            <state relative-caret-position="286">
+              <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
@@ -221,8 +201,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/p2/Simulation_Aug_print/table.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-519">
-              <caret line="27" selection-start-line="27" selection-end-line="27" />
+            <state relative-caret-position="-358">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/p2/Simulation_Aug_print/change_to_tex.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="149">
+              <caret line="63" selection-start-line="63" selection-end-line="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/p2/Simulation_Aug_print/tex.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="99" />
             </state>
           </provider>
         </entry>
@@ -231,7 +229,7 @@
         <entry file="file://$PROJECT_DIR$/p2/Simulation_Aug_print/true_value.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="88">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
@@ -239,7 +237,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/p2/Simulation_Aug_print/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
+            <state relative-caret-position="638">
               <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
             </state>
           </provider>
@@ -277,6 +275,7 @@
       <find>\bdf.x\b</find>
       <find>\*\W*(a2 - a1)</find>
       <find>.values</find>
+      <find>The settings:</find>
     </findStrings>
     <replaceStrings>
       <replace>product</replace>
@@ -293,6 +292,7 @@
       <replace>df[['x1', 'x2']]</replace>
       <replace>@ (a2 - a1)</replace>
       <replace>`</replace>
+      <replace>\b</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -301,8 +301,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pytorch/60_minutes/what_is_pytorch.py" />
-        <option value="$PROJECT_DIR$/pytorch/60_minutes/test.py" />
         <option value="$PROJECT_DIR$/pytorch/Learning_PyTorch_with_Examples/warm_up_numpy.py" />
         <option value="$PROJECT_DIR$/tqdm.py" />
         <option value="$PROJECT_DIR$/aaasss.py" />
@@ -349,9 +347,11 @@
         <option value="$PROJECT_DIR$/p2/Simulation_Aug_2d/value_estimator.py" />
         <option value="$PROJECT_DIR$/p2/Simulation_Aug/value_estimator.py" />
         <option value="$PROJECT_DIR$/p2/Simulation_Aug_print/value_estimator.py" />
+        <option value="$PROJECT_DIR$/p2/Simulation_Aug_print/true_value.py" />
         <option value="$PROJECT_DIR$/p2/Simulation_Aug_print/table.txt" />
         <option value="$PROJECT_DIR$/p2/Simulation_Aug_print/main.py" />
-        <option value="$PROJECT_DIR$/p2/Simulation_Aug_print/true_value.py" />
+        <option value="$PROJECT_DIR$/p2/Simulation_Aug_print/change_to_tex.py" />
+        <option value="$PROJECT_DIR$/p2/Simulation_Aug_print/tex.txt" />
       </list>
     </option>
   </component>
@@ -361,9 +361,8 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="52" />
-    <option name="y" value="214" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="877" />
   </component>
@@ -375,38 +374,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="WXY_Projects" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WXY_Projects" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="WXY_Projects" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WXY_Projects" type="462c0819:PsiDirectoryNode" />
-              <item name="p2" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="WXY_Projects" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WXY_Projects" type="462c0819:PsiDirectoryNode" />
-              <item name="p2" type="462c0819:PsiDirectoryNode" />
-              <item name="Simulation_Aug_print" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="WXY_Projects" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WXY_Projects" type="462c0819:PsiDirectoryNode" />
-              <item name="pytorch" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="WXY_Projects" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WXY_Projects" type="462c0819:PsiDirectoryNode" />
-              <item name="reading_list" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Default'; set:Default; class com.intellij.packageDependencies.ChangeListScope">
           <expand>
@@ -449,6 +416,38 @@
           <select />
         </subPane>
       </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="WXY_Projects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WXY_Projects" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WXY_Projects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WXY_Projects" type="462c0819:PsiDirectoryNode" />
+              <item name="p2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WXY_Projects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WXY_Projects" type="462c0819:PsiDirectoryNode" />
+              <item name="p2" type="462c0819:PsiDirectoryNode" />
+              <item name="Simulation_Aug_print" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WXY_Projects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WXY_Projects" type="462c0819:PsiDirectoryNode" />
+              <item name="pytorch" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WXY_Projects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WXY_Projects" type="462c0819:PsiDirectoryNode" />
+              <item name="reading_list" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -476,15 +475,16 @@
     <option name="myShowDebugConsoleByDefault" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/p2/Simulation_Aug_print" />
+      <recent name="$PROJECT_DIR$/pytorch" />
+      <recent name="$PROJECT_DIR$/p2" />
+      <recent name="$PROJECT_DIR$/p2/Simulation_Aug" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/p2" />
       <recent name="$PROJECT_DIR$/p2/Simulation_Aug" />
       <recent name="$PROJECT_DIR$/examples" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/pytorch" />
-      <recent name="$PROJECT_DIR$/p2" />
-      <recent name="$PROJECT_DIR$/p2/Simulation_Aug" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -499,7 +499,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.main (3)">
+  <component name="RunManager" selected="Python.change_to_tex">
     <configuration name="Unnamed" type="PythonConfigurationType" factoryName="Python">
       <module name="WXY_Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -516,6 +516,28 @@
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/p2/Simulation_July/utils.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="change_to_tex" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="WXY_Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/p2/Simulation_Aug_print" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/p2/Simulation_Aug_print/change_to_tex.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
@@ -570,6 +592,9 @@
       <module name="WXY_Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/p2/Simulation_Aug_2d" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -611,6 +636,9 @@
       <module name="WXY_Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/p2/Simulation_Aug" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -626,32 +654,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main_cal" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="value_estimator" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="WXY_Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/p2/Simulation_Aug" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/p2/Simulation_Aug/main_cal.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="value_estimator" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="WXY_Project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/p2/Simulation_Aug" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -673,18 +682,18 @@
       <item itemvalue="Python.high_order_func" />
       <item itemvalue="Python.main" />
       <item itemvalue="Python.value_estimator" />
-      <item itemvalue="Python.main_cal" />
       <item itemvalue="Python.main (1)" />
       <item itemvalue="Python.main (2)" />
       <item itemvalue="Python.main (3)" />
+      <item itemvalue="Python.change_to_tex" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.change_to_tex" />
         <item itemvalue="Python.main (3)" />
         <item itemvalue="Python.main (2)" />
         <item itemvalue="Python.value_estimator" />
         <item itemvalue="Python.main (1)" />
-        <item itemvalue="Python.main_cal" />
       </list>
     </recent_temporary>
   </component>
@@ -737,20 +746,20 @@
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49759036" weight="0.14520743" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49759036" visible="true" weight="0.14520743" />
       <window_info id="Structure" order="1" sideWeight="0.50240964" side_tool="true" weight="0.14306152" />
       <window_info id="Favorites" order="2" sideWeight="0.5019108" side_tool="true" weight="0.1416309" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30828026" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.25987262" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.30828026" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.36305732" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32771084" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32738853" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32771084" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49928468" weight="0.13614458" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49928468" weight="0.5719745" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5007153" side_tool="true" weight="0.7452229" />
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49946752" weight="0.45095542" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -855,6 +864,10 @@
           <line>137</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/p2/Simulation_Aug_print/change_to_tex.py</url>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
@@ -862,20 +875,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/examples/frame.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/borrow frame.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/examples/r_frame.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -1024,13 +1023,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/p2/Simulation_Aug_2d/table.txt" />
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="169">
@@ -1094,12 +1086,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="401">
           <caret line="135" column="57" lean-forward="true" selection-start-line="129" selection-start-column="4" selection-end-line="135" selection-end-column="57" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <marker date="1534569568646" expanded="true" signature="187:231" ph="..." />
-            <marker date="1534569568646" expanded="true" signature="2340:2342" ph="..." />
-            <marker date="1534569568646" expanded="true" signature="2922:2927" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1107,9 +1093,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="13" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1143,34 +1126,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/p2/Simulation_Aug_print/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/p2/Simulation_Aug_print/true_value.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/p2/Simulation_Aug_print/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/p2/Simulation_Aug_print/table.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-519">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="-358">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/p2/Simulation_Aug_print/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="28" column="26" lean-forward="true" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+        <state relative-caret-position="286">
+          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/p2/Simulation_Aug_print/change_to_tex.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/p2/Simulation_Aug_print/tex.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="99" />
         </state>
       </provider>
     </entry>

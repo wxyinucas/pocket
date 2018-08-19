@@ -41,12 +41,14 @@ b_hat = np.mean(b_hat_seq, axis=0)
 with open('./table.txt', 'a+') as f:
     ALPHA = np.append(ALPHA1, ALPHA2)
     BETA = np.append(BETA1, BETA2)
-    tmp = np.append(a_hat-ALPHA, b_hat-BETA)
+    tmp = np.append(a_hat - ALPHA, b_hat - BETA)
     string = [f'{num:.4f}' for num in tmp]
 
     time_stamp = time.asctime(time.localtime(end_time))
-    print(f'\nThe settings:\nAlpha1={ALPHA1}, Alpha2={ALPHA2}, Beta1={BETA1}, Beta2={BETA2}.\n'
+    print(f'\nAlpha1={ALPHA1}, Alpha2={ALPHA2}, Beta1={BETA1}, Beta2={BETA2}.\n'
           f'Samples={SIZE}, replicate={replicate}.\nTime stamp: {time_stamp}', file=f)
     print(*string, sep=' & ', file=f, end='\n')
     f.seek(0)
     print(f.readlines())
+
+# TODO: 再增加一个py file，操纵字符串，来更改true value的真值。
