@@ -1,31 +1,22 @@
 \begin{table}[!htbp]
 \centering
-\caption{Simulation result $n = 200$}\label{tab:simulation}
-\begin{tabular}{l c c c c}
+\caption{Simulation result replicate $= 200$}\label{tab:simulation}
+\begin{tabular}{l c c c c c c c c}
 
 \toprule
 
-\multirow2*{} & $\alpha_1 = [-1.0, 0.0]$ & $\alpha_2 = [-1.0, 0.5]$ & $\beta_1 = [-1.0, 0.0]$ & $\beta_2 = [-1.0, 0.5]$ \\
-\cline{2-5}
-& Bias & ESE & ASE & CP\\
+\multirow{2}*{} & \multicolumn{2}{c}{$\alpha_1 = [-1.0, 0.0]$} & \multicolumn{2}{c}{$\alpha_2 = [-1.0, 0.5]$} & \multicolumn{2}{c}{$\beta_1 = [-1.0, 0.0]$} & \multicolumn{2}{c}{$\beta_2 = [-1.0, 0.5]$} \\
+\cline{2-5} \cline{6-9}
+& Bias & ESE & ASE & CP & Bias & ESE & ASE & CP\\
 \hline
-\a & 0.0044 & & & \\
- & 0.0178 & & & \\
-\a & 0.0169 & & & \\
- & 0.0275 & & & \\
-\a & 0.0229 & & & \\
- & 0.0248 & & & \\
-\a & 0.0020 & & & \\
- & 0.0026 & & & \\
-\hline
-0.0061 & & & & \\
-0.0108 & & & & \\
-0.0210 & & & & \\
-0.0147 & & & & \\
-0.0135 & & & & \\
-0.0035 & & & & \\
-0.0107 & & & & \\
-0.0135 & & & & \\
+\multirow{2}*{$\alpha_1$} & 0.0044 & & & & 0.0061 & & & \\
+ & 0.0178 & & & & 0.0108 & & &\\
+\multirow{2}*{$\alpha_2$} & 0.0178 & & & & 0.0108 & & & \\
+ & 0.0169 & & & & 0.0210 & & &\\
+\multirow{2}*{$\beta_1$} & 0.0169 & & & & 0.0210 & & & \\
+ & 0.0275 & & & & 0.0147 & & &\\
+\multirow{2}*{$\beta_2$} & 0.0275 & & & & 0.0147 & & & \\
+ & 0.0229 & & & & 0.0135 & & &\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -33,32 +24,23 @@
 ========================
 \begin{table}[!htbp]
 \centering
-\caption{Simulation result $n = 200$}\label{tab:simulation}
-\begin{tabular}{l c c c c}
+\caption{Simulation result replicate $= 200$}\label{tab:simulation}
+\begin{tabular}{l c c c c c c c c}
 
 \toprule
 
-\multirow2*{} & $\alpha_1 = [-1.0, 1.0]$ & $\alpha_2 = [-1.0, 0.5]$ & $\beta_1 = [-1.0, 1.0]$ & $\beta_2 = [-1.0, 0.5]$ \\
-\cline{2-5}
-& Bias & ESE & ASE & CP\\
+\multirow{2}*{} & \multicolumn{2}{c}{$\alpha_1 = [-1.0, 1.0]$} & \multicolumn{2}{c}{$\alpha_2 = [-1.0, 0.5]$} & \multicolumn{2}{c}{$\beta_1 = [-1.0, 1.0]$} & \multicolumn{2}{c}{$\beta_2 = [-1.0, 0.5]$} \\
+\cline{2-5} \cline{6-9}
+& Bias & ESE & ASE & CP & Bias & ESE & ASE & CP\\
 \hline
-\a & 0.0130 & & & \\
- & 0.0043 & & & \\
-\a & 0.0125 & & & \\
- & 0.0076 & & & \\
-\a & 0.0196 & & & \\
- & 0.0154 & & & \\
-\a & 0.0025 & & & \\
- & 0.0033 & & & \\
-\hline
-0.0087 & & & & \\
-0.0047 & & & & \\
-0.0043 & & & & \\
-0.0006 & & & & \\
-0.0045 & & & & \\
-0.0065 & & & & \\
-0.0061 & & & & \\
-0.0157 & & & & \\
+\multirow{2}*{$\alpha_1$} & 0.0130 & & & & 0.0087 & & & \\
+ & 0.0043 & & & & 0.0047 & & &\\
+\multirow{2}*{$\alpha_2$} & 0.0043 & & & & 0.0047 & & & \\
+ & 0.0125 & & & & 0.0043 & & &\\
+\multirow{2}*{$\beta_1$} & 0.0125 & & & & 0.0043 & & & \\
+ & 0.0076 & & & & 0.0006 & & &\\
+\multirow{2}*{$\beta_2$} & 0.0076 & & & & 0.0006 & & & \\
+ & 0.0196 & & & & 0.0045 & & &\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -66,32 +48,23 @@
 ========================
 \begin{table}[!htbp]
 \centering
-\caption{Simulation result $n = 200$}\label{tab:simulation}
-\begin{tabular}{l c c c c}
+\caption{Simulation result replicate $= 200$}\label{tab:simulation}
+\begin{tabular}{l c c c c c c c c}
 
 \toprule
 
-\multirow2*{} & $\alpha_1 = [-1.0, 0.5]$ & $\alpha_2 = [-1.0, 0.0]$ & $\beta_1 = [-1.0, 0.5]$ & $\beta_2 = [-1.0, 0.0]$ \\
-\cline{2-5}
-& Bias & ESE & ASE & CP\\
+\multirow{2}*{} & \multicolumn{2}{c}{$\alpha_1 = [-1.0, 0.5]$} & \multicolumn{2}{c}{$\alpha_2 = [-1.0, 0.0]$} & \multicolumn{2}{c}{$\beta_1 = [-1.0, 0.5]$} & \multicolumn{2}{c}{$\beta_2 = [-1.0, 0.0]$} \\
+\cline{2-5} \cline{6-9}
+& Bias & ESE & ASE & CP & Bias & ESE & ASE & CP\\
 \hline
-\a & 0.0046 & & & \\
- & 0.0061 & & & \\
-\a & 0.0078 & & & \\
- & 0.0005 & & & \\
-\a & 0.0029 & & & \\
- & 0.0180 & & & \\
-\a & 0.0011 & & & \\
- & 0.0104 & & & \\
-\hline
-0.0011 & & & & \\
-0.0251 & & & & \\
-0.0068 & & & & \\
-0.0039 & & & & \\
-0.0032 & & & & \\
-0.0010 & & & & \\
-0.0242 & & & & \\
-0.0025 & & & & \\
+\multirow{2}*{$\alpha_1$} & 0.0046 & & & & 0.0011 & & & \\
+ & 0.0061 & & & & 0.0251 & & &\\
+\multirow{2}*{$\alpha_2$} & 0.0061 & & & & 0.0251 & & & \\
+ & 0.0078 & & & & 0.0068 & & &\\
+\multirow{2}*{$\beta_1$} & 0.0078 & & & & 0.0068 & & & \\
+ & 0.0005 & & & & 0.0039 & & &\\
+\multirow{2}*{$\beta_2$} & 0.0005 & & & & 0.0039 & & & \\
+ & 0.0029 & & & & 0.0032 & & &\\
 \bottomrule
 \end{tabular}
 \end{table}

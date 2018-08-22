@@ -14,19 +14,23 @@ import re
 
 head = '''\\begin{table}[!htbp]
 \centering
-\caption{Simulation result $n = 200$}\label{tab:simulation}
-\\begin{tabular}{l c c c c}
+\caption{Simulation result replicate $= 1000$}\label{tab:simulation}
+\\begin{tabular}{l c c c c c c c c}
 
 \\toprule
 '''
 
-mid = '''\cline{2-5}
-& Bias & ESE & ASE & CP\\\\
+mid = '''\cline{2-5} \cline{6-9}
+& Bias & ESE & ASE & CP & Bias & ESE & ASE & CP\\\\
 \hline'''
 
 bottom = '''\\bottomrule
 \end{tabular}
 \end{table}'''
+
+row_names = ['$\\alpha_1$', '$\\alpha_2$', '$\\beta_1$', '$\\beta_2$']
+r_ = '}'
+l_ = '{'
 
 
 def extract(sentence):
@@ -36,6 +40,7 @@ def extract(sentence):
         return par
     else:
         output = re.findall('[\d\.]+', sentence)
+        output = [output[i:(i + 1) * 2] for i in range(4)]
         return output
 
 
@@ -55,17 +60,17 @@ with open('./table.txt', 'r') as f:
         with open('./tex.txt', 'a+') as w:
             print(head, file=w)
             print(
-                f'\multirow{2}*{{}} & $\\alpha_1 = {paras[0]}$ & $\\alpha_2 = {paras[1]}$ & $\\beta_1 = {paras[2]}$ & $\\beta_2 = {paras[3]}$ \\\\',
+                f'\multirow{{2}}*{{}} & \\multicolumn{{2}}{{c}}{{$\\alpha_1 = {paras[0]}$}} & '
+                f'\\multicolumn{{2}}{{c}}{{$\\alpha_2 = {paras[1]}$}} & '
+                f'\\multicolumn{{2}}{{c}}{{$\\beta_1 = {paras[2]}$}} & '
+                f'\\multicolumn{{2}}{{c}}{{$\\beta_2 = {paras[3]}$}} \\\\',
                 file=w)
 
             print(mid, file=w)
 
-            for num in [result_200[i * 2:(i + 1)*2] for i in range(4)]:
-                print(f'\\a & {num[0]} & & & \\\\', file=w)
-                print(f' & {num[1]} & & & \\\\', file=w)
-            print('\hline', file=w)
-            for num in result_500:
-                print(f'{num} & & & & \\\\', file=w)
+            for num_200, num_500, row_name in zip(result_200, result_500, row_names):
+                print(f'\multirow{{2}}*{l_}{row_name}{r_} & {num_200[0]} & & & & {num_500[0]} & & & \\\\', file=w)
+                print(f' & {num_200[1]} & & & & {num_500[1]} & & &\\\\', file=w)
 
             print(bottom + '\n', file=w)
             print('========================', file=w)
