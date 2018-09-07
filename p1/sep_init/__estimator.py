@@ -4,14 +4,13 @@ __author__ = 'Xiaoyu Wang'
 """
 ==================================
 # @Time      : 2018/9/7  10:00
-# @File      : __estimator.py
+# @File      : estimator.py
 # @Project   : WXY_projects
 ==================================
 
 """
 from scipy import optimize
-from p1.__generator import *
-import time
+from p1.sep_init.__generator import *
 import csv
 import numpy as np
 
@@ -231,60 +230,60 @@ class Estimator(object):
         self.time_list = np.array(com_data)
 
 
-def estimate_test(sample_size=100, beta=1, gamma=1, iterations=100):
-    temp = np.zeros(2)
-    for _ in range(iterations):
-        pm = Estimator(sample_size, beta=beta, gamma=gamma, x_gen='np.random.uniform(0,1)',
-                       z_gen='np.random.uniform(0,1)')
-        pm.calculator()
-        temp += pm.sol.x
-
-    print('beta = {}, gamma = {}'.format(beta, gamma))
-    print("The estimating result is ", temp / iterations)
-    return None
-
-
-def esd(sample_size=100, beta=1, gamma=1, iterations=100):
-    temp = np.zeros(2)[None, :]
-    for _ in range(iterations):
-        pm = Estimator(sample_size, beta=beta, gamma=gamma, x_gen='np.random.uniform(0,1)',
-                       z_gen='np.random.uniform(0,1)')
-        pm.calculator()
-        temp = np.append(temp, pm.sol.x[None, :], axis=0)
-        # print(temp.shape)
-    temp = np.delete(temp, 0, axis=0)
-    # print(temp.shape)
-
-    esv = np.cov(temp.T)
-    esd = np.sqrt(esv[[0, 1], [0, 1]])
-    print('beta = {}, gamma = {}'.format(beta, gamma))
-    print("The ESD is ", esd)
-    return None
-
-
-def ase_esd(sample_size=100, beta=1, gamma=1, iterations=100):
-    estimators = np.zeros(2)[None, :]
-    ases = np.zeros(2)[None, :]
-    for _ in range(iterations):
-        pm = Estimator(sample_size, beta=beta, gamma=gamma, x_gen='np.random.uniform(0,1)',
-                       z_gen='np.random.uniform(0,1)')
-        pm.calculator()
-        estimators = np.append(estimators, pm.sol.x[None, :], axis=0)
-        pm.get_hat(pm.sol.x)
-        pm.making_matrix([pm.beta_h, pm.gamma_h])
-        ases = np.append(ases, pm.ASE()[None, :], axis=0)
-        # print(temp.shape)
-    estimators = np.delete(estimators, 0, axis=0)
-    ases = np.delete(ases, 0, 0)
-    # print(temp.shape)
-
-    esv = np.cov(estimators.T)
-    esd = np.sqrt(esv[[0, 1], [0, 1]])
-    ase = np.mean(ases, axis=0)
-    print('beta = {}, gamma = {}'.format(beta, gamma))
-    print("The ESD is ", esd)
-    print('The ase =', ase)
-    return None
+# def estimate_test(sample_size=100, beta=1, gamma=1, iterations=100):
+#     temp = np.zeros(2)
+#     for _ in range(iterations):
+#         pm = Estimator(sample_size, beta=beta, gamma=gamma, x_gen='np.random.uniform(0,1)',
+#                        z_gen='np.random.uniform(0,1)')
+#         pm.calculator()
+#         temp += pm.sol.x
+#
+#     print('beta = {}, gamma = {}'.format(beta, gamma))
+#     print("The estimating result is ", temp / iterations)
+#     return None
+#
+#
+# def esd(sample_size=100, beta=1, gamma=1, iterations=100):
+#     temp = np.zeros(2)[None, :]
+#     for _ in range(iterations):
+#         pm = Estimator(sample_size, beta=beta, gamma=gamma, x_gen='np.random.uniform(0,1)',
+#                        z_gen='np.random.uniform(0,1)')
+#         pm.calculator()
+#         temp = np.append(temp, pm.sol.x[None, :], axis=0)
+#         # print(temp.shape)
+#     temp = np.delete(temp, 0, axis=0)
+#     # print(temp.shape)
+#
+#     esv = np.cov(temp.T)
+#     esd = np.sqrt(esv[[0, 1], [0, 1]])
+#     print('beta = {}, gamma = {}'.format(beta, gamma))
+#     print("The ESD is ", esd)
+#     return None
+#
+#
+# def ase_esd(sample_size=100, beta=1, gamma=1, iterations=100):
+#     estimators = np.zeros(2)[None, :]
+#     ases = np.zeros(2)[None, :]
+#     for _ in range(iterations):
+#         pm = Estimator(sample_size, beta=beta, gamma=gamma, x_gen='np.random.uniform(0,1)',
+#                        z_gen='np.random.uniform(0,1)')
+#         pm.calculator()
+#         estimators = np.append(estimators, pm.sol.x[None, :], axis=0)
+#         pm.get_hat(pm.sol.x)
+#         pm.making_matrix([pm.beta_h, pm.gamma_h])
+#         ases = np.append(ases, pm.ASE()[None, :], axis=0)
+#         # print(temp.shape)
+#     estimators = np.delete(estimators, 0, axis=0)
+#     ases = np.delete(ases, 0, 0)
+#     # print(temp.shape)
+#
+#     esv = np.cov(estimators.T)
+#     esd = np.sqrt(esv[[0, 1], [0, 1]])
+#     ase = np.mean(ases, axis=0)
+#     print('beta = {}, gamma = {}'.format(beta, gamma))
+#     print("The ESD is ", esd)
+#     print('The ase =', ase)
+#     return None
 
 
 def simulation(sample_size=100, beta=1, gamma=1, iterations=100, detail=False):

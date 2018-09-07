@@ -4,7 +4,7 @@ __author__ = 'Xiaoyu Wang'
 """
 ==================================
 # @Time      : 2018/9/7  11:00
-# @File      : __generator.py
+# @File      : generator.py
 # @Project   : WXY_projects
 ==================================
 

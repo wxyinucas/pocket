@@ -12,11 +12,9 @@ __author__ = 'Xiaoyu Wang'
 """
 
 from scipy import optimize
-from p1.__generator import *
-import time
-import csv
+from p1.sep_init.__generator import *
 import numpy as np
-from p1.true_value import BETA, GAMMA
+from p1.sep_init.true_value import BETA, GAMMA
 
 
 def load(n_sample=200):
@@ -134,6 +132,8 @@ def calculator():
     sol = optimize.root(equation, np.array([BETA, GAMMA]), method='Krylov')
     return np.array(sol.x)
 
+
+# variance
 
 def get_hat(para_hat):
     # para_hat[0]: hat_beta
