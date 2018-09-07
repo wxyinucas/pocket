@@ -3,14 +3,16 @@ __author__ = 'Xiaoyu Wang'
 
 """
 ==================================
-# @Time      : 2018/9/7  15:40
-# @File      : mian.py
+# @Time      : 2018/9/7  16:20
+# @File      : main.py
 # @Project   : WXY_projects
 ==================================
 
 """
-from p1.sep_init.est import *
 import numpy as np
+from tqdm import tqdm
+import csv
+from p1.sep_class.estimator import Estimator
 
 
 def simulation(sample_size=100, beta=1, gamma=1, iterations=100, detail=False):
@@ -20,10 +22,10 @@ def simulation(sample_size=100, beta=1, gamma=1, iterations=100, detail=False):
     estimators = np.zeros(2)[None, :]
     ases = np.zeros(2)[None, :]
     for _ in range(iterations):
-        load(sample_size)
-        sol = calculator()
-        estimators = np.append(estimators, sol.x[None, :], axis=0)
-        ases = np.append(ases, ASE()[None, :], axis=0)
+        am = Estimator(sample_size, beta=beta, gamma=gamma)
+        am.calculator()
+        estimators = np.append(estimators, am.sol.x[None, :], axis=0)
+        ases = np.append(ases, am.ASE()[None, :], axis=0)
 
     # NOW we get the vectors of estimator and ASE
     estimators = np.delete(estimators, 0, axis=0)
@@ -55,7 +57,7 @@ def simulation(sample_size=100, beta=1, gamma=1, iterations=100, detail=False):
 
 
 def result(iterations=10):
-    with open('simulation_result.csv', 'w', newline='') as cf:
+    with open('./simulation_result.csv', 'w', newline='') as cf:
         fieldnames = ['Sample_size', 'beta', 'gamma', 'beta_bias', 'beta_esd', 'beta_ase', 'beta_cp',
                       'gamma_bias', 'gamma_esd', 'gamma_ase', 'gamma_cp']
         writer = csv.DictWriter(cf, fieldnames=fieldnames)

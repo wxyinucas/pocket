@@ -12,6 +12,7 @@ __author__ = 'Xiaoyu Wang'
 """
 
 import numpy as np
+from p1.sep_init.true_value import BETA, GAMMA
 
 
 class Record:
@@ -28,10 +29,9 @@ class Record:
     "n_interval"
     """
 
-    def __init__(self, beta=0, gamma=0, x_gen='1', z_gen='1'):
+    def __init__(self, beta=BETA, gamma=GAMMA, x_gen='1', z_gen='1'):
         """
         :param pr: the probability of time interval been observed
-        :param beta: real value of beta
         """
         self.beta = beta
         self.gamma = gamma

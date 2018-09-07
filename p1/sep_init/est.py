@@ -12,7 +12,7 @@ __author__ = 'Xiaoyu Wang'
 """
 
 from scipy import optimize
-from p1.sep_init.__generator import *
+from p1.sep_init.gen import *
 import numpy as np
 from p1.sep_init.true_value import BETA, GAMMA
 
@@ -64,7 +64,7 @@ def making_y():
     index = np.cumsum(length)
     index = np.insert(index, 0, 0)
 
-    assert Y.shape == (np.sum(length), len(num)), f'Wrong Y shape {Y.shape} != ({np.sum(length)}, {len(num)})'
+    assert Y.shape == (np.sum(length), num), f'Wrong Y shape {Y.shape} != ({np.sum(length)}, {num})'
 
 
 def making_matrix(para_hat):
@@ -74,6 +74,7 @@ def making_matrix(para_hat):
     global q0, Z_t, Z_N, X_t, X_N
 
     q0 = np.exp(para_hat[1] * x)
+    making_y()
 
     # Zt is [z_k - \bar{z}(c_j-)]_{(j,k)}
     Z_cj = (tri.T @ (q0 * z)) / (tri.T @ q0)

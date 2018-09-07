@@ -26,7 +26,7 @@ class Record(object):
     "n_interval"
     """
 
-    def __init__(self, beta = 0, gamma = 0, x_gen='1', z_gen='1'):
+    def __init__(self, beta=0, gamma=0, x_gen='1', z_gen='1'):
         """
         :param pr: the probability of time interval been observed
         :param beta: real value of beta
@@ -52,24 +52,19 @@ class Record(object):
 
         # np.random.seed(42)
         # generate some values
-        self.c = np.random.uniform(self.tau / 2,self.tau)
-        # self.z = np.random.binomial(1, 0.5)
-        # self.x = np.random.binomial(1, 0.5)
-        # self.z = np.random.uniform(0, 1)
-        # self.x = np.random.uniform(0, 1)
-        # self.z = 1
-        # self.x = 1
-        self.z = eval(self.z_gen)
-        self.x = eval(self.x_gen)
+        self.c = np.random.uniform(self.tau / 2, self.tau)
+        self.x = np.random.uniform(0, 1)
+        self.z = np.random.uniform(0, 1)
         self.time_list = [0]
 
         # initial life time before censoring
-        while (self.time_list[-1] < self.c):
+        while self.time_list[-1] < self.c:
             ## scale = 1 / lambda
             ## dmu_0 = 1
             # if 可加可乘
-            self.time_list.append(self.time_list[-1] + np.random.exponential(scale=1/
-                                    (np.exp(self.x * self.gamma)+self.beta * self.z)))
+            self.time_list.append(self.time_list[-1] + np.random.exponential(scale=1 /
+                                                                                   (np.exp(
+                                                                                       self.x * self.gamma) + self.beta * self.z)))
         else:
             self.time_list.pop(-1)
             self.time_list.pop(0)
