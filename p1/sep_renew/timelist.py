@@ -70,8 +70,25 @@ def change_time_list(t: np.array, T: np.array, r: np.array):
     return t_result, T_result, r
 
 
-if __name__ == '__main__':
+def change_time_matrix(t: np.array, T: np.array, r: np.array):
+    """
+    对change_time_list的封装。
 
+    在vectorize的基础上将字典合并了。
+    """
+    tmp_fun = np.vectorize(change_time_list, signature='(n),(m),(j)->(p),(),(j)')
+
+    t_result, T_tmp, r_result = tmp_fun(t, T, r)
+
+    T_result = {}
+    for d in T_tmp:
+        T_result.update(d)
+
+    assert np.array_equal(r_result, r)
+    return t_result, T_result, r
+
+
+if __name__ == '__main__':
     # test 1
     T = [0, 1, 2, 3, 5]
     r = [1, 0, 1, 0]
@@ -92,4 +109,6 @@ if __name__ == '__main__':
     r_test = np.array([r, r])
     t_test = np.array([t, t])
 
-    change_time_list(t_test, T_test, r_test)
+    tt, TT, rr = change_time_matrix(t_test, T_test, r_test)
+
+    print(tt, TT, rr, sep='\n')
