@@ -41,33 +41,31 @@ def poisson_process(terminal, num) -> np.array:
 
 def indicator(num, pr) -> np.array:
     """
-    :param num: 每次观测到的记录总数。
+    :param num: 每次观测到的T的总数，为了填补[T, tau]，需要再加1。
     :return: matrix
     """
 
     r_list = []
 
     for ite in range(len(num)):
-        tmp = np.random.binomial(1, pr, num[ite])
+        tmp = np.random.binomial(1, pr, num[ite] + 1)
         r_list.append(tmp)
 
     return np.array(r_list)
 
 
-def modify_ob(T, r):
+def modify_ob(T):
     """
     用于修正数据结构以适合time_list
     """
-    assert T.shape[0] == r.shape[0]
-    T_tmp, r_tmp = map(list, [T, r])
+    T_tmp = list(T)
 
     for ite in range(len(T)):
-        T_tmp[ite] = np.array([0, *T_tmp[ite], 5])  # TAU = 5 here
-        r_tmp[ite] = np.array([*r_tmp[ite], 0])
+        T_tmp[ite] = np.array([0, *T_tmp[ite], 5])  # TAU = 5 here, 因为c不一定观测的到
 
-    T_result, r_result = map(np.array, [T_tmp, r_tmp])
+    T_result = np.array(T_tmp)
 
-    return T_result, r_result
+    return T_result
 
 
 if __name__ == '__main__':

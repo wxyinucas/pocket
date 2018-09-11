@@ -76,12 +76,14 @@ def change_time_matrix(t: np.array, T: np.array, r: np.array):
     """
     assert t.shape[0] == T.shape[0] == r.shape[0]
 
-    t_list, T_list, r_list = map(list, [r, T, r])
+    t_list, T_list, r_list = map(list, [t, T, r])
+    T_result = {}
 
     for ite in range(len(t_list)):
         t_list[ite], T_list[ite], r_list[ite] = change_time_list(t_list[ite], T_list[ite], r_list[ite])
+        T_result.update(T_list[ite])
 
-    return map(np.array, [t_list, T_list, r_list])
+    return np.array(t_list), T_result, r
 
 
 if __name__ == '__main__':

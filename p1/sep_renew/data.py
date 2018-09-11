@@ -11,7 +11,7 @@ __author__ = 'Xiaoyu Wang'
 定义新类，用于储存一次试验中的所有数据.
 """
 from timelist import change_time_matrix
-from utils import compare, poisson_process, indicator, modify_ob
+from utils import poisson_process, indicator, modify_ob
 
 import numpy as np
 
@@ -58,10 +58,10 @@ class Data:
         T_tmp = poisson_process(self.c, self.M)
 
         # 生成区间指示变量r
-        r_tmp = indicator(self.m, pr)
+        r = indicator(self.M, pr)
 
         # 预处理T&r，并生成观测time_list
-        T, r = modify_ob(T_tmp, r_tmp)
+        T = modify_ob(T_tmp)
         self.t, self.T, self.r = change_time_matrix(t, T, r)
 
 
