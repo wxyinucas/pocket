@@ -68,17 +68,34 @@ def modify_ob(T):
     return T_result
 
 
+def flatten(t):
+    """
+    将复合np.array 压平。
+    """
+    tmp = []
+    for ite in t:
+        tmp.extend(ite.tolist())
+    return np.array(tmp)
+
+
 if __name__ == '__main__':
+    # compare
     # v1 = np.array([4, 6, 1])
     # v2 = np.arange(5)
     # print(compare(v1, v2))
-    #
+
+    # poisson_process
     # terminal = np.array([4, 4, 5, 5, 6, 6])
-    num = np.arange(6) + 1
+    # num = np.arange(6) + 1
     # print(poisson_process(terminal, num))
 
-    print(indicator(num, 0.5))
+    # indicator
+    # print(indicator(num, 0.5))
 
+    # modify
     # T = np.array([[1, 2], [2, 3]])
-    # r = np.array([[1, 1], [1, 0]])
+    r = np.array([[1, 1], [1, 0]])
     # print(modify_ob(T, r))
+
+    # flatten
+    print(flatten(r))

@@ -31,6 +31,7 @@ class Data:
         assert source in ['random', 'import'], 'Wrong source type!'
 
         if source == 'random':
+            self.n = n_sample
             self.gen(n_sample, pr)
         else:
             pass  # TODO:补全 import & export data
@@ -40,6 +41,9 @@ class Data:
         # 协变量
         self.x = np.random.uniform(0, 1, n_sample)
         self.z = np.random.uniform(0, 1, n_sample)
+
+        # 用于估计的协变量
+        self.q = np.array([self.x, self.z])
 
         # 删失时间
         self.c = np.random.uniform(TAU / 2, TAU, n_sample)
