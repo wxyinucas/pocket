@@ -72,16 +72,20 @@ def change_time_list(t: np.array, T: np.array, r: np.array):
 
 def change_time_matrix(t: np.array, T: np.array, r: np.array):
     """
-    封装change_time_list, 使之能处理不规则np.array。
+    对change_time_list的封装。
+
+    在vectorize的基础上将字典合并了。
     """
-    assert t.shape[0] == T.shape[0] == r.shape[0]
+    tmp_fun = np.vectorize(change_time_list, signature='(n),(m),(j)->(p),(),(j)')
 
-    t_list, T_list, r_list = map(list, [r, T, r])
+    t_result, T_tmp, r_result = tmp_fun(t, T, r)
 
-    for ite in range(len(t_list)):
-        t_list[ite], T_list[ite], r_list[ite] = change_time_list(t_list[ite], T_list[ite], r_list[ite])
+    T_result = {}
+    for d in T_tmp:
+        T_result.update(d)
 
-    return map(np.array, [t_list, T_list, r_list])
+    assert np.array_equal(r_result, r)
+    return t_result, T_result, r
 
 
 if __name__ == '__main__':
@@ -103,7 +107,7 @@ if __name__ == '__main__':
     # test 2: 如何传播
     # T_test = np.array([T, T])
     T_test = np.array([T, np.array([0, 1, 5])])
-    r_test = np.array([r, np.array([1, 1])])
+    r_test = np.array([r, r])
     t_test = np.array([t, t])
 
     tt, TT, rr = change_time_matrix(t_test, T_test, r_test)
