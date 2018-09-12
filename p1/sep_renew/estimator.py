@@ -51,22 +51,44 @@ class Estimator(Data):
 
         def C():
             t_c_matrix = compare(flatten(self.t), self.c)
-            x_part_tmp = np.sum(t_c_matrix * exp * self.x, axis=1)/np.sum(t_c_matrix * exp, axis=1)
+            x_part_tmp = np.sum(t_c_matrix * exp * self.x, axis=1) / np.sum(t_c_matrix * exp, axis=1)
             x_part = np.sum(x_part_tmp, axis=0)
 
             assert x_part_tmp.shape[0] == flatten(self.t).shape[0]
-            assert x_part.shape[0] == 1
+            assert type(x_part) == np.float64
 
-            z_part_tmp = np.sum(t_c_matrix * exp * self.z, axis=1)/np.sum(t_c_matrix * exp, axis=1)
+            z_part_tmp = np.sum(t_c_matrix * exp * self.z, axis=1) / np.sum(t_c_matrix * exp, axis=1)
             z_part = np.sum(z_part_tmp, axis=0)
 
             tmp = np.array([x_part, z_part])
 
             return tmp / self.n
 
-        return A()
+        def D():
+            # 每个tmp都是笔记中矩形框中部分
+            def factor(loc):
+                """
+                生成笔记中向量x_part_j每个entry。
+                """
+                num = loc + 1
+                
+                x_part_tmp = np.sum(np.tri(num) * exp * self.x, axis=1) / np.sum(np.tri(num) * exp, axis=1)
+                x_part_vec = x_part_tmp * self.dt[:num]
+            
+                assert x_part_tmp.shape[0] == num
+                assert x_part_vec.shape[0] == num
+
+                z_part_tmp = np.sum(np.tri(num) * exp * self.z, axis=1) / np.sum(np.tri(num) * exp, axis=1)
+                z_part_vec = z_part_tmp * self.dt[:num]
+
+                return x_part_vec, z_part_vec
+
+            factor(1)
+
+        return A() - B() - C() + D()
 
 
 if __name__ == '__main__':
     test = Estimator(1, 1)
     test.cal_equation(1, 1)
+

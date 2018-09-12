@@ -36,10 +36,15 @@ class Data:
         else:
             pass  # TODO:补全 import & export data
 
+        # 数据重排 & 计算dt
+        self.re_index()
+        self.cal_dt(self.c)
+
     def gen(self, n_sample, pr):
 
         # 协变量
         self.x = np.random.uniform(0, 1, n_sample)
+        # self.x = np.linspace(0, 1, n_sample)  # 测试排序
         self.z = np.random.uniform(0, 1, n_sample)
 
         # 用于估计的协变量
@@ -67,6 +72,27 @@ class Data:
         # 预处理T&r，并生成观测time_list
         T = modify_ob(T_tmp)
         self.t, self.T, self.r = change_time_matrix(t, T, r)
+
+    def re_index(self):
+
+        order_c = self.c.argsort()
+
+        def order(array):
+            result = array[order_c]
+            return result
+
+        [self.x, self.z, self.c, self.m, self.M, self.t, self.r] = map(order,
+                                                                       [self.x, self.z, self.c, self.m, self.M, self.t,
+                                                                        self.r])
+
+        self.q = self.q[:, order_c]
+
+        self.Y = np.tri(self.n).T
+
+    def cal_dt(self, c):
+
+        c_all = np.array([0, *c])
+        self.dt = np.diff(c_all)
 
 
 if __name__ == '__main__':
