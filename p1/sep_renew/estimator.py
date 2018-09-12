@@ -87,6 +87,17 @@ class Estimator(Data):
 
         return A() - B() - C() + D()
 
+    def vec_dN(self, q):
+
+        vec = []
+        for i in range(self.n):
+            tmp = q[i] - compare(self.t[i], self.c) @ (exp * q) / compare(self.t[i], self.c) @ exp
+
+            assert (tmp.shape == self.t[i].shape).all
+            vec.append(np.sum(tmp, axis=0))
+
+        return np.array(vec)
+
 
 if __name__ == '__main__':
     test = Estimator(1, 1)

@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="60c4694b-06da-43a8-9d14-236c9f8b1baf" name="Default" comment="finished data structure">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/p1/sep_renew/estimator.py" afterDir="false" />
+    <list default="true" id="60c4694b-06da-43a8-9d14-236c9f8b1baf" name="Default" comment="re_abstract">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/p1/sep_renew/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/p1/sep_renew/data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p1/sep_renew/estimator.py" beforeDir="false" afterPath="$PROJECT_DIR$/p1/sep_renew/estimator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/p1/sep_renew/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/p1/sep_renew/utils.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,14 +16,14 @@
     <SUITE FILE_PATH="coverage/WXY_Project$main_test.coverage" NAME="main_test Coverage Results" MODIFIED="1532962726946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p2/Simulation_July" />
     <SUITE FILE_PATH="coverage/WXY_projects$__estimator.coverage" NAME="__estimator Coverage Results" MODIFIED="1536292837054" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/WXY_Project$write_twice.coverage" NAME="write_twice Coverage Results" MODIFIED="1533089669308" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
-    <SUITE FILE_PATH="coverage/WXY_projects$estimator.coverage" NAME="estimator Coverage Results" MODIFIED="1536657286858" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p1/sep_renew" />
+    <SUITE FILE_PATH="coverage/WXY_projects$estimator.coverage" NAME="estimator Coverage Results" MODIFIED="1536723826521" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p1/sep_renew" />
     <SUITE FILE_PATH="coverage/WXY_Project$main.coverage" NAME="main Coverage Results" MODIFIED="1535378184645" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p2/Simulation_Aug_print" />
     <SUITE FILE_PATH="coverage/WXY_Projects$test.coverage" NAME="test Coverage Results" MODIFIED="1531308685675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytorch/60_minutes" />
     <SUITE FILE_PATH="coverage/WXY_Projects$what_is_pytorch.coverage" NAME="what_is_pytorch Coverage Results" MODIFIED="1531308094134" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytorch/60_minutes" />
     <SUITE FILE_PATH="coverage/WXY_Project$read_part.coverage" NAME="read_part Coverage Results" MODIFIED="1532746746609" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/WXY_Project$warm_up_numpy.coverage" NAME="warm_up_numpy Coverage Results" MODIFIED="1531905007895" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytorch/Learning_PyTorch_with_Examples" />
     <SUITE FILE_PATH="coverage/pocket$save_df.coverage" NAME="save_df Coverage Results" MODIFIED="1535803900415" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
-    <SUITE FILE_PATH="coverage/WXY_projects$data.coverage" NAME="data Coverage Results" MODIFIED="1536655462753" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p1/sep_renew" />
+    <SUITE FILE_PATH="coverage/WXY_projects$data.coverage" NAME="data Coverage Results" MODIFIED="1536720422381" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p1/sep_renew" />
     <SUITE FILE_PATH="coverage/WXY_Project$trans.coverage" NAME="trans Coverage Results" MODIFIED="1532686458789" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/WXY_Project$what_is_input.coverage" NAME="what_is_input Coverage Results" MODIFIED="1532962196961" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/WXY_Projects$warm_up_numpy.coverage" NAME="warm_up_numpy Coverage Results" MODIFIED="1531317202853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytorch/Learning_PyTorch_with_Examples" />
@@ -171,30 +169,30 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="csv" value="1" />
-          <entry key="py" value="51" />
+          <entry key="py" value="53" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="51" />
+          <entry key="Python" value="53" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Python Console" value="1283" />
+          <entry key="Python Console" value="1781" />
           <entry key="dummy" value="31" />
-          <entry key="py" value="8317" />
-          <entry key="txt" value="245" />
+          <entry key="py" value="9647" />
+          <entry key="txt" value="278" />
           <entry key="utils" value="134" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="276" />
-          <entry key="Python" value="9734" />
+          <entry key="PLAIN_TEXT" value="309" />
+          <entry key="Python" value="11562" />
         </counts>
       </usages-collector>
     </session>
@@ -221,12 +219,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/p1/sep_renew/data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="761">
-              <caret line="48" selection-start-line="48" selection-end-line="48" />
+            <state relative-caret-position="486">
+              <caret line="46" column="54" selection-start-line="46" selection-start-column="54" selection-end-line="46" selection-end-column="54" />
               <folding>
                 <element signature="e#214#253#0" expanded="true" />
-                <marker date="1536655689824" expanded="true" signature="374:571" ph="..." />
-                <marker date="1536655689824" expanded="true" signature="833:843" ph="..." />
+                <marker date="1536720556848" expanded="true" signature="374:571" ph="..." />
+                <marker date="1536720556848" expanded="true" signature="908:918" ph="..." />
+                <marker date="1536720556848" expanded="true" signature="2213:2223" ph="..." />
               </folding>
             </state>
           </provider>
@@ -242,11 +241,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/p1/sep_renew/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="477">
-              <caret line="75" selection-start-line="75" selection-end-line="75" />
+            <state>
+              <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
               <folding>
-                <marker date="1536656821248" expanded="true" signature="256:260" ph="..." />
-                <marker date="1536656821248" expanded="true" signature="1452:1580" ph="..." />
+                <marker date="1536740391986" expanded="true" signature="256:260" ph="..." />
+                <marker date="1536740391986" expanded="true" signature="1452:1580" ph="..." />
               </folding>
             </state>
           </provider>
@@ -255,12 +254,22 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/p1/sep_renew/estimator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="632">
-              <caret line="66" column="18" selection-start-line="66" selection-start-column="18" selection-end-line="66" selection-end-column="18" />
+            <state relative-caret-position="544">
+              <caret line="103" column="27" lean-forward="true" selection-start-line="103" selection-start-column="27" selection-end-line="103" selection-end-column="27" />
               <folding>
                 <element signature="e#216#237#0" expanded="true" />
-                <marker date="1536657992879" expanded="true" signature="1114:1666" ph="..." />
+                <element signature="e#690#2449#0" />
+                <marker date="1536740911428" expanded="true" signature="1871:2393" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/p1/sep_init/__estimator.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="350">
+              <caret line="93" column="21" lean-forward="true" selection-start-line="93" selection-start-column="21" selection-end-line="93" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -296,10 +305,11 @@
       <find>possion</find>
       <find>(?&lt;!\.)poisson</find>
       <find>tt</find>
+      <find>i\+1</find>
+      <find>(?&lt;!e)(?&lt;!a)x</find>
     </findStrings>
     <replaceStrings>
       <replace>c</replace>
-      <replace>z</replace>
       <replace>x</replace>
       <replace>para</replace>
       <replace>t_panel_loc_list</replace>
@@ -307,6 +317,7 @@
       <replace>poisson_process</replace>
       <replace>T_list</replace>
       <replace>t_list</replace>
+      <replace>z</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -418,6 +429,12 @@
               <item name="WXY_projects" type="b2602c69:ProjectViewProjectNode" />
               <item name="WXY_project" type="462c0819:PsiDirectoryNode" />
               <item name="p1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WXY_projects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WXY_project" type="462c0819:PsiDirectoryNode" />
+              <item name="p1" type="462c0819:PsiDirectoryNode" />
+              <item name="sep_init" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="WXY_projects" type="b2602c69:ProjectViewProjectNode" />
@@ -669,8 +686,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.estimator" />
-        <item itemvalue="Python.utils" />
         <item itemvalue="Python.data" />
+        <item itemvalue="Python.utils" />
         <item itemvalue="Python.timelist" />
         <item itemvalue="Python.main (1)" />
       </list>
@@ -750,7 +767,21 @@
       <option name="project" value="LOCAL" />
       <updated>1536638077749</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="starting estimator">
+      <created>1536658318832</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1536658318832</updated>
+    </task>
+    <task id="LOCAL-00011" summary="re_abstract">
+      <created>1536737252790</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1536737252790</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -787,9 +818,9 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Remote Host" order="3" weight="0.32960597" />
       <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" x="0" y="0" width="430" height="858" id="Documentation" order="5" sideWeight="0.51131225" side_tool="true" visible="true" weight="0.41660047" />
+      <window_info active="true" anchor="right" x="0" y="0" width="430" height="858" id="Documentation" order="5" sideWeight="0.51206636" side_tool="true" visible="true" weight="0.41660047" />
       <window_info anchor="right" id="SciView" order="6" sideWeight="0.49924585" weight="0.28236696" />
-      <window_info active="true" anchor="right" id="Debug" order="7" sideWeight="0.48868778" visible="true" weight="0.41660047" />
+      <window_info anchor="right" id="Debug" order="7" sideWeight="0.48793364" visible="true" weight="0.41660047" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4969834" visible="true" weight="0.07386815" />
@@ -860,7 +891,9 @@
     <MESSAGE value="making function vectorized!" />
     <MESSAGE value="make last r uncertain(not 0 for sure)" />
     <MESSAGE value="finished data structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished data structure" />
+    <MESSAGE value="starting estimator" />
+    <MESSAGE value="re_abstract" />
+    <option name="LAST_COMMIT_MESSAGE" value="re_abstract" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1040,13 +1073,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/p1/sep_init/__estimator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4906">
-          <caret line="226" column="17" selection-start-line="226" selection-start-column="17" selection-end-line="226" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/anaconda3/envs/wxy/lib/python3.7/site-packages/numpy/linalg/linalg.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="433">
@@ -1058,13 +1084,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/p1/sep_init/__generator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1056">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
         </state>
       </provider>
     </entry>
@@ -1180,36 +1199,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/p1/sep_init/__generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-110">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/p1/sep_init/__estimator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="93" column="21" lean-forward="true" selection-start-line="93" selection-start-column="21" selection-end-line="93" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/p1/sep_renew/data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="761">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
+        <state relative-caret-position="486">
+          <caret line="46" column="54" selection-start-line="46" selection-start-column="54" selection-end-line="46" selection-end-column="54" />
           <folding>
             <element signature="e#214#253#0" expanded="true" />
-            <marker date="1536655689824" expanded="true" signature="374:571" ph="..." />
-            <marker date="1536655689824" expanded="true" signature="833:843" ph="..." />
+            <marker date="1536720556848" expanded="true" signature="374:571" ph="..." />
+            <marker date="1536720556848" expanded="true" signature="908:918" ph="..." />
+            <marker date="1536720556848" expanded="true" signature="2213:2223" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/p1/sep_renew/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="75" selection-start-line="75" selection-end-line="75" />
+        <state>
+          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
           <folding>
-            <marker date="1536656821248" expanded="true" signature="256:260" ph="..." />
-            <marker date="1536656821248" expanded="true" signature="1452:1580" ph="..." />
+            <marker date="1536740391986" expanded="true" signature="256:260" ph="..." />
+            <marker date="1536740391986" expanded="true" signature="1452:1580" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/p1/sep_renew/estimator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="632">
-          <caret line="66" column="18" selection-start-line="66" selection-start-column="18" selection-end-line="66" selection-end-column="18" />
+        <state relative-caret-position="544">
+          <caret line="103" column="27" lean-forward="true" selection-start-line="103" selection-start-column="27" selection-end-line="103" selection-end-column="27" />
           <folding>
             <element signature="e#216#237#0" expanded="true" />
-            <marker date="1536657992879" expanded="true" signature="1114:1666" ph="..." />
+            <element signature="e#690#2449#0" />
+            <marker date="1536740911428" expanded="true" signature="1871:2393" ph="..." />
           </folding>
         </state>
       </provider>
