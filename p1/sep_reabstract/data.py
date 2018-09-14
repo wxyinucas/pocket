@@ -20,7 +20,7 @@ TAU = 5
 
 class Data:
 
-    def __init__(self, true_beta, true_gamma, n_sample=200, pr=0.5, source='random'):
+    def __init__(self, true_beta, true_gamma, n_sample=200, pr=1, source='random'):
         """
         生成n_sample个数据。
         """
@@ -45,7 +45,7 @@ class Data:
         # 协变量
         self.x = np.random.uniform(0, 1, n_sample)
         # self.x = np.linspace(0, 1, n_sample)  # 测试排序
-        self.z = np.random.uniform(0, 1, n_sample)
+        self.z = np.random.uniform(0, 0, n_sample)
 
         # 用于估计的协变量
         self.q = np.array([self.x, self.z])
@@ -99,3 +99,6 @@ if __name__ == '__main__':
     data = Data(1, 1)
 
     print('Do not panic.')
+
+
+

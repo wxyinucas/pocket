@@ -43,7 +43,7 @@ class Estimator(Data):
             try:
                 tmp = q[i] - compare(self.t[i], self.c) @ (exp * q) / (compare(self.t[i], self.c) @ exp)
                 assert (tmp.shape == self.t[i].shape)
-                vec.append(np.sum(tmp, axis=0))
+                vec.append(np.nansum(tmp, axis=0))
             except ValueError:
                 pass
 
@@ -52,25 +52,17 @@ class Estimator(Data):
 
         return vec
 
-    def vec_dt(self, q, exp):
+    def vec_dt(self, q, exp, beta):
         """
         取值于dt,Q_i - Q(theta, c_j)
         """
 
-        def inter_dt(array: np.array):
-            tmp = np.nansum(self.Y @ (array * exp * q) / (self.Y @ (array * exp)) * (array * self.dt))
+        q_bar = (self.Y @ (exp * q)) / (self.Y @ exp)
+        matrix = q[:, None] - q_bar[None, :]
 
-            assert tmp.shape == ()
-            return tmp
+        vec = self.z * (self.Y.T * matrix) @ self.dt * beta
 
-        vecs = []
-        for row in self.Y:
-            vecs.append(inter_dt(row))
-
-        result = q - np.array(vecs)
-        assert result.shape == (self.n,)
-
-        return result
+        return vec
 
     def cal_equation(self, para):
         """
@@ -78,18 +70,18 @@ class Estimator(Data):
 
         对照笔记中，按照t的来源，分为dN和dt两部分。
         """
-        assert para.shape == (2, )
+        assert para.shape == (2,)
         beta, gamma = para
 
         exp = np.exp(gamma * self.x)
 
         self.dN_arr = np.array([self.vec_dN(self.x, exp), self.vec_dN(self.z, exp)])
-        self.dt_arr = np.array([self.vec_dt(self.x, exp), self.vec_dt(self.z, exp)])
+        self.dt_arr = np.array([self.vec_dt(self.x, exp, beta), self.vec_dt(self.z, exp, beta)])
 
         assert self.dN_arr.shape == (2, self.n)
 
         dN = np.sum(self.dN_arr, axis=1)
-        dt = self.dt_arr @ self.z * beta
+        dt = np.sum(self.dt_arr, axis=1)
 
         assert dN.shape == dt.shape
         assert dN.shape == (2,)
@@ -101,14 +93,16 @@ if __name__ == '__main__':
     hat_paras = []
     zeros = []
 
+    true_values = np.array([1, 1])
+
     for _ in tqdm(range(20)):
-        est = Estimator(0, 0)
-        zero = est.cal_equation(np.array([1, 1]))
-        sol = fsolve(est.cal_equation, np.array([0, 0]))
+        est = Estimator(*true_values)
+        zero = est.cal_equation(true_values)
+        sol = fsolve(est.cal_equation, true_values)
         hat_paras.append(sol)
         zeros.append(zero)
 
     hat_paras = np.array(hat_paras)
     zeros = np.array(zeros)
 
-    print(np.mean(hat_paras, axis=0), np.mean(zeros, axis=0))
+    print(np.mean(hat_paras, axis=0))
