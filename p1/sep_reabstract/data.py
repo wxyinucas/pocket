@@ -85,10 +85,6 @@ class Data:
                                                                        [self.x, self.z, self.c, self.m, self.M, self.t,
                                                                         self.r])
 
-        # [self.x, self.z, self.c, self.m, self.M, self.t, self.T, self.r] = map(order,
-        #                                                                        [self.x, self.z, self.c, self.m, self.M,
-        #                                                                         self.t,
-        #                                                                         self.T, self.r])
 
         self.q = self.q[:, order_c]
 

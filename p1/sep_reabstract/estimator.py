@@ -22,27 +22,36 @@ class Estimator(Data):
     继承了data的结构，直接估计即可。
     """
 
-    def __init__(self, true_beta, true_gamma, n_sample=200, pr=1, source='random'):
+    def __init__(self, true_beta, true_gamma, n_sample=200, pr=0.8, source='random'):
         super(Estimator, self).__init__(true_beta, true_gamma, n_sample, pr, source)
 
-        # 3个估计量
+        # 3个估计量(在哪里用？)
         self.hat_beta = 0
         self.hat_gamma = 0
         self.variance = np.zeros([2, 2])
 
-        # 2个积分时使用的变量
+        # 2个积分时使用的变量（又在哪里用？）
         self.dN_arr = 0
         self.dt_arr = 0
 
-    def vec_dN(self, q, exp):
+        # 把T取出来用
+        T = np.array([(k, v) for (k, v) in self.T.items()])
+        try:
+            self.T_t = T[:, 0]
+            self.T_n = T[:, 1]
+            assert np.sum(self.T_n) == int(np.sum(self.T_n))
+        except IndexError:
+            pass
+
+    def vec_dN(self, q, times, exp):
         """
         取值于dN,即t_ij构成的向量。Q_i - Q(theta, t_ij)
         """
         vec = []
         for i in range(self.n):
             try:
-                tmp = q[i] - ((compare(self.t[i], self.c) @ (exp * q)) / (compare(self.t[i], self.c) @ exp))
-                assert tmp.shape == self.t[i].shape
+                tmp = q[i] - ((compare(times[i], self.c) @ (exp * q)) / (compare(times[i], self.c) @ exp))
+                assert tmp.shape == times[i].shape
                 vec.append(np.nansum(tmp, axis=0))
             except ValueError:
                 pass
@@ -64,6 +73,18 @@ class Estimator(Data):
 
         return vec
 
+    def panel_dt(self, q, exp, beta):
+        """
+        仅用于panel data的数据处理。
+        """
+        q_bar = (compare(self.T_t, self.c) @ (exp * q)) / (compare(self.T_t, self.c) @ exp)
+        matrix = q[:, None] - q_bar[None, :]
+
+        vec = beta * self.z[:, None] @ (matrix * compare(self.T_t, self.c)) @ (
+                    self.T_t / (compare(self.T_t, self.c) @ exp))
+
+        return vec
+
     def cal_equation(self, para):
         """
         计算估计方程，beta, gamma均为估计值。
@@ -75,16 +96,19 @@ class Estimator(Data):
 
         exp = np.exp(gamma * self.x)
 
-        self.vec_dN(self.z, exp)
+        re_dN_arr = np.array([self.vec_dN(self.z, self.t, exp), self.vec_dN(self.x, self.t, exp)])
+        re_dt_arr = np.array([self.vec_dt(self.z, exp, beta), self.vec_dt(self.x, exp, beta)])
 
-        self.dN_arr = np.array([self.vec_dN(self.z, exp), self.vec_dN(self.x, exp)])
-        self.dt_arr = np.array([self.vec_dt(self.z, exp, beta), self.vec_dt(self.x, exp, beta)])
+        pa_dN_arr = np.array([self.vec_dN(self.z, self.T_t, exp) * self.T_n,
+                              self.vec_dN(self.x, self.T_t, exp) * self.T_n])
+        pa_dt_arr = np.array(self.panel_dt(self.z, exp, beta), self.panel_dt(self.x, exp, beta))
 
-        assert self.dN_arr.shape == (2, self.n)
+        assert re_dN_arr.shape == (2, self.n)
+        assert pa_dN_arr.shape == (2, self.n)
 
-        dN = np.sum(self.dN_arr, axis=1)
-        dt = np.sum(self.dt_arr, axis=1)
-        print(dN[1], dt[1])
+        dN = np.sum(re_dN_arr, axis=1) + np.sum(pa_dN_arr, axis=1)
+        dt = np.sum(re_dt_arr, axis=1) + np.sum(pa_dt_arr, axis=1)
+        # print(dN[1], dt[1])
 
         assert dN.shape == dt.shape
         assert dN.shape == (2,)
@@ -96,7 +120,7 @@ if __name__ == '__main__':
     hat_paras = []
     zeros = []
 
-    true_values = np.array([-1, 1])
+    true_values = np.array([1, 1])
 
     for _ in tqdm(range(20)):
         est = Estimator(*true_values)

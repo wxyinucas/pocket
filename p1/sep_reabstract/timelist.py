@@ -17,6 +17,7 @@ from utils import compare
 def change_time_list(t: np.array, T: np.array, r: np.array):
     """
     用于simulation，将生成的数据更改为观测到的格式。
+    每次处理一条数据。
 
     :param t: 实际发生时间
     :param T: 观测时间（传入时一定包含0， TAU）
@@ -29,7 +30,7 @@ def change_time_list(t: np.array, T: np.array, r: np.array):
     t = [0.5, 1.2, 1.4, 1.6, 1.8, 2, 2.5, 3, 4]
 
     Expect result:
-    T = [(2: 5)] or [(2, 6)]?
+    T = [(2, 6)]
     r = [1, 0, 1, 0]
     t = [0.5, 2.5, 3]
     """
@@ -62,10 +63,10 @@ def change_time_list(t: np.array, T: np.array, r: np.array):
 
     # 计算r=0对应的T右端点
     r_0_end = (np.array(r_0_loc) + 1).tolist()
-    T_result = {T_iter: n_iter for T_iter, n_iter in zip(T[r_0_end], n[r_0_end])}
+    T_result = np.array(list(zip(T[r_0_end], n[r_0_end])))
 
     if r[-1] == 0:
-        del T_result[5]
+        T_result = T_result[:-1]
 
     return t_result, T_result, r
 
@@ -77,13 +78,11 @@ def change_time_matrix(t: np.array, T: np.array, r: np.array):
     assert t.shape[0] == T.shape[0] == r.shape[0]
 
     t_list, T_list, r_list = map(list, [t, T, r])
-    T_result = {}
 
     for ite in range(len(t_list)):
         t_list[ite], T_list[ite], r_list[ite] = change_time_list(t_list[ite], T_list[ite], r_list[ite])
-        T_result.update(T_list[ite])
 
-    return np.array(t_list), T_result, r
+    return np.array(t_list), np.array(T_list), r
 
 
 if __name__ == '__main__':
@@ -97,7 +96,8 @@ if __name__ == '__main__':
     tt, TT, rr = change_time_list(t, T, r)
 
     assert (tt == np.array([0.5, 2.5, 3])).all()
-    assert TT == {2: 6}
+    # assert TT == {2: 6}
+    assert (TT == np.array([[2, 6]])).all()
     assert (rr == [1, 0, 1, 0]).all()
 
     # todo: 在project中设定全局常量。
