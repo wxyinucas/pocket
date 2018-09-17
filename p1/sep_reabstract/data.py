@@ -45,7 +45,7 @@ class Data:
         # 协变量
         self.x = np.random.uniform(0, 1, n_sample)
         # self.x = np.linspace(0, 1, n_sample)  # 测试排序
-        self.z = np.random.uniform(0, 1, n_sample)
+        self.z = np.random.uniform(0, 0, n_sample)
 
         # 用于估计的协变量
         self.q = np.array([self.x, self.z])

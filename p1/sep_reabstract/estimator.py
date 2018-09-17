@@ -134,7 +134,7 @@ if __name__ == '__main__':
     hat_paras = []
     zeros = []
 
-    true_values = np.array([1, 1])
+    true_values = np.array([0, 1])
 
     for _ in tqdm(range(20)):
         est = Estimator(*true_values)
