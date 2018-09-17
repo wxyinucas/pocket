@@ -60,7 +60,7 @@ class Estimator(Data):
         q_bar = (self.Y @ (exp * q)) / (self.Y @ exp)
         matrix = q[:, None] - q_bar[None, :]
 
-        vec = self.z * (self.Y.T * matrix) @ self.dt * beta
+        vec = self.z[:, None] * (self.Y.T * matrix) @ self.dt * beta
 
         return vec
 
@@ -84,7 +84,7 @@ class Estimator(Data):
 
         dN = np.sum(self.dN_arr, axis=1)
         dt = np.sum(self.dt_arr, axis=1)
-        # print(dN[0], dt[0])
+        print(dN[1], dt[1])
 
         assert dN.shape == dt.shape
         assert dN.shape == (2,)
@@ -96,7 +96,7 @@ if __name__ == '__main__':
     hat_paras = []
     zeros = []
 
-    true_values = np.array([1, 1])
+    true_values = np.array([-1, 1])
 
     for _ in tqdm(range(20)):
         est = Estimator(*true_values)
@@ -108,4 +108,4 @@ if __name__ == '__main__':
     hat_paras = np.array(hat_paras)
     zeros = np.array(zeros)
 
-    print(np.mean(hat_paras, axis=0))
+    print(f'bias is {true_values - np.mean(hat_paras, axis=0)}.')
