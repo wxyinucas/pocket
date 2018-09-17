@@ -10,7 +10,7 @@ __author__ = 'Xiaoyu Wang'
 
 """
 from data import Data
-from utils import compare
+from utils import compare, separate, flatten
 from scipy.optimize import fsolve
 from tqdm import tqdm
 
@@ -22,7 +22,7 @@ class Estimator(Data):
     继承了data的结构，直接估计即可。
     """
 
-    def __init__(self, true_beta, true_gamma, n_sample=200, pr=0.8, source='random'):
+    def __init__(self, true_beta, true_gamma, n_sample=200, pr=0, source='random'):
         super(Estimator, self).__init__(true_beta, true_gamma, n_sample, pr, source)
 
         # 3个估计量(在哪里用？)
@@ -35,13 +35,8 @@ class Estimator(Data):
         self.dt_arr = 0
 
         # 把T取出来用
-        T = np.array([(k, v) for (k, v) in self.T.items()])
-        try:
-            self.T_t = T[:, 0]
-            self.T_n = T[:, 1]
-            assert np.sum(self.T_n) == int(np.sum(self.T_n))
-        except IndexError:
-            pass
+        T = self.T
+        self.T_t, self.T_n = separate(T)
 
     def vec_dN(self, q, times, exp):
         """
@@ -49,12 +44,9 @@ class Estimator(Data):
         """
         vec = []
         for i in range(self.n):
-            try:
-                tmp = q[i] - ((compare(times[i], self.c) @ (exp * q)) / (compare(times[i], self.c) @ exp))
-                assert tmp.shape == times[i].shape
-                vec.append(np.nansum(tmp, axis=0))
-            except ValueError:
-                pass
+            tmp = q[i] - ((compare(times[i], self.c) @ (exp * q)) / (compare(times[i], self.c) @ exp))
+            assert tmp.shape == times[i].shape
+            vec.append(np.nansum(tmp, axis=0))
 
         vec = np.array(vec)
         assert vec.shape == (self.n,)
@@ -73,15 +65,35 @@ class Estimator(Data):
 
         return vec
 
+    # TODO: 重构下面两个函数。
+    def panel_dN(self, q, times, exp):
+        """
+        仅用于panel data 的数据处理
+        """
+        vec = []
+        for i in range(self.n):
+            tmp = q[i] - ((compare(times[i], self.c) @ (exp * q)) / (compare(times[i], self.c) @ exp) * self.T_n[i])
+            assert tmp.shape == times[i].shape
+            vec.append(np.nansum(tmp, axis=0))
+
+        vec = np.array(vec)
+        assert vec.shape == (self.n,)
+
+        return vec
+
     def panel_dt(self, q, exp, beta):
         """
         仅用于panel data的数据处理。
+
+        T__ 是压平厚的T_t
         """
-        q_bar = (compare(self.T_t, self.c) @ (exp * q)) / (compare(self.T_t, self.c) @ exp)
+        T__ = flatten(self.T_t)
+
+        q_bar = (compare(T__, self.c) @ (exp * q)) / (compare(T__, self.c) @ exp)
         matrix = q[:, None] - q_bar[None, :]
 
-        vec = beta * self.z[:, None] @ (matrix * compare(self.T_t, self.c)) @ (
-                    self.T_t / (compare(self.T_t, self.c) @ exp))
+        vec = beta * self.z[:, None] * (matrix * compare(T__, self.c).T) @ (
+                T__ / (compare(T__, self.c) @ exp))
 
         return vec
 
@@ -99,15 +111,17 @@ class Estimator(Data):
         re_dN_arr = np.array([self.vec_dN(self.z, self.t, exp), self.vec_dN(self.x, self.t, exp)])
         re_dt_arr = np.array([self.vec_dt(self.z, exp, beta), self.vec_dt(self.x, exp, beta)])
 
-        pa_dN_arr = np.array([self.vec_dN(self.z, self.T_t, exp) * self.T_n,
-                              self.vec_dN(self.x, self.T_t, exp) * self.T_n])
-        pa_dt_arr = np.array(self.panel_dt(self.z, exp, beta), self.panel_dt(self.x, exp, beta))
+        pa_dN_arr = np.array([self.panel_dN(self.z, self.T_t, exp),
+                              self.panel_dN(self.x, self.T_t, exp)])
+        pa_dt_arr = np.array([self.panel_dt(self.z, exp, beta), self.panel_dt(self.x, exp, beta)])
 
         assert re_dN_arr.shape == (2, self.n)
         assert pa_dN_arr.shape == (2, self.n)
 
         dN = np.sum(re_dN_arr, axis=1) + np.sum(pa_dN_arr, axis=1)
         dt = np.sum(re_dt_arr, axis=1) + np.sum(pa_dt_arr, axis=1)
+        # dN = np.sum(re_dN_arr, axis=1)
+        # dt = np.sum(re_dt_arr, axis=1)
         # print(dN[1], dt[1])
 
         assert dN.shape == dt.shape

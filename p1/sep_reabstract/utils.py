@@ -78,6 +78,25 @@ def flatten(t):
     return np.array(tmp)
 
 
+def separate(T):
+    """
+    将T分解成T_ij 和 N，但保持分组
+    """
+    n = T.shape[0]
+
+    time = []
+    count = []
+    for i in range(n):
+        if T[i].shape[0]:
+            time.append(T[i][:, 0])
+            count.append(T[i][:, 1])
+        else:
+            time.append(np.array([]))
+            count.append(np.array([]))
+
+    return np.array(time), np.array(count)
+
+
 if __name__ == '__main__':
     # compare
     # v1 = np.array([4, 6, 1])
@@ -94,8 +113,15 @@ if __name__ == '__main__':
 
     # modify
     # T = np.array([[1, 2], [2, 3]])
-    r = np.array([[1, 1], [1, 0]])
+    # r = np.array([[1, 1], [1, 0]])
     # print(modify_ob(T, r))
 
     # flatten
-    print(flatten(r))
+    # r = np.array([[1, 1], [1, 0]])
+    # print(flatten(r))
+    # T_ = np.array([np.array([[1, 2], [3, 4], [5, 6]]), np.array([[1, 2], [3, 4], [5, 6]])])
+    # print(flatten(T_))
+
+    # separate
+    T = np.array([np.array([]), np.array([[2, 3], [3, 4], [5, 2]])])
+    print(separate(T))
