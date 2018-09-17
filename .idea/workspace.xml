@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="60c4694b-06da-43a8-9d14-236c9f8b1baf" name="Default" comment="re_write by old notes">
-      <change afterPath="$PROJECT_DIR$/p1/sep_reabstract/estimator_bakup_915.py" afterDir="false" />
+    <list default="true" id="60c4694b-06da-43a8-9d14-236c9f8b1baf" name="Default" comment="ai...">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/p1/sep_reabstract/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/p1/sep_reabstract/data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/p1/sep_reabstract/estimator.py" beforeDir="false" afterPath="$PROJECT_DIR$/p1/sep_reabstract/estimator.py" afterDir="false" />
     </list>
@@ -14,26 +14,27 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/WXY_Project$main_test.coverage" NAME="main_test Coverage Results" MODIFIED="1532962726946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p2/Simulation_July" />
-    <SUITE FILE_PATH="coverage/WXY_projects$__estimator.coverage" NAME="__estimator Coverage Results" MODIFIED="1536812408811" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/WXY_projects$data__1_.coverage" NAME="data (1) Coverage Results" MODIFIED="1536910850149" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p1/sep_reabstract" />
-    <SUITE FILE_PATH="coverage/WXY_Project$write_twice.coverage" NAME="write_twice Coverage Results" MODIFIED="1533089669308" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
-    <SUITE FILE_PATH="coverage/WXY_projects$estimator__1_.coverage" NAME="estimator (1) Coverage Results" MODIFIED="1537151949783" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p1/sep_reabstract" />
-    <SUITE FILE_PATH="coverage/WXY_projects$estimator.coverage" NAME="estimator Coverage Results" MODIFIED="1536723826521" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p1/sep_renew" />
+    <SUITE FILE_PATH="coverage/WXY_projects$estimator__1_.coverage" NAME="estimator Coverage Results" MODIFIED="1537155543153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p1/sep_reabstract" />
     <SUITE FILE_PATH="coverage/WXY_Project$main.coverage" NAME="main Coverage Results" MODIFIED="1535378184645" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p2/Simulation_Aug_print" />
     <SUITE FILE_PATH="coverage/WXY_Projects$test.coverage" NAME="test Coverage Results" MODIFIED="1531308685675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytorch/60_minutes" />
-    <SUITE FILE_PATH="coverage/WXY_projects$estimator_test.coverage" NAME="estimator_test Coverage Results" MODIFIED="1536824522841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p1/sep_reabstract" />
-    <SUITE FILE_PATH="coverage/WXY_Projects$what_is_pytorch.coverage" NAME="what_is_pytorch Coverage Results" MODIFIED="1531308094134" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytorch/60_minutes" />
     <SUITE FILE_PATH="coverage/WXY_Project$read_part.coverage" NAME="read_part Coverage Results" MODIFIED="1532746746609" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
-    <SUITE FILE_PATH="coverage/WXY_Project$warm_up_numpy.coverage" NAME="warm_up_numpy Coverage Results" MODIFIED="1531905007895" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytorch/Learning_PyTorch_with_Examples" />
     <SUITE FILE_PATH="coverage/pocket$save_df.coverage" NAME="save_df Coverage Results" MODIFIED="1535803900415" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
-    <SUITE FILE_PATH="coverage/WXY_projects$data.coverage" NAME="data Coverage Results" MODIFIED="1536720422381" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p1/sep_renew" />
+    <SUITE FILE_PATH="coverage/WXY_projects$estimator_bakup_915.coverage" NAME="estimator_bakup_915 Coverage Results" MODIFIED="1537154057492" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p1/sep_reabstract" />
     <SUITE FILE_PATH="coverage/WXY_Project$trans.coverage" NAME="trans Coverage Results" MODIFIED="1532686458789" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
-    <SUITE FILE_PATH="coverage/WXY_Project$what_is_input.coverage" NAME="what_is_input Coverage Results" MODIFIED="1532962196961" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/WXY_Projects$warm_up_numpy.coverage" NAME="warm_up_numpy Coverage Results" MODIFIED="1531317202853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytorch/Learning_PyTorch_with_Examples" />
     <SUITE FILE_PATH="coverage/WXY_Project$time_re.coverage" NAME="time_re Coverage Results" MODIFIED="1532673215649" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
-    <SUITE FILE_PATH="coverage/pocket$value_change.coverage" NAME="value_change Coverage Results" MODIFIED="1535860150153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p2/Simulation_Aug_print" />
     <SUITE FILE_PATH="coverage/WXY_projects$utils.coverage" NAME="utils Coverage Results" MODIFIED="1536656821253" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p1/sep_renew" />
     <SUITE FILE_PATH="coverage/WXY_projects$test_gen.coverage" NAME="test_gen Coverage Results" MODIFIED="1536911305787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p1/sep_reabstract" />
+    <SUITE FILE_PATH="coverage/WXY_projects$__estimator.coverage" NAME="__estimator Coverage Results" MODIFIED="1536812408811" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
+    <SUITE FILE_PATH="coverage/WXY_Project$write_twice.coverage" NAME="write_twice Coverage Results" MODIFIED="1533089669308" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
+    <SUITE FILE_PATH="coverage/WXY_projects$estimator.coverage" NAME="estimator Coverage Results" MODIFIED="1536723826521" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p1/sep_renew" />
+    <SUITE FILE_PATH="coverage/WXY_projects$estimator_test.coverage" NAME="estimator_test Coverage Results" MODIFIED="1536824522841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p1/sep_reabstract" />
+    <SUITE FILE_PATH="coverage/WXY_Projects$what_is_pytorch.coverage" NAME="what_is_pytorch Coverage Results" MODIFIED="1531308094134" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytorch/60_minutes" />
+    <SUITE FILE_PATH="coverage/WXY_Project$warm_up_numpy.coverage" NAME="warm_up_numpy Coverage Results" MODIFIED="1531905007895" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytorch/Learning_PyTorch_with_Examples" />
+    <SUITE FILE_PATH="coverage/WXY_projects$data.coverage" NAME="data Coverage Results" MODIFIED="1536720422381" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p1/sep_renew" />
+    <SUITE FILE_PATH="coverage/WXY_Project$what_is_input.coverage" NAME="what_is_input Coverage Results" MODIFIED="1532962196961" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
+    <SUITE FILE_PATH="coverage/pocket$value_change.coverage" NAME="value_change Coverage Results" MODIFIED="1535860150153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p2/Simulation_Aug_print" />
     <SUITE FILE_PATH="coverage/pocket$main.coverage" NAME="main Coverage Results" MODIFIED="1535862238802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p2" />
     <SUITE FILE_PATH="coverage/WXY_projects$main__2_.coverage" NAME="main (2) Coverage Results" MODIFIED="1536309841065" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/WXY_projects$timelist.coverage" NAME="timelist Coverage Results" MODIFIED="1536636189005" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p1/sep_renew" />
@@ -174,32 +175,33 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="csv" value="2" />
-          <entry key="py" value="68" />
+          <entry key="py" value="75" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PLAIN_TEXT" value="3" />
-          <entry key="Python" value="68" />
+          <entry key="Python" value="75" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Python Console" value="2419" />
+          <entry key="Python Console" value="2596" />
           <entry key="dummy" value="35" />
-          <entry key="py" value="12169" />
-          <entry key="txt" value="304" />
+          <entry key="py" value="12255" />
+          <entry key="txt" value="313" />
           <entry key="utils" value="134" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="339" />
-          <entry key="Python" value="14722" />
+          <entry key="PLAIN_TEXT" value="348" />
+          <entry key="Python" value="14985" />
         </counts>
       </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages" />
     </session>
   </component>
   <component name="FavoritesManager">
@@ -210,8 +212,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/p1/sep_reabstract/estimator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="64" selection-start-line="64" selection-end-line="64" />
+            <state relative-caret-position="717">
+              <caret line="84" selection-start-line="84" selection-end-line="84" />
               <folding>
                 <element signature="e#216#237#0" expanded="true" />
               </folding>
@@ -220,10 +222,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/p1/sep_reabstract/utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/p1/sep_reabstract/data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-195">
-              <caret line="45" column="39" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
+            <state relative-caret-position="2244">
+              <caret line="105" column="26" lean-forward="true" selection-start-line="105" selection-start-column="26" selection-end-line="105" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/p1/sep_init/__estimator.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5919">
+              <caret line="360" column="21" selection-start-line="360" selection-start-column="21" selection-end-line="360" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -341,8 +361,8 @@
         <option value="$PROJECT_DIR$/p1/sep_init/__estimator.py" />
         <option value="$PROJECT_DIR$/p1/sep_reabstract/estimator_test.py" />
         <option value="$PROJECT_DIR$/p1/sep_reabstract/test_gen.py" />
-        <option value="$PROJECT_DIR$/p1/sep_reabstract/estimator.py" />
         <option value="$PROJECT_DIR$/p1/sep_reabstract/data.py" />
+        <option value="$PROJECT_DIR$/p1/sep_reabstract/estimator.py" />
       </list>
     </option>
   </component>
@@ -392,6 +412,12 @@
               <item name="WXY_projects" type="b2602c69:ProjectViewProjectNode" />
               <item name="WXY_project" type="462c0819:PsiDirectoryNode" />
               <item name="p1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WXY_projects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WXY_project" type="462c0819:PsiDirectoryNode" />
+              <item name="p1" type="462c0819:PsiDirectoryNode" />
+              <item name="sep_init" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="WXY_projects" type="b2602c69:ProjectViewProjectNode" />
@@ -460,7 +486,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.estimator (1)">
+  <component name="RunManager" selected="Python.estimator">
     <configuration name="Unnamed" type="PythonConfigurationType" factoryName="Python">
       <module name="WXY_Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -475,28 +501,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/p2/Simulation_July/utils.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="__estimator" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="WXY_Project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/p1/sep_init/__estimator.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -549,7 +553,29 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="estimator (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="estimator" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="WXY_Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/p1/sep_reabstract" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/p1/sep_reabstract/estimator.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="estimator_bakup_915" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="WXY_Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -562,7 +588,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/p1/sep_reabstract/estimator.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/p1/sep_reabstract/estimator_bakup_915.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -641,19 +667,19 @@
       <item itemvalue="Python.Unnamed" />
       <item itemvalue="Python.main_test" />
       <item itemvalue="Python.main (2)" />
-      <item itemvalue="Python.estimator (1)" />
+      <item itemvalue="Python.estimator" />
       <item itemvalue="Python.estimator_test" />
-      <item itemvalue="Python.__estimator" />
       <item itemvalue="Python.data (1)" />
       <item itemvalue="Python.test_gen" />
+      <item itemvalue="Python.estimator_bakup_915" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.estimator (1)" />
+        <item itemvalue="Python.estimator" />
+        <item itemvalue="Python.estimator_bakup_915" />
         <item itemvalue="Python.test_gen" />
         <item itemvalue="Python.data (1)" />
         <item itemvalue="Python.estimator_test" />
-        <item itemvalue="Python.__estimator" />
       </list>
     </recent_temporary>
   </component>
@@ -759,7 +785,14 @@
       <option name="project" value="LOCAL" />
       <updated>1536827829798</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="ai...">
+      <created>1537152185158</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1537152185158</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -795,9 +828,9 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Remote Host" order="3" weight="0.32960597" />
       <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" x="0" y="0" width="430" height="858" id="Documentation" order="5" sideWeight="0.51583713" side_tool="true" visible="true" weight="0.41660047" />
+      <window_info anchor="right" x="0" y="0" width="430" height="858" id="Documentation" order="5" sideWeight="0.51659125" side_tool="true" visible="true" weight="0.41660047" />
       <window_info anchor="right" id="SciView" order="6" sideWeight="0.49924585" weight="0.28236696" />
-      <window_info active="true" anchor="right" id="Debug" order="7" sideWeight="0.4841629" visible="true" weight="0.41660047" />
+      <window_info active="true" anchor="right" id="Debug" order="7" sideWeight="0.48340875" visible="true" weight="0.41660047" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4969834" visible="true" weight="0.07386815" />
@@ -871,7 +904,8 @@
     <MESSAGE value="starting estimator" />
     <MESSAGE value="re_abstract" />
     <MESSAGE value="re_write by old notes" />
-    <option name="LAST_COMMIT_MESSAGE" value="re_write by old notes" />
+    <MESSAGE value="ai..." />
+    <option name="LAST_COMMIT_MESSAGE" value="ai..." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -886,11 +920,6 @@
           <line>103</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/p1/sep_reabstract/estimator.py</url>
-          <line>62</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
@@ -898,18 +927,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/p2/Simulation_July/miaomiao.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-515" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/p2/Simulation_July/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/p2/Simulation_July/true_value.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -1149,13 +1166,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/anaconda3/envs/wxy/lib/python3.7/site-packages/scipy/optimize/minpack.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/simulation_result.csv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1173,13 +1183,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/p1/sep_init/__estimator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6064">
-          <caret line="360" column="21" selection-start-line="360" selection-start-column="21" selection-end-line="360" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -1194,13 +1197,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/p1/sep_reabstract/data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-195">
-          <caret line="45" column="39" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/p1/sep_reabstract/test_gen.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
@@ -1208,10 +1204,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/wxy/lib/python3.7/site-packages/scipy/optimize/minpack.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="226" selection-start-line="226" selection-end-line="226" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/p1/sep_reabstract/estimator_bakup_915.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="573">
+          <caret line="82" selection-start-line="82" selection-end-line="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/p1/sep_reabstract/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/p1/sep_init/__estimator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5919">
+          <caret line="360" column="21" selection-start-line="360" selection-start-column="21" selection-end-line="360" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/p1/sep_reabstract/data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2244">
+          <caret line="105" column="26" lean-forward="true" selection-start-line="105" selection-start-column="26" selection-end-line="105" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/p1/sep_reabstract/estimator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="64" selection-start-line="64" selection-end-line="64" />
+        <state relative-caret-position="717">
+          <caret line="84" selection-start-line="84" selection-end-line="84" />
           <folding>
             <element signature="e#216#237#0" expanded="true" />
           </folding>

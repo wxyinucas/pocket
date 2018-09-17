@@ -45,7 +45,7 @@ class Data:
         # 协变量
         self.x = np.random.uniform(0, 1, n_sample)
         # self.x = np.linspace(0, 1, n_sample)  # 测试排序
-        self.z = np.random.uniform(0, 1, n_sample)
+        self.z = np.random.uniform(0, 0, n_sample)
 
         # 用于估计的协变量
         self.q = np.array([self.x, self.z])
@@ -85,6 +85,11 @@ class Data:
                                                                        [self.x, self.z, self.c, self.m, self.M, self.t,
                                                                         self.r])
 
+        # [self.x, self.z, self.c, self.m, self.M, self.t, self.T, self.r] = map(order,
+        #                                                                        [self.x, self.z, self.c, self.m, self.M,
+        #                                                                         self.t,
+        #                                                                         self.T, self.r])
+
         self.q = self.q[:, order_c]
 
         self.Y = np.tri(self.n).T
@@ -99,6 +104,3 @@ if __name__ == '__main__':
     data = Data(1, 1)
 
     print('Do not panic.')
-
-
-

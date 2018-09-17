@@ -41,14 +41,14 @@ class Estimator(Data):
         vec = []
         for i in range(self.n):
             try:
-                tmp = q[i] - compare(self.t[i], self.c) @ (exp * q) / (compare(self.t[i], self.c) @ exp)
-                assert (tmp.shape == self.t[i].shape)
+                tmp = q[i] - ((compare(self.t[i], self.c) @ (exp * q)) / (compare(self.t[i], self.c) @ exp))
+                assert tmp.shape == self.t[i].shape
                 vec.append(np.nansum(tmp, axis=0))
             except ValueError:
                 pass
 
         vec = np.array(vec)
-        assert vec.shape[0] == self.n
+        assert vec.shape == (self.n,)
 
         return vec
 
@@ -75,13 +75,16 @@ class Estimator(Data):
 
         exp = np.exp(gamma * self.x)
 
-        self.dN_arr = np.array([self.vec_dN(self.x, exp), self.vec_dN(self.z, exp)])
-        self.dt_arr = np.array([self.vec_dt(self.x, exp, beta), self.vec_dt(self.z, exp, beta)])
+        self.vec_dN(self.z, exp)
+
+        self.dN_arr = np.array([self.vec_dN(self.z, exp), self.vec_dN(self.x, exp)])
+        self.dt_arr = np.array([self.vec_dt(self.z, exp, beta), self.vec_dt(self.x, exp, beta)])
 
         assert self.dN_arr.shape == (2, self.n)
 
         dN = np.sum(self.dN_arr, axis=1)
         dt = np.sum(self.dt_arr, axis=1)
+        # print(dN[0], dt[0])
 
         assert dN.shape == dt.shape
         assert dN.shape == (2,)
@@ -93,7 +96,7 @@ if __name__ == '__main__':
     hat_paras = []
     zeros = []
 
-    true_values = np.array([1, 0])
+    true_values = np.array([1, 1])
 
     for _ in tqdm(range(20)):
         est = Estimator(*true_values)
