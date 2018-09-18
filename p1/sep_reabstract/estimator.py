@@ -22,7 +22,7 @@ class Estimator(Data):
     继承了data的结构，直接估计即可。
     """
 
-    def __init__(self, true_beta, true_gamma, n_sample=200, pr=0, source='random'):
+    def __init__(self, true_beta, true_gamma, n_sample=200, pr=0.8, source='random'):
         super(Estimator, self).__init__(true_beta, true_gamma, n_sample, pr, source)
 
         # 3个估计量(在哪里用？)
@@ -72,7 +72,7 @@ class Estimator(Data):
         """
         vec = []
         for i in range(self.n):
-            tmp = q[i] - ((compare(times[i], self.c) @ (exp * q)) / (compare(times[i], self.c) @ exp) * self.T_n[i])
+            tmp = (q[i] - ((compare(times[i], self.c) @ (exp * q)) / (compare(times[i], self.c) @ exp))) * self.T_n[i]
             assert tmp.shape == times[i].shape
             vec.append(np.nansum(tmp, axis=0))
 
@@ -136,7 +136,7 @@ if __name__ == '__main__':
 
     true_values = np.array([0, 1])
 
-    for _ in tqdm(range(20)):
+    for _ in tqdm(range(1000)):
         est = Estimator(*true_values)
         zero = est.cal_equation(true_values)
         sol = fsolve(est.cal_equation, true_values)
