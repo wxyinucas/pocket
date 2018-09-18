@@ -38,19 +38,14 @@ class Estimator(Data):
         T = self.T
         self.T_t, self.T_n = separate(T)
 
-    def vec_dN(self, q, time_stack, exp, num_stack=0):
+    def vec_dN(self, q, times, exp):
         """
         取值于dN,即t_ij构成的向量。Q_i - Q(theta, t_ij)
         """
-        # 初始化向量，并生成num_stack
         vec = []
-        if type(num_stack) == int:
-            num_stack = np.ones(q.shape[0])
-
         for i in range(self.n):
-            tmp = (q[i] - ((compare(time_stack[i], self.c) @ (exp * q)) / (compare(time_stack[i], self.c) @ exp))) * \
-                  num_stack[i]
-            assert tmp.shape == time_stack[i].shape
+            tmp = q[i] - ((compare(times[i], self.c) @ (exp * q)) / (compare(times[i], self.c) @ exp))
+            assert tmp.shape == times[i].shape
             vec.append(np.nansum(tmp, axis=0))
 
         vec = np.array(vec)
@@ -58,24 +53,47 @@ class Estimator(Data):
 
         return vec
 
-    def vec_dt(self, q, time_stack, exp, beta):
+    def vec_dt(self, q, exp, beta):
         """
         取值于dt,Q_i - Q(theta, c_j)
         """
 
-        try:
-            time_arr = flatten(time_stack)
-            factor = time_arr / (compare(time_arr, self.c) @ exp)
-        except TypeError:
-            time_arr = time_stack
-            factor = self.dt
-
-        com = compare(time_arr, self.c)
-
-        q_bar = (com @ (exp * q)) / (com @ exp)
+        q_bar = (self.Y @ (exp * q)) / (self.Y @ exp)
         matrix = q[:, None] - q_bar[None, :]
 
-        vec = beta * self.z[:, None] * (com.T * matrix) @ factor
+        vec = self.z[:, None] * (self.Y.T * matrix) @ self.dt * beta
+
+        return vec
+
+    # TODO: 重构下面两个函数。
+    def panel_dN(self, q, times, exp):
+        """
+        仅用于panel data 的数据处理
+        """
+        vec = []
+        for i in range(self.n):
+            tmp = (q[i] - ((compare(times[i], self.c) @ (exp * q)) / (compare(times[i], self.c) @ exp))) * self.T_n[i]
+            assert tmp.shape == times[i].shape
+            vec.append(np.nansum(tmp, axis=0))
+
+        vec = np.array(vec)
+        assert vec.shape == (self.n,)
+
+        return vec
+
+    def panel_dt(self, q, exp, beta):
+        """
+        仅用于panel data的数据处理。
+
+        T__ 是压平厚的T_t
+        """
+        T__ = flatten(self.T_t)
+
+        q_bar = (compare(T__, self.c) @ (exp * q)) / (compare(T__, self.c) @ exp)
+        matrix = q[:, None] - q_bar[None, :]
+
+        vec = beta * self.z[:, None] * (matrix * compare(T__, self.c).T) @ (
+                T__ / (compare(T__, self.c) @ exp))
 
         return vec
 
@@ -91,11 +109,11 @@ class Estimator(Data):
         exp = np.exp(gamma * self.x)
 
         re_dN_arr = np.array([self.vec_dN(self.z, self.t, exp), self.vec_dN(self.x, self.t, exp)])
-        re_dt_arr = np.array([self.vec_dt(self.z, self.c, exp, beta), self.vec_dt(self.x, self.c, exp, beta)])
+        re_dt_arr = np.array([self.vec_dt(self.z, exp, beta), self.vec_dt(self.x, exp, beta)])
 
-        pa_dN_arr = np.array([self.vec_dN(self.z, self.T_t, exp, self.T_n),
-                              self.vec_dN(self.x, self.T_t, exp, self.T_n)])
-        pa_dt_arr = np.array([self.vec_dt(self.z, self.T_t, exp, beta), self.vec_dt(self.x, self.T_t,exp, beta)])
+        pa_dN_arr = np.array([self.panel_dN(self.z, self.T_t, exp),
+                              self.panel_dN(self.x, self.T_t, exp)])
+        pa_dt_arr = np.array([self.panel_dt(self.z, exp, beta), self.panel_dt(self.x, exp, beta)])
 
         assert re_dN_arr.shape == (2, self.n)
         assert pa_dN_arr.shape == (2, self.n)
@@ -117,9 +135,8 @@ if __name__ == '__main__':
     zeros = []
 
     true_values = np.array([0, 1])
-    np.random.seed(42)
 
-    for _ in tqdm(range(20)):
+    for _ in tqdm(range(1000)):
         est = Estimator(*true_values)
         zero = est.cal_equation(true_values)
         sol = fsolve(est.cal_equation, true_values)
