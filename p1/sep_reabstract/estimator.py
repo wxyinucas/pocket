@@ -121,10 +121,8 @@ if __name__ == '__main__':
 
     for _ in tqdm(range(20)):
         est = Estimator(*true_values)
-        zero = est.cal_equation(true_values)
         sol = fsolve(est.cal_equation, true_values)
         hat_paras.append(sol)
-        zeros.append(zero)
 
     hat_paras = np.array(hat_paras)
     zeros = np.array(zeros)
