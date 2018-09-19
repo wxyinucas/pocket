@@ -38,9 +38,19 @@ class Estimator(Data):
         T = self.T
         self.T_t, self.T_n = separate(T)
 
+    def q_bar(self, q, time, exp):
+        """
+        生成z_bar, x_bar.
+        """
+        tmp = (compare(time, self.c) @ (exp * q)) / (compare(time, self.c) @ exp)
+        assert time.shape == tmp.shape
+
+        return tmp
+
     def vec_dN(self, q, time_stack, exp, num_stack=0):
         """
         取值于dN,即t_ij构成的向量。Q_i - Q(theta, t_ij)
+        num_stack 用于 panel
         """
         # 初始化向量，并生成num_stack
         vec = []
@@ -48,8 +58,7 @@ class Estimator(Data):
             num_stack = np.ones(q.shape[0])
 
         for i in range(self.n):
-            tmp = (q[i] - ((compare(time_stack[i], self.c) @ (exp * q)) / (compare(time_stack[i], self.c) @ exp))) * \
-                  num_stack[i]
+            tmp = (q[i] - self.q_bar(q, time_stack[i], exp)) * num_stack[i]
             assert tmp.shape == time_stack[i].shape
             vec.append(np.nansum(tmp, axis=0))
 
@@ -72,7 +81,7 @@ class Estimator(Data):
 
         com = compare(time_arr, self.c)
 
-        q_bar = (com @ (exp * q)) / (com @ exp)
+        q_bar = self.q_bar(q, time_arr, exp)
         matrix = q[:, None] - q_bar[None, :]
 
         vec = beta * self.z[:, None] * (com.T * matrix) @ factor
@@ -95,7 +104,7 @@ class Estimator(Data):
 
         pa_dN_arr = np.array([self.vec_dN(self.z, self.T_t, exp, self.T_n),
                               self.vec_dN(self.x, self.T_t, exp, self.T_n)])
-        pa_dt_arr = np.array([self.vec_dt(self.z, self.T_t, exp, beta), self.vec_dt(self.x, self.T_t,exp, beta)])
+        pa_dt_arr = np.array([self.vec_dt(self.z, self.T_t, exp, beta), self.vec_dt(self.x, self.T_t, exp, beta)])
 
         assert re_dN_arr.shape == (2, self.n)
         assert pa_dN_arr.shape == (2, self.n)
@@ -111,6 +120,47 @@ class Estimator(Data):
 
         return (dN - dt) / self.n
 
+    # Now variance
+
+    def v_matrix(self, exp_):
+        """
+        估计矩阵V
+        """
+        exp = np.exp(self.gamma * self.x)
+
+        v_mat = np.zeros((2, 2))
+        time_stack = self.t
+
+        for i in range(self.n):
+            x_arr = (self.x[i] - self.q_bar(self.x[i], time_stack[i], exp))
+            z_arr = (self.z[i] - self.q_bar(self.z[i], time_stack[i], exp))
+            arr = np.array([x_arr, z_arr])  # 生成两行
+            assert x_arr.shape == time_stack[i].shape
+            v_mat += arr @ arr.T
+
+        assert v_mat.shape == (2, 2)
+
+        return v_mat
+
+    def a_dt(self, q1, q2, exp_):
+        exp = np.exp(self.gamma * self.x)
+        tmp = compare(self.c, self.c).T * [q1 - self.q_bar(q1, self.c, exp)] * [q2 - self.q_bar(q2, self.c, exp)] @ \
+              self.dt
+        assert tmp.shape == (self.n,)
+
+        return np.sum(tmp)
+
+    def a_dmu(self, q1, q2, exp_):
+        exp = np.exp(self.gamma * self.x)
+        time_arr = flatten(self.t)
+
+        dN_arr = exp @ ((q1[:, None] - self.q_bar(q1, time_arr, exp)[None, :]) * (
+                    q2[:, None] - self.q_bar(q2, time_arr, exp)[None, :])
+                        * compare(time_arr, self.c).T) / (compare(time_arr, self.c) @ exp)
+        assert dN_arr.shape == (self.n,)
+
+        dt = exp @ ((q1))
+
 
 if __name__ == '__main__':
     hat_paras = []
@@ -120,9 +170,14 @@ if __name__ == '__main__':
     np.random.seed(42)
 
     for _ in tqdm(range(20)):
+        # bias
         est = Estimator(*true_values)
         sol = fsolve(est.cal_equation, true_values)
         hat_paras.append(sol)
+
+        # var
+        est.v_matrix(1)
+        est.a_dt(est.z, est.x, 0)
 
     hat_paras = np.array(hat_paras)
     zeros = np.array(zeros)
