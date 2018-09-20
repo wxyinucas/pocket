@@ -87,7 +87,6 @@ class Data:
 
         self.q = self.q[:, order_c]
 
-        self.Y = np.tri(self.n).T
 
     def cal_dt(self, c):
 

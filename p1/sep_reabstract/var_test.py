@@ -181,6 +181,114 @@ class Estimator(Data):
         result = np.sum(dN_arr) + dt
         assert result.shape == ()
         return result
+    
+    def making_Y(self, detail=False):
+        # create a lower triangular matrix
+        self.tri = np.tri(self.n)
+
+        ## This Y is \tilda{Y} in calculation
+        self.Y = np.array([np.zeros(self.n)])
+        for i in range(self.n):
+            temp = np.array([(k < self.c).astype(int) for k in self.t[i]])
+            try:
+                self.Y = np.append(self.Y, temp, axis=0)
+            except ValueError:
+                pass
+        self.Y = np.delete(self.Y, 0, 0)  # 1 indicate which vector to delete, 0 is axis.
+
+        self.length = np.array([len(i) for i in self.t])
+        self.index = np.cumsum(self.length)
+        self.index = np.insert(self.index, 0, 0)
+
+        if detail:
+            print('The shape of Y suppose to be ({0}, {1}), \n'
+                  'while the actual shape is {2} '.
+                  format(np.sum(self.length), self.n, self.Y.shape))
+
+    def making_matrix(self, x, detail=False):
+        # x[0]: beta
+        # x[1]: gamma
+        self.q0 = np.exp(x[1] * self.x)
+        self.tri = compare(self.c, self.c).T
+
+        ## Zt is [z_k - \bar{z}(c_j-)]_{(j,k)}
+        Z_cj = (self.tri.T @ (self.q0 * self.z)) / (self.tri.T @ self.q0)
+        self.Z_t = self.z[None, :] - Z_cj[:, None]
+
+        ## Z_N is [z_k - \bar{z}(t_ij)]_{(ij,k)}, whose dimension is (l,n)
+        Z_tij = (self.Y @ (self.q0 * self.z)) / (self.Y @ self.q0)
+        self.Z_N = self.z[None, :] - Z_tij[:, None]
+
+        X_cj = (self.tri.T @ (self.q0 * self.x)) / (self.tri.T @ self.q0)
+        self.X_t = self.x[None, :] - X_cj[:, None]
+        X_tij = (self.Y @ (self.q0 * self.x)) / (self.Y @ self.q0)
+        self.X_N = self.x[None, :] - X_tij[:, None]
+
+        if detail:
+            print('The shape of Z_t suppose to be ({0},{0}), while the actual shape is {1}'.format(
+                self.n, self.Z_t.shape))
+            print('The shape of Z_N suppose to be ({0},{1}), while the actual shape is {2}'.format(
+                np.sum(self.length), self.n, self.Z_N.shape))
+
+    def A_bb(self):
+        result = self.z @ (self.tri * self.Z_t.T) @ self.dt
+        return result
+
+    def A_bg(self):
+        Alpha = np.sum(((self.Y * self.Z_N) @ (self.q0 * self.x)) /
+                       (self.Y @ self.q0))
+        Beta = self.hat_beta* self.z @ self.tri @ \
+               (self.dt * ((self.tri.T * self.Z_t) @ (self.q0 * self.x) /
+                               (self.tri.T @ self.q0)))
+
+        return Alpha - Beta
+
+    def A_gb(self):
+        result = self.z @ (self.tri * self.X_t.T) @ self.dt
+        return result
+
+    def A_gg(self):
+        Alpha = np.sum(((self.Y * self.X_N) @ (self.q0 * self.x)) /
+                       (self.Y @ self.q0))
+        Beta = self.hat_beta * self.z @ self.tri @ \
+               (self.dt * ((self.tri.T * self.X_t) @ (self.q0 * self.x) /
+                               (self.tri.T @ self.q0)))
+
+        return Alpha - Beta
+
+    def A_matrix(self):
+        result = np.array([[self.A_bb(), self.A_bg()], [self.A_gb(), self.A_gg()]]) \
+                 / self.n
+        return result
+
+    def V_matrix(self, detail=False):
+        temp = 0
+        for i in range(self.n):
+            alpha = self.Z_N[self.index[i]:self.index[i + 1], i][None, :]
+            delta = self.X_N[self.index[i]:self.index[i + 1], i][None, :]
+            zeta = np.append(alpha, delta, axis=0)
+            temp += zeta @ zeta.T
+        if detail:
+            print('shape of alpha is', alpha.shape)
+            print('shape of zeta is ', zeta.shape)
+            print('Shape of temp = ', temp.shape)
+        return temp / self.n
+
+    def ASE(self):
+        """
+        1. self.calculator
+        2. self.get_hat(self.sol.x)
+        3. self.making_matrix([self.beta_h, self.gamma_h])
+        """
+        self.making_Y()
+        self.making_matrix([self.hat_beta, self.hat_gamma])
+
+        A = self.A_matrix()
+        V = self.V_matrix()
+
+        asv = np.linalg.inv(A) * V * np.linalg.inv(A).T
+        ase = np.sqrt(asv[[0, 1], [0, 1]])
+        return ase / np.sqrt(self.n)
 
     def ase(self, hat_paras: np.array):
         # 载入估计量
@@ -197,7 +305,7 @@ class Estimator(Data):
         a_mat = np.array([[a11, a12], [a21, a22]])
         a_inv = np.linalg.inv(a_mat)
 
-        asv = a_inv * v_mat * a_inv.T
+        asv = a_inv * v_mat * a_inv
         ase = np.sqrt(asv[[0, 1], [0, 1]])
         return ase
 
@@ -205,11 +313,12 @@ class Estimator(Data):
 if __name__ == '__main__':
     hat_paras_list = []
     hat_std_list = []
+    listttt =[]
 
     true_values = np.array([1, 1])
     np.random.seed(42)
 
-    for _ in tqdm(range(50)):
+    for _ in tqdm(range(20)):
         # bias
         est = Estimator(*true_values)
         sol = fsolve(est.cal_equation, true_values)
@@ -217,10 +326,12 @@ if __name__ == '__main__':
 
         # var
         hat_std_list.append(est.ase(sol))
+        listttt.append(est.ASE())
 
     # 处理估计结果, 两列
     hat_paras_arr = np.array(hat_paras_list)
     hat_std_arr = np.array(hat_std_list)
+    arr = np.array(listttt)
 
     # 得出结论
     bias = true_values - np.mean(hat_paras_arr, axis=0)
@@ -229,4 +340,4 @@ if __name__ == '__main__':
     esd = np.sqrt(esv[[0, 1], [0, 1]])
 
     print(f'bias is {bias}.')
-    print(f'ase is {ase}; esd is {esd}, esv is {esv}')
+    print(f'ase is {ase}; esd is {esd}; arrr is {np.mean(arr, axis=0)}')

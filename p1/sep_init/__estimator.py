@@ -10,7 +10,7 @@ __author__ = 'Xiaoyu Wang'
 
 """
 from scipy import optimize
-from p1.sep_init.__generator import *
+from __generator import *
 import csv
 import numpy as np
 
