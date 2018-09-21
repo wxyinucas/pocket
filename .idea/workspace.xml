@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="60c4694b-06da-43a8-9d14-236c9f8b1baf" name="Default" comment="var mess">
+    <list default="true" id="60c4694b-06da-43a8-9d14-236c9f8b1baf" name="Default" comment="recurrent part var finished">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/p1/sep_reabstract/estimator.py" beforeDir="false" afterPath="$PROJECT_DIR$/p1/sep_reabstract/estimator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p1/sep_reabstract/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/p1/sep_reabstract/utils.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,7 +16,7 @@
     <SUITE FILE_PATH="coverage/WXY_Project$main_test.coverage" NAME="main_test Coverage Results" MODIFIED="1532962726946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p2/Simulation_July" />
     <SUITE FILE_PATH="coverage/WXY_projects$data__1_.coverage" NAME="data (1) Coverage Results" MODIFIED="1536910850149" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p1/sep_reabstract" />
     <SUITE FILE_PATH="coverage/WXY_projects$estimator_backup917.coverage" NAME="estimator_backup917 Coverage Results" MODIFIED="1537164189135" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p1/sep_reabstract" />
-    <SUITE FILE_PATH="coverage/WXY_projects$estimator__1_.coverage" NAME="estimator Coverage Results" MODIFIED="1537510918042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p1/sep_reabstract" />
+    <SUITE FILE_PATH="coverage/WXY_projects$estimator__1_.coverage" NAME="estimator Coverage Results" MODIFIED="1537512612282" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p1/sep_reabstract" />
     <SUITE FILE_PATH="coverage/WXY_Project$main.coverage" NAME="main Coverage Results" MODIFIED="1535378184645" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p2/Simulation_Aug_print" />
     <SUITE FILE_PATH="coverage/WXY_Projects$test.coverage" NAME="test Coverage Results" MODIFIED="1531308685675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytorch/60_minutes" />
     <SUITE FILE_PATH="coverage/WXY_projects$var_test.coverage" NAME="var_test Coverage Results" MODIFIED="1537426998073" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p1/sep_reabstract" />
@@ -192,18 +193,18 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Python Console" value="4515" />
+          <entry key="Python Console" value="4660" />
           <entry key="dummy" value="39" />
-          <entry key="py" value="17452" />
-          <entry key="txt" value="473" />
+          <entry key="py" value="17694" />
+          <entry key="txt" value="501" />
           <entry key="utils" value="134" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="512" />
-          <entry key="Python" value="22101" />
+          <entry key="PLAIN_TEXT" value="540" />
+          <entry key="Python" value="22488" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -217,11 +218,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/p1/sep_reabstract/estimator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="514">
-              <caret line="239" lean-forward="true" selection-start-line="237" selection-start-column="4" selection-end-line="239" />
+            <state relative-caret-position="433">
+              <caret line="212" column="26" selection-start-line="212" selection-start-column="26" selection-end-line="212" selection-end-column="26" />
               <folding>
-                <marker date="1537510918037" expanded="true" signature="863:1162" ph="..." />
-                <marker date="1537510918037" expanded="true" signature="5406:5415" ph="..." />
+                <marker date="1537512612277" expanded="true" signature="861:1160" ph="..." />
+                <marker date="1537512612277" expanded="true" signature="5404:5413" ph="..." />
               </folding>
             </state>
           </provider>
@@ -251,8 +252,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/p1/sep_reabstract/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="498">
-              <caret line="94" column="38" selection-start-line="94" selection-start-column="38" selection-end-line="94" selection-end-column="38" />
+            <state relative-caret-position="330">
+              <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -286,7 +287,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>2016年11月22日</find>
       <find>\bc\|</find>
       <find>\bc\b</find>
       <find>\bself\b</find>
@@ -316,6 +316,7 @@
       <find>_arr</find>
       <find>var</find>
       <find>self.time_list</find>
+      <find>0</find>
     </findStrings>
     <replaceStrings>
       <replace>c</replace>
@@ -340,6 +341,7 @@
       <replace>_list</replace>
       <replace>std</replace>
       <replace>self.t</replace>
+      <replace>1</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -392,7 +394,6 @@
         <option value="$PROJECT_DIR$/p1/sep_reabstract/test.py" />
         <option value="$PROJECT_DIR$/p1/sep_reabstract/test_gen.py" />
         <option value="$PROJECT_DIR$/p1/sep_reabstract/timelist.py" />
-        <option value="$PROJECT_DIR$/p1/sep_reabstract/utils.py" />
         <option value="$PROJECT_DIR$/p1/sep_reabstract/tmp.txt" />
         <option value="$PROJECT_DIR$/p1/sep_reabstract/estimator_918.py" />
         <option value="$PROJECT_DIR$/p1/sep_reabstract/estimator_backup917.py" />
@@ -403,6 +404,7 @@
         <option value="$PROJECT_DIR$/p1/sep_init/__estimator.py" />
         <option value="$PROJECT_DIR$/p1/sep_reabstract/var_test.py" />
         <option value="$PROJECT_DIR$/p1/sep_reabstract/data.py" />
+        <option value="$PROJECT_DIR$/p1/sep_reabstract/utils.py" />
         <option value="$PROJECT_DIR$/p1/sep_reabstract/estimator.py" />
       </list>
     </option>
@@ -915,7 +917,14 @@
       <option name="project" value="LOCAL" />
       <updated>1537427075220</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="recurrent part var finished">
+      <created>1537511331314</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1537511331314</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -990,7 +999,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="7_30" />
     <MESSAGE value="9_7 refactor p1" />
     <MESSAGE value="9_7 failed try" />
     <MESSAGE value="9_7 reading and preparing" />
@@ -1015,7 +1023,8 @@
     <MESSAGE value="q_bar done" />
     <MESSAGE value="19 night" />
     <MESSAGE value="var mess" />
-    <option name="LAST_COMMIT_MESSAGE" value="var mess" />
+    <MESSAGE value="recurrent part var finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="recurrent part var finished" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1307,13 +1316,6 @@
     <entry file="file://$PROJECT_DIR$/p1/sep_reabstract/var_testestimator.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/p1/sep_reabstract/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="94" column="38" selection-start-line="94" selection-start-column="38" selection-end-line="94" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/anaconda3/envs/wxy/lib/python3.7/site-packages/numpy/lib/function_base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="492">
@@ -1366,13 +1368,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/p1/sep_reabstract/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/p1/sep_reabstract/estimator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="239" lean-forward="true" selection-start-line="237" selection-start-column="4" selection-end-line="239" />
+        <state relative-caret-position="433">
+          <caret line="212" column="26" selection-start-line="212" selection-start-column="26" selection-end-line="212" selection-end-column="26" />
           <folding>
-            <marker date="1537510918037" expanded="true" signature="863:1162" ph="..." />
-            <marker date="1537510918037" expanded="true" signature="5406:5415" ph="..." />
+            <marker date="1537512612277" expanded="true" signature="861:1160" ph="..." />
+            <marker date="1537512612277" expanded="true" signature="5404:5413" ph="..." />
           </folding>
         </state>
       </provider>
