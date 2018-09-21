@@ -22,7 +22,7 @@ class Estimator(Data):
     继承了data的结构，直接估计即可。
     """
 
-    def __init__(self, true_beta, true_gamma, n_sample=200, pr=1, source='random'):
+    def __init__(self, true_beta, true_gamma, n_sample=200, pr=0.8, source='random'):
         super(Estimator, self).__init__(true_beta, true_gamma, n_sample, pr, source)
 
         # 3个估计量(在哪里用？)
@@ -172,13 +172,14 @@ class Estimator(Data):
                 q2[:, None] - self.q_bar(q2, time_arr, exp)[None, :])
                         * compare(time_arr, self.c).T) / (compare(time_arr, self.c) @ exp)
         assert dN_arr.shape == time_arr.shape
+        dN = np.sum(dN_arr)
 
         dt = beta * ((exp @ ((q1[:, None] - self.q_bar(q1, self.c, exp)[None, :]) * (
                 q2[:, None] - self.q_bar(q2, self.c, exp)[None, :])
                              * compare(self.c, self.c).T)) / (compare(self.c, self.c) @ exp)) @ (
-                     compare(self.c, self.c) * self.dt) @ self.z
+                     compare(self.c, self.c) * self.dt[:, None]) @ self.z
 
-        result = np.sum(dN_arr) + dt
+        result = dN - dt
         assert result.shape == ()
         return result
 
@@ -206,10 +207,10 @@ if __name__ == '__main__':
     hat_paras_list = []
     hat_std_list = []
 
-    true_values = np.array([1, 1])
+    true_values = np.array([1, 0])
     np.random.seed(42)
 
-    for _ in tqdm(range(50)):
+    for _ in tqdm(range(1000)):
         # bias
         est = Estimator(*true_values)
         sol = fsolve(est.cal_equation, true_values)
@@ -222,11 +223,17 @@ if __name__ == '__main__':
     hat_paras_arr = np.array(hat_paras_list)
     hat_std_arr = np.array(hat_std_list)
 
-    # 得出结论
-    bias = true_values - np.mean(hat_paras_arr, axis=0)
+    # 计算bias
+    est_values = np.mean(hat_paras_arr, axis=0)
+    bias = true_values - est_values
+
+    # 计算ase & esd
     ase = np.mean(hat_std_arr, axis=0)
     esv = np.cov(hat_paras_arr, rowvar=False)
     esd = np.sqrt(esv[[0, 1], [0, 1]])
 
+    # 计算cp
+    cp_beta_count = compare(est_values[0] - 1.9)
+
     print(f'bias is {bias}.')
-    print(f'ase is {ase}; esd is {esd}, esv is {esv}')
+    print(f'ase is {ase}; esd is {esd}')
