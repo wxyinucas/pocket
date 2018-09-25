@@ -25,13 +25,9 @@ class Estimator(Data):
     def __init__(self, true_beta, true_gamma, n_sample=200, pr=0, source='random'):
         super(Estimator, self).__init__(true_beta, true_gamma, n_sample, pr, source)
 
-        # 3个估计量(在哪里用？)
-        self.hat_beta = 0
-        self.hat_gamma = 0
-
-        # 2个积分时使用的变量（又在哪里用？）
-        self.dN_arr = 0
-        self.dt_arr = 0
+        # 计算估计方差时被导入
+        self.hat_beta = None
+        self.hat_gamma = None
 
         # 把T取出来用
         T = self.T
@@ -137,13 +133,15 @@ class Estimator(Data):
         time_stack = self.t
 
         for i in range(self.n):
-            x_arr = self.x[i] - self.q_bar(self.x, time_stack[i], exp)
-            z_arr = self.z[i] - self.q_bar(self.z, time_stack[i], exp)
+            # recurrent-event part
+            x_rec_arr = self.x[i] - self.q_bar(self.x, time_stack[i], exp)
+            z_rec_arr = self.z[i] - self.q_bar(self.z, time_stack[i], exp)
 
-            # TODO: 加入panel data 并修改变量名称
+            # panel-data part
 
-            arr = np.array([z_arr, x_arr])  # 生成两行
-            assert x_arr.shape == time_stack[i].shape
+
+            arr = np.array([z_rec_arr, x_rec_arr])  # 生成两行
+            assert x_rec_arr.shape == time_stack[i].shape
             assert arr.shape == (2, time_stack[i].shape[0])
             v_mat += arr @ arr.T
 
@@ -189,6 +187,7 @@ class Estimator(Data):
         self.hat_beta = hat_paras[0]
         self.hat_gamma = hat_paras[1]
 
+        # 分别计算V和A
         v_mat = self.v_matrix()
 
         a11 = self.a_dt(self.z, self.z)
