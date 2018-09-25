@@ -22,7 +22,7 @@ class Estimator(Data):
     继承了data的结构，直接估计即可。
     """
 
-    def __init__(self, true_beta, true_gamma, n_sample=200, pr=1, source='random'):
+    def __init__(self, true_beta, true_gamma, n_sample=200, pr=0, source='random'):
         super(Estimator, self).__init__(true_beta, true_gamma, n_sample, pr, source)
 
         # 3个估计量(在哪里用？)
@@ -141,7 +141,6 @@ class Estimator(Data):
             z_arr = self.z[i] - self.q_bar(self.z, time_stack[i], exp)
 
             arr = np.array([z_arr, x_arr])  # 生成两行
-            # arr = np.array([x_arr, z_arr])  # 生成两行
             assert x_arr.shape == time_stack[i].shape
             assert arr.shape == (2, time_stack[i].shape[0])
             v_mat += arr @ arr.T
