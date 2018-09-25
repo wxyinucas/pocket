@@ -140,8 +140,6 @@ class Estimator(Data):
             x_arr = self.x[i] - self.q_bar(self.x, time_stack[i], exp)
             z_arr = self.z[i] - self.q_bar(self.z, time_stack[i], exp)
 
-            # TODO: 加入panel data 并修改变量名称
-
             arr = np.array([z_arr, x_arr])  # 生成两行
             assert x_arr.shape == time_stack[i].shape
             assert arr.shape == (2, time_stack[i].shape[0])
