@@ -11,8 +11,9 @@ __author__ = 'Xiaoyu Wang'
 """
 from data import Data
 from utils import compare, separate, flatten
-from scipy.optimize import fsolve
+from scipy.optimize import fsolve, root
 from tqdm import tqdm
+from time import time
 
 import numpy as np
 
@@ -22,7 +23,7 @@ class Estimator(Data):
     继承了data的结构，直接估计即可。
     """
 
-    def __init__(self, true_beta, true_gamma, n_sample=200, pr=0, source='random'):
+    def __init__(self, true_beta, true_gamma, n_sample=200, pr=1, source='random'):
         super(Estimator, self).__init__(true_beta, true_gamma, n_sample, pr, source)
 
         # 计算估计方差时被导入
@@ -129,21 +130,30 @@ class Estimator(Data):
         gamma = self.hat_gamma
         exp = np.exp(gamma * self.x)
 
+        t_stack = self.t
+        T_stack = self.T_t
+        num_stack = self.T_n
+
         v_mat = np.zeros((2, 2))
-        time_stack = self.t
 
         for i in range(self.n):
             # recurrent-event part
-            x_rec_arr = self.x[i] - self.q_bar(self.x, time_stack[i], exp)
-            z_rec_arr = self.z[i] - self.q_bar(self.z, time_stack[i], exp)
+            x_rec_arr = self.x[i] - self.q_bar(self.x, t_stack[i], exp)
+            z_rec_arr = self.z[i] - self.q_bar(self.z, t_stack[i], exp)
 
             # panel-data part
+            x_pan_arr = (self.x[i] - self.q_bar(self.x, T_stack[i], exp)) * num_stack[i]
+            z_pan_arr = (self.z[i] - self.q_bar(self.z, T_stack[i], exp)) * num_stack[i]
 
+            # sum them separately
+            rec_arr = np.array([z_rec_arr, x_rec_arr])  # 生成两行
+            pan_arr = np.array([z_pan_arr, x_pan_arr])
 
-            arr = np.array([z_rec_arr, x_rec_arr])  # 生成两行
-            assert x_rec_arr.shape == time_stack[i].shape
-            assert arr.shape == (2, time_stack[i].shape[0])
-            v_mat += arr @ arr.T
+            assert x_rec_arr.shape == t_stack[i].shape
+            assert x_pan_arr.shape == T_stack[i].shape
+            assert rec_arr.shape == (2, t_stack[i].shape[0])
+            assert pan_arr.shape == (2, T_stack[i].shape[0])
+            v_mat += rec_arr @ rec_arr.T + pan_arr @ pan_arr.T
 
         assert v_mat.shape == (2, 2)
 
@@ -178,7 +188,7 @@ class Estimator(Data):
                              * compare(self.c, self.c).T)) / (compare(self.c, self.c) @ exp)) @ (
                      compare(self.c, self.c) * self.dt[:, None]) @ self.z
 
-        result = dN - dt
+        result = dN - dt  # result还是太大了，原因是dt太小了么？
         assert result.shape == ()
         return result
 
@@ -198,52 +208,63 @@ class Estimator(Data):
         a_mat = np.array([[a11, a12], [a21, a22]])
         a_inv = np.linalg.inv(a_mat)
 
-        asv = a_inv * v_mat * a_inv.T
+        asv = a_inv * v_mat * a_inv
         ase = np.sqrt(asv[[0, 1], [0, 1]])
         return ase
 
 
 if __name__ == '__main__':
-    hat_paras_list = []
-    hat_std_list = []
 
-    true_values = np.array([1, 1])
-    np.random.seed(42)
+    def simulation():
+        hat_paras_list = []
+        hat_std_list = []
 
-    for _ in tqdm(range(100)):
-        # bias
-        est = Estimator(*true_values)
-        sol = fsolve(est.cal_equation, true_values)
-        hat_paras_list.append(sol)
+        true_values = np.array([1, 1])
 
-        # var
-        hat_std_list.append(est.ase(sol))
+        # np.random.seed(42)
 
-    # 处理估计结果, 两列
-    hat_paras_arr = np.array(hat_paras_list)
-    hat_std_arr = np.array(hat_std_list)
+        start_time = time()
+        for _ in tqdm(range(200)):
+            # bias
+            est = Estimator(*true_values)
+            # sol = fsolve(est.cal_equation, true_values)
+            sol = root(est.cal_equation, np.array([0, 0]), method='Krylov').x
+            hat_paras_list.append(sol)
 
-    # 计算bias
-    est_values = np.mean(hat_paras_arr, axis=0)
-    bias = true_values - est_values
+            # var
+            hat_std_list.append(est.ase(sol))
+            # hat_std_list.append(est.ase(true_values))
 
-    # 计算ase & esd
-    ase = np.mean(hat_std_arr, axis=0)
-    esv = np.cov(hat_paras_arr, rowvar=False)
-    esd = np.sqrt(esv[[0, 1], [0, 1]])
+        # 处理估计结果, 两列
+        hat_paras_arr = np.array(hat_paras_list)
+        hat_std_arr = np.array(hat_std_list)
 
-    # 计算cp
-    cp_beta_count = (est_values[0] - 1.96 * ase[0] <= hat_paras_arr[:, 0]) * (
-            hat_paras_arr[:, 0] <= est_values[0] + 1.96 * ase[0]
-    )
-    cp_gamma_count = (est_values[1] - 1.96 * ase[1] <= hat_paras_arr[:, 1]) * (
-            hat_paras_arr[:, 1] <= est_values[1] + 1.96 * ase[1])
-    cp_count = np.array([cp_beta_count, cp_gamma_count])
+        # 计算bias
+        est_values = np.mean(hat_paras_arr, axis=0)
+        bias = true_values - est_values
 
-    cp = np.mean(cp_count, axis=1)
+        # 计算ase & esd
+        ase = np.mean(hat_std_arr, axis=0)
+        esv = np.cov(hat_paras_arr, rowvar=False)
+        esd = np.sqrt(esv[[0, 1], [0, 1]])
 
-    print('\n=======================================================')
-    print(f'bias is {bias}.')
-    print(f'ase is {ase}; esd is {esd}')
-    print(f'cp is {cp}.')
-    print('=======================================================\n')
+        # 计算cp
+        cp_beta_count = (est_values[0] - 1.96 * ase[0] <= hat_paras_arr[:, 0]) * (
+                hat_paras_arr[:, 0] <= est_values[0] + 1.96 * ase[0]
+        )
+        cp_gamma_count = (est_values[1] - 1.96 * ase[1] <= hat_paras_arr[:, 1]) * (
+                hat_paras_arr[:, 1] <= est_values[1] + 1.96 * ase[1])
+        cp_count = np.array([cp_beta_count, cp_gamma_count])
+
+        cp = np.mean(cp_count, axis=1)
+
+        print('\n=======================================================')
+        print(f'running time is {time() - start_time:.2f}s.')
+        print('-------------------------------------------------------')
+        print(f'bias is {bias}.')
+        print(f'ase is {ase}; esd is {esd}')
+        print(f'cp is {cp}.')
+        print('=======================================================\n')
+
+    for _ in range(5):
+        simulation()

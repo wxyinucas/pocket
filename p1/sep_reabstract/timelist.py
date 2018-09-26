@@ -74,6 +74,8 @@ def change_time_list(t: np.array, T: np.array, r: np.array):
 def change_time_matrix(t: np.array, T: np.array, r: np.array):
     """
     封装change_time_list, 使之能处理不规则np.array。
+
+    返回值均是np.array，更易处理。
     """
     assert t.shape[0] == T.shape[0] == r.shape[0]
 

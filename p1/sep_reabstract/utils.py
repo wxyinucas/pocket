@@ -97,6 +97,14 @@ def separate(T):
     return np.array(time), np.array(count)
 
 
+def r_i(time_arr, r_arr, T_arr):
+    """
+    给定时间向量time_arr， 判断每一个是否在t_arr中。
+    返回值是与time_arr等长的0，1arr。
+    """
+
+
+
 if __name__ == '__main__':
     # compare
     # v1 = np.array([4, 6, 1])

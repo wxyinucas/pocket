@@ -358,4 +358,4 @@ def result(iterations=10):
 
 
 if __name__ == '__main__':
-    print(result(10))
+    result(100)

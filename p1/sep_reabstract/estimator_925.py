@@ -22,7 +22,7 @@ class Estimator(Data):
     继承了data的结构，直接估计即可。
     """
 
-    def __init__(self, true_beta, true_gamma, n_sample=200, pr=0, source='random'):
+    def __init__(self, true_beta, true_gamma, n_sample=200, pr=1, source='random'):
         super(Estimator, self).__init__(true_beta, true_gamma, n_sample, pr, source)
 
         # 3个估计量(在哪里用？)
@@ -209,7 +209,7 @@ if __name__ == '__main__':
     true_values = np.array([1, 1])
     np.random.seed(42)
 
-    for _ in tqdm(range(100)):
+    for _ in tqdm(range(500)):
         # bias
         est = Estimator(*true_values)
         sol = fsolve(est.cal_equation, true_values)
