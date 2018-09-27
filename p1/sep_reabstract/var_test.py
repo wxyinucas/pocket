@@ -9,16 +9,16 @@ __author__ = 'Xiaoyu Wang'
 ==================================
 
 """
-from data import Data
+from var_data_test import TestData
 from utils import compare, separate, flatten
-from scipy.optimize import fsolve
+from scipy.optimize import fsolve, root
 from tqdm import tqdm
 from time import time
 
 import numpy as np
 
 
-class Estimator(Data):
+class Estimator(TestData):
     """
     继承了data的结构，直接估计即可。
     """
@@ -30,13 +30,11 @@ class Estimator(Data):
         self.hat_beta = 0
         self.hat_gamma = 0
 
-        # 2个积分时使用的变量（又在哪里用？）
-        self.dN_arr = 0
-        self.dt_arr = 0
-
         # 把T取出来用
         T = self.T
         self.T_t, self.T_n = separate(T)
+
+        self.making_Y()
 
     def q_bar(self, q, time, exp):
         """
@@ -216,6 +214,7 @@ class Estimator(Data):
         ase = np.sqrt(asv[[0, 1], [0, 1]])
         return ase
 
+    # original method
     def making_Y(self, detail=False):
         # create a lower triangular matrix
         self.tri = np.tri(self.n)
@@ -264,6 +263,31 @@ class Estimator(Data):
             print('The shape of Z_N suppose to be ({0},{1}), while the actual shape is {2}'.format(
                 np.sum(self.length), self.n, self.Z_N.shape))
 
+    # estimating
+    def equation(self, x):
+        ## S = A - B
+        self.making_matrix(x=x)
+
+        self.A_z = 0
+        self.A_x = 0
+
+        for i in range(self.n):
+            self.A_z += np.sum(self.Z_N[self.index[i]:self.index[i + 1], i])
+            self.A_x += np.sum(self.X_N[self.index[i]:self.index[i + 1], i])
+
+        self.B_z = self.z @ (self.tri * self.Z_t.T) @ self.dt * x[0]
+        self.B_x = self.z @ (self.tri * self.X_t.T) @ self.dt * x[0]
+
+        result = np.array([self.A_z - self.B_z, self.A_x - self.B_x])  # / self.num
+        return result
+
+    def calculator(self):
+        # self.sol = optimize.root(self.equation, np.array([self.beta, self.gamma]),
+        #                          method='Krylov')
+        self.sol = root(self.equation, np.array([0, 0]),
+                        method='Krylov')
+        return np.array(self.sol.x)
+
     def A_bb(self):
         result = self.z @ (self.tri * self.Z_t.T) @ self.dt
         return result
@@ -295,6 +319,7 @@ class Estimator(Data):
                  / self.n
         return result
 
+    # variance estimating
     def V_matrix(self, detail=False):
         temp = 0
         for i in range(self.n):
@@ -327,36 +352,46 @@ class Estimator(Data):
 
 if __name__ == '__main__':
     def simulation():
+        global est
+
         hat_paras_list = []
         hat_std_list = []
-        origin_list = []
+        origin_paras_list = []
+        origin_std_list = []
 
         true_values = np.array([1, 1])
 
         # np.random.seed(42)
 
         start_time = time()
-        for _ in tqdm(range(200)):
+        for _ in tqdm(range(100)):
             # bias
-            est = Estimator(*true_values)
+            est = Estimator(*true_values, n_sample=200)
             sol = fsolve(est.cal_equation, true_values)
             hat_paras_list.append(sol)
+            origin_paras_list.append(est.calculator())
 
             # var
             hat_std_list.append(est.ase(sol))
-            origin_list.append(est.ASE())
+            origin_std_list.append(est.ASE())
 
         # 处理估计结果, 两列
         hat_paras_arr = np.array(hat_paras_list)
         hat_std_arr = np.array(hat_std_list)
 
+        origin_paras_arr = np.array(origin_paras_list)
+        origin_std_arr = np.array(origin_std_list)
+
         # 计算bias
         est_values = np.mean(hat_paras_arr, axis=0)
         bias = true_values - est_values
 
+        origin_est_values = np.mean(origin_paras_arr, axis=0)
+        origin_bias = true_values - origin_est_values
+
         # 计算ase & esd
         ase = np.mean(hat_std_arr, axis=0)
-        origin_ase = np.mean(np.array(origin_list), axis=0)
+        origin_ase = np.mean(origin_std_arr, axis=0)
         esv = np.cov(hat_paras_arr, rowvar=False)
         esd = np.sqrt(esv[[0, 1], [0, 1]])
 
@@ -369,13 +404,13 @@ if __name__ == '__main__':
         cp_count = np.array([cp_beta_count, cp_gamma_count])
 
         cp = np.mean(cp_count, axis=1)
-        
+
         # 计算cp
-        o_cp_beta_count = (est_values[0] - 1.96 * origin_ase[0] <= hat_paras_arr[:, 0]) * (
-                hat_paras_arr[:, 0] <= est_values[0] + 1.96 * origin_ase[0]
+        o_cp_beta_count = (origin_est_values[0] - 1.96 * origin_ase[0] <= origin_paras_arr[:, 0]) * (
+                hat_paras_arr[:, 0] <= origin_est_values[0] + 1.96 * origin_ase[0]
         )
-        o_cp_gamma_count = (est_values[1] - 1.96 * origin_ase[1] <= hat_paras_arr[:, 1]) * (
-                hat_paras_arr[:, 1] <= est_values[1] + 1.96 * origin_ase[1])
+        o_cp_gamma_count = (origin_est_values[1] - 1.96 * origin_ase[1] <= origin_paras_arr[:, 1]) * (
+                hat_paras_arr[:, 1] <= origin_est_values[1] + 1.96 * origin_ase[1])
         o_cp_count = np.array([o_cp_beta_count, o_cp_gamma_count])
 
         o_cp = np.mean(o_cp_count, axis=1)
@@ -387,10 +422,11 @@ if __name__ == '__main__':
         print(f'ase is {ase}; esd is {esd}')
         print(f'cp is {cp}.')
         print('-------------------------------------------------------')
+        print(f'origin bias is {origin_bias}')
         print(f'origin ase is {origin_ase}; esd is {esd}')
         print(f'cp is {o_cp}')
         print('=======================================================\n')
 
 
-    for _ in range(5):
+    for _ in range(10):
         simulation()

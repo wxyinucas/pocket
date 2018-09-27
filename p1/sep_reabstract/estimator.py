@@ -15,6 +15,7 @@ from scipy.optimize import fsolve, root
 from tqdm import tqdm
 from time import time
 
+import matplotlib.pyplot as plt
 import numpy as np
 
 
@@ -23,7 +24,7 @@ class Estimator(Data):
     继承了data的结构，直接估计即可。
     """
 
-    def __init__(self, true_beta, true_gamma, n_sample=200, pr=1, source='random'):
+    def __init__(self, true_beta, true_gamma, n_sample=200, pr=0.5, source='random'):
         super(Estimator, self).__init__(true_beta, true_gamma, n_sample, pr, source)
 
         # 计算估计方差时被导入
@@ -164,8 +165,7 @@ class Estimator(Data):
 
         exp = np.exp(gamma * self.x)
         tmp = (compare(self.c, self.c).T * (q1[:, None] - self.q_bar(q1, self.c, exp)[None, :]) * (
-                q2[:, None] - self.q_bar(q2, self.c, exp)[None, :])) @ \
-              self.dt
+                q2[:, None] - self.q_bar(q2, self.c, exp)[None, :])) @ self.dt
         assert tmp.shape == (self.n,)
 
         return np.sum(tmp)
@@ -219,21 +219,21 @@ if __name__ == '__main__':
         hat_paras_list = []
         hat_std_list = []
 
-        true_values = np.array([1, 1])
+        true_values = np.array([0, 1])
 
         # np.random.seed(42)
 
         start_time = time()
-        for _ in tqdm(range(200)):
+        for _ in tqdm(range(1000)):
             # bias
-            est = Estimator(*true_values)
+            est = Estimator(*true_values, n_sample=200)
             # sol = fsolve(est.cal_equation, true_values)
-            sol = root(est.cal_equation, np.array([0, 0]), method='Krylov').x
+            sol = root(est.cal_equation, true_values, method='Krylov').x
             hat_paras_list.append(sol)
 
             # var
             hat_std_list.append(est.ase(sol))
-            # hat_std_list.append(est.ase(true_values))
+            # hat_std_list.append(est.ase(true_values))  # 真值代入效果也不好
 
         # 处理估计结果, 两列
         hat_paras_arr = np.array(hat_paras_list)
@@ -266,5 +266,6 @@ if __name__ == '__main__':
         print(f'cp is {cp}.')
         print('=======================================================\n')
 
-    for _ in range(5):
+
+    for _ in range(2):
         simulation()
