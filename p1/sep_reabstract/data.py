@@ -87,7 +87,6 @@ class Data:
 
         self.q = self.q[:, order_c]
 
-
     def cal_dt(self, c):
 
         c_all = np.array([0, *c])

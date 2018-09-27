@@ -97,12 +97,21 @@ def separate(T):
     return np.array(time), np.array(count)
 
 
-def r_i(time_arr, r_arr, T_arr):
+def r_i(time_arr, T_arr, r_arr):
     """
-    给定时间向量time_arr， 判断每一个是否在t_arr中。
+    给定时间向量time_arr， 判断每一个是否可观测。
     返回值是与time_arr等长的0，1arr。
     """
+    assert len(time_arr.shape) in [0, 1] or time_arr.shape[1] == 1, f'time_arr wrong shape {time_arr.shape}.'
+    assert len(r_arr.shape) == 1 or r_arr.shape[0] == 1, f'r_arr wrong shape {r_arr.shape}.'
+    assert r_arr.shape[0] == T_arr.shape[0] - 1
 
+    com = compare(time_arr, T_arr)
+    t_in_T_index = len(T_arr) - np.sum(com, axis=1)
+    t_r_marker = r_arr[t_in_T_index]
+
+    assert t_in_T_index.shape == time_arr.shape
+    return t_r_marker
 
 
 if __name__ == '__main__':
@@ -131,5 +140,11 @@ if __name__ == '__main__':
     # print(flatten(T_))
 
     # separate
-    T = np.array([np.array([]), np.array([[2, 3], [3, 4], [5, 2]])])
-    print(separate(T))
+    # T = np.array([np.array([]), np.array([[2, 3], [3, 4], [5, 2]])])
+    # print(separate(T))
+
+    # r_i
+    t = np.arange(4) + 0.5
+    T = np.array([0, 1, 2, 3, 4, 5])
+    r = np.array([0, 1, 0, 1, 0])
+    print(r_i(t, T, r))

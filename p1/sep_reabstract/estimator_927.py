@@ -24,7 +24,7 @@ class Estimator(Data):
     继承了data的结构，直接估计即可。
     """
 
-    def __init__(self, true_beta, true_gamma, n_sample=200, pr=1, source='random'):
+    def __init__(self, true_beta, true_gamma, n_sample=200, pr=0.5, source='random'):
         super(Estimator, self).__init__(true_beta, true_gamma, n_sample, pr, source)
 
         # 计算估计方差时被导入
@@ -49,14 +49,6 @@ class Estimator(Data):
 
         return tmp
 
-    def q_matrix(self, q, time, exp):
-        """
-        生成矩阵q_i - q_bar(q)_j
-        """
-        tmp = q[:, None] - self.q_bar(q, time, exp)[None, :]
-        assert tmp.shape == (q.shape[0], time.shape[0])
-        return tmp
-
     def vec_dN(self, q, time_stack, exp, num_stack=0):
         """
         取值于dN,即t_ij构成的向量。Q_i - Q(theta, t_ij)
@@ -79,10 +71,7 @@ class Estimator(Data):
 
     def vec_dt(self, q, time_stack, exp, beta):
         """
-        取值于dt
-        Q_i - Q(theta, c_j)
-
-        time_stack 决定了是recurrent 还是 panel data
+        取值于dt,Q_i - Q(theta, c_j)
         """
 
         try:
@@ -175,7 +164,8 @@ class Estimator(Data):
         gamma = self.hat_gamma
 
         exp = np.exp(gamma * self.x)
-        tmp = (compare(self.c, self.c).T * self.q_matrix(q1, self.c, exp) * self.q_matrix(q2, self.c, exp)) @ self.dt
+        tmp = (compare(self.c, self.c).T * (q1[:, None] - self.q_bar(q1, self.c, exp)[None, :]) * (
+                q2[:, None] - self.q_bar(q2, self.c, exp)[None, :])) @ self.dt
         assert tmp.shape == (self.n,)
 
         return np.sum(tmp)
@@ -187,14 +177,16 @@ class Estimator(Data):
         exp = np.exp(gamma * self.x)
         time_arr = flatten(self.t)
 
-        dN_arr = exp @ (self.q_matrix(q1, time_arr, exp) * self.q_matrix(q2, time_arr, exp)
+        dN_arr = exp @ ((q1[:, None] - self.q_bar(q1, time_arr, exp)[None, :]) * (
+                q2[:, None] - self.q_bar(q2, time_arr, exp)[None, :])
                         * compare(time_arr, self.c).T) / (compare(time_arr, self.c) @ exp)
         assert dN_arr.shape == time_arr.shape
         dN = np.sum(dN_arr)
 
-        dt = beta * ((exp @ (
-                    self.q_matrix(q1, self.c, exp) * self.q_matrix(q2, self.c, exp) * compare(self.c, self.c).T)) / (
-                                 compare(self.c, self.c) @ exp)) @ (compare(self.c, self.c) * self.dt[:, None]) @ self.z
+        dt = beta * ((exp @ ((q1[:, None] - self.q_bar(q1, self.c, exp)[None, :]) * (
+                q2[:, None] - self.q_bar(q2, self.c, exp)[None, :])
+                             * compare(self.c, self.c).T)) / (compare(self.c, self.c) @ exp)) @ (
+                     compare(self.c, self.c) * self.dt[:, None]) @ self.z
 
         result = dN - dt  # result还是太大了，原因是dt太小了么？
         assert result.shape == ()
@@ -227,14 +219,14 @@ if __name__ == '__main__':
         hat_paras_list = []
         hat_std_list = []
 
-        true_values = np.array([1, 1])
+        true_values = np.array([0, 1])
 
-        # np.random.seed(42)
+        np.random.seed(42)
 
         start_time = time()
         for _ in tqdm(range(100)):
             # bias
-            est = Estimator(*true_values, n_sample=500)
+            est = Estimator(*true_values, n_sample=100)
             # sol = fsolve(est.cal_equation, true_values)
             sol = root(est.cal_equation, true_values, method='Krylov').x
             hat_paras_list.append(sol)
@@ -275,5 +267,5 @@ if __name__ == '__main__':
         print('=======================================================\n')
 
 
-    for _ in range(5):
+    for _ in range(1):
         simulation()
