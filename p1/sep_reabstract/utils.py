@@ -104,28 +104,30 @@ def r_i(time_arr, T_arr, r_arr):
     """
     assert len(time_arr.shape) in [0, 1] or time_arr.shape[1] == 1, f'time_arr wrong shape {time_arr.shape}.'
     assert len(r_arr.shape) in [0, 1] or r_arr.shape[0] == 1, f'r_arr wrong shape {r_arr.shape}.'
-    assert r_arr.shape[0] == T_arr.shape[0] - 1
+    assert r_arr.shape[0] == T_arr.shape[0]
 
     com = compare(time_arr, T_arr)
     t_in_T_index = len(T_arr) - np.sum(com, axis=1)
     t_r_indicator = r_arr[t_in_T_index]
 
-    assert t_in_T_index.shape == time_arr.shape
+    assert t_in_T_index.shape == time_arr.shape or (time_arr.shape == () and t_in_T_index.shape == (1,))
     return t_r_indicator
 
 
-def r_mat(t_stack, T_stack, r_stack):
+def r_mat(t_arr, T_stack, r_stack):
     """
     封装r_i()，用来生成不规则矩阵t_r_indicators。
+
+    注意：T_stack & r_stack是列；t_stack 是行。(但在循环时，是对掉过来的)
     """
-    assert t_stack.shape[0] == T_stack.shape[0] == r_stack.shape[0]
+    assert T_stack.shape[0] == r_stack.shape[0]
     tmp = []
 
-    for ite in range(t_stack.shape[0]):
-        tmp.append(r_i(t_stack[ite], T_stack[ite], r_stack[ite]))
+    for ite in range(T_stack.shape[0]):
+        tmp.append(r_i(t_arr, T_stack[ite], r_stack[ite]))
 
-    t_r_indicators = np.array(tmp)
-    assert t_r_indicators.shape[0] == t_stack.shape[0]
+    t_r_indicators = np.array(tmp).T
+    assert t_r_indicators.shape == (t_stack.shape[0], len(T_stack))
     return t_r_indicators
 
 
@@ -159,13 +161,13 @@ if __name__ == '__main__':
     # print(separate(T))
 
     # r_i
-    t = np.arange(4) + 0.5
-    T = np.array([0, 1, 2, 3, 4, 5])
+    t = np.arange(3) + 0.5
+    T = np.array([1, 2, 3, 4, 5])
     r = np.array([0, 1, 0, 1, 0])
     print(r_i(t, T, r))
 
     # r_mat
     t_stack = np.array([t, t, t])
-    T_stack = np.array([T, T, T])
+    T_stack = np.array([T, T+1, T-1])
     r_stack = np.array([r, r, r])
-    print(r_mat(t_stack, T_stack, r_stack))
+    print(r_mat(t, T_stack, r_stack))

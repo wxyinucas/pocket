@@ -20,7 +20,7 @@ TAU = 5
 
 class Data:
 
-    def __init__(self, true_beta, true_gamma, n_sample=200, pr=1, source='random'):
+    def __init__(self, true_beta, true_gamma, n_sample=200, pr=0.5, source='random'):
         """
         生成n_sample个数据。
         """
@@ -81,9 +81,8 @@ class Data:
             result = array[order_c]
             return result
 
-        [self.x, self.z, self.c, self.m, self.M, self.t, self.T, self.r] = map(order,
-                                                                               [self.x, self.z, self.c, self.m, self.M,
-                                                                                self.t, self.T, self.r])
+        [self.x, self.z, self.c, self.m, self.M, self.t, self.T, self.T0, self.r] = map(order,
+            [self.x, self.z, self.c, self.m, self.M, self.t, self.T, self.T0, self.r])
 
         self.q = self.q[:, order_c]
 

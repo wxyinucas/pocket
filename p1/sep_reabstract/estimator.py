@@ -24,14 +24,17 @@ class Estimator(Data):
     继承了data的结构，直接估计即可。
     """
 
-    def __init__(self, true_beta, true_gamma, n_sample=200, pr=1, source='random'):
+    def __init__(self, true_beta, true_gamma, n_sample=200, pr=0.8, source='random'):
         super(Estimator, self).__init__(true_beta, true_gamma, n_sample, pr, source)
 
         # 计算估计方差时被导入
         self.hat_beta = None
         self.hat_gamma = None
 
-        # 把T0取出来用
+        # 把T0 & T取出来用
+        T0 = self.T0
+        self.T0_t, self.T0_n = separate(T0)
+
         T = self.T
         self.T_t, self.T_n = separate(T)
 
@@ -115,9 +118,9 @@ class Estimator(Data):
         re_dN_arr = np.array([self.vec_dN(self.z, self.t, exp), self.vec_dN(self.x, self.t, exp)])
         re_dt_arr = np.array([self.vec_dt(self.z, self.c, exp, beta), self.vec_dt(self.x, self.c, exp, beta)])
 
-        pa_dN_arr = np.array([self.vec_dN(self.z, self.T_t, exp, self.T_n),
-                              self.vec_dN(self.x, self.T_t, exp, self.T_n)])
-        pa_dt_arr = np.array([self.vec_dt(self.z, self.T_t, exp, beta), self.vec_dt(self.x, self.T_t, exp, beta)])
+        pa_dN_arr = np.array([self.vec_dN(self.z, self.T0_t, exp, self.T0_n),
+                              self.vec_dN(self.x, self.T0_t, exp, self.T0_n)])
+        pa_dt_arr = np.array([self.vec_dt(self.z, self.T0_t, exp, beta), self.vec_dt(self.x, self.T0_t, exp, beta)])
 
         assert re_dN_arr.shape == (2, self.n)
         assert pa_dN_arr.shape == (2, self.n)
@@ -143,8 +146,8 @@ class Estimator(Data):
         exp = np.exp(gamma * self.x)
 
         t_stack = self.t
-        T_stack = self.T_t
-        num_stack = self.T_n
+        T0_stack = self.T0_t
+        num_stack = self.T0_n
 
         v_mat = np.zeros((2, 2))
 
@@ -154,17 +157,17 @@ class Estimator(Data):
             z_rec_arr = self.z[i] - self.q_bar(self.z, t_stack[i], exp)
 
             # panel-data part
-            x_pan_arr = (self.x[i] - self.q_bar(self.x, T_stack[i], exp)) * num_stack[i]
-            z_pan_arr = (self.z[i] - self.q_bar(self.z, T_stack[i], exp)) * num_stack[i]
+            x_pan_arr = (self.x[i] - self.q_bar(self.x, T0_stack[i], exp)) * num_stack[i]
+            z_pan_arr = (self.z[i] - self.q_bar(self.z, T0_stack[i], exp)) * num_stack[i]
 
             # sum them separately
             rec_arr = np.array([z_rec_arr, x_rec_arr])  # 生成两行
             pan_arr = np.array([z_pan_arr, x_pan_arr])
 
             assert x_rec_arr.shape == t_stack[i].shape
-            assert x_pan_arr.shape == T_stack[i].shape
+            assert x_pan_arr.shape == T0_stack[i].shape
             assert rec_arr.shape == (2, t_stack[i].shape[0])
-            assert pan_arr.shape == (2, T_stack[i].shape[0])
+            assert pan_arr.shape == (2, T0_stack[i].shape[0])
             v_mat += rec_arr @ rec_arr.T + pan_arr @ pan_arr.T
 
         assert v_mat.shape == (2, 2)
