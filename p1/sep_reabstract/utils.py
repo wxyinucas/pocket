@@ -61,7 +61,7 @@ def modify_ob(T):
     T_tmp = list(T)
 
     for ite in range(len(T)):
-        T_tmp[ite] = np.array([0, *T_tmp[ite], 5])  # TAU = 5 here, 因为c不一定观测的到
+        T_tmp[ite] = np.array([*T_tmp[ite], 5])  # TAU = 5 here, 因为c不一定观测的到
 
     T_result = np.array(T_tmp)
 
@@ -103,15 +103,30 @@ def r_i(time_arr, T_arr, r_arr):
     返回值是与time_arr等长的0，1arr。
     """
     assert len(time_arr.shape) in [0, 1] or time_arr.shape[1] == 1, f'time_arr wrong shape {time_arr.shape}.'
-    assert len(r_arr.shape) == 1 or r_arr.shape[0] == 1, f'r_arr wrong shape {r_arr.shape}.'
+    assert len(r_arr.shape) in [0, 1] or r_arr.shape[0] == 1, f'r_arr wrong shape {r_arr.shape}.'
     assert r_arr.shape[0] == T_arr.shape[0] - 1
 
     com = compare(time_arr, T_arr)
     t_in_T_index = len(T_arr) - np.sum(com, axis=1)
-    t_r_marker = r_arr[t_in_T_index]
+    t_r_indicator = r_arr[t_in_T_index]
 
     assert t_in_T_index.shape == time_arr.shape
-    return t_r_marker
+    return t_r_indicator
+
+
+def r_mat(t_stack, T_stack, r_stack):
+    """
+    封装r_i()，用来生成不规则矩阵t_r_indicators。
+    """
+    assert t_stack.shape[0] == T_stack.shape[0] == r_stack.shape[0]
+    tmp = []
+
+    for ite in range(t_stack.shape[0]):
+        tmp.append(r_i(t_stack[ite], T_stack[ite], r_stack[ite]))
+
+    t_r_indicators = np.array(tmp)
+    assert t_r_indicators.shape[0] == t_stack.shape[0]
+    return t_r_indicators
 
 
 if __name__ == '__main__':
@@ -148,3 +163,9 @@ if __name__ == '__main__':
     T = np.array([0, 1, 2, 3, 4, 5])
     r = np.array([0, 1, 0, 1, 0])
     print(r_i(t, T, r))
+
+    # r_mat
+    t_stack = np.array([t, t, t])
+    T_stack = np.array([T, T, T])
+    r_stack = np.array([r, r, r])
+    print(r_mat(t_stack, T_stack, r_stack))

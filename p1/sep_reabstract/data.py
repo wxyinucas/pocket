@@ -71,7 +71,7 @@ class Data:
 
         # 预处理T&r，并生成观测time_list
         T = modify_ob(T_tmp)
-        self.t, self.T, self.r = change_time_matrix(t, T, r)
+        self.t, self.T0, self.r, self.T = change_time_matrix(t, T, r)
 
     def re_index(self):
 
