@@ -118,7 +118,7 @@ def r_mat(t_arr, T_stack, r_stack):
     """
     封装r_i()，用来生成不规则矩阵t_r_indicators。
 
-    注意：T_stack & r_stack是列；t_stack 是行。(但在循环时，是对掉过来的)
+    注意：T_stack & r_stack是行；t_stack 是列。(r_i(C_j)和其他记号的对应。)
     """
     assert T_stack.shape[0] == r_stack.shape[0]
     tmp = []
@@ -126,8 +126,8 @@ def r_mat(t_arr, T_stack, r_stack):
     for ite in range(T_stack.shape[0]):
         tmp.append(r_i(t_arr, T_stack[ite], r_stack[ite]))
 
-    t_r_indicators = np.array(tmp).T
-    assert t_r_indicators.shape == (t_stack.shape[0], len(T_stack))
+    t_r_indicators = np.array(tmp)
+    assert t_r_indicators.shape == (len(T_stack), t_arr.shape[0])
     return t_r_indicators
 
 

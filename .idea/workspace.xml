@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="60c4694b-06da-43a8-9d14-236c9f8b1baf" name="Default" comment="add T0">
+    <list default="true" id="60c4694b-06da-43a8-9d14-236c9f8b1baf" name="Default" comment="928 night">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/p1/sep_init/__generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/p1/sep_init/__generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/p1/sep_reabstract/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/p1/sep_reabstract/data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/p1/sep_reabstract/estimator.py" beforeDir="false" afterPath="$PROJECT_DIR$/p1/sep_reabstract/estimator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/p1/sep_reabstract/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/p1/sep_reabstract/utils.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,7 +30,7 @@
     <SUITE FILE_PATH="coverage/WXY_projects$utils.coverage" NAME="utils Coverage Results" MODIFIED="1538116882036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p1/sep_reabstract" />
     <SUITE FILE_PATH="coverage/WXY_projects$__estimator.coverage" NAME="__estimator Coverage Results" MODIFIED="1537951500901" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p1/sep_init" />
     <SUITE FILE_PATH="coverage/WXY_Project$write_twice.coverage" NAME="write_twice Coverage Results" MODIFIED="1533089669308" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
-    <SUITE FILE_PATH="coverage/WXY_projects$estimator.coverage" NAME="estimator Coverage Results" MODIFIED="1538115168943" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p1/sep_reabstract" />
+    <SUITE FILE_PATH="coverage/WXY_projects$estimator.coverage" NAME="estimator Coverage Results" MODIFIED="1538271153876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p1/sep_reabstract" />
     <SUITE FILE_PATH="coverage/WXY_projects$estimator_test.coverage" NAME="estimator_test Coverage Results" MODIFIED="1536824522841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p1/sep_reabstract" />
     <SUITE FILE_PATH="coverage/WXY_Projects$what_is_pytorch.coverage" NAME="what_is_pytorch Coverage Results" MODIFIED="1531308094134" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytorch/60_minutes" />
     <SUITE FILE_PATH="coverage/WXY_Project$warm_up_numpy.coverage" NAME="warm_up_numpy Coverage Results" MODIFIED="1531905007895" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytorch/Learning_PyTorch_with_Examples" />
@@ -70,8 +67,8 @@
             <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/p1/sep_init/__generator.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="883">
-                    <caret line="71" column="44" selection-start-line="71" selection-start-column="44" selection-end-line="71" selection-end-column="44" />
+                  <state relative-caret-position="1257">
+                    <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
                   </state>
                 </provider>
               </entry>
@@ -247,18 +244,18 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Python Console" value="5994" />
+          <entry key="Python Console" value="6007" />
           <entry key="dummy" value="39" />
-          <entry key="py" value="21553" />
-          <entry key="txt" value="678" />
+          <entry key="py" value="21584" />
+          <entry key="txt" value="688" />
           <entry key="utils" value="134" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="717" />
-          <entry key="Python" value="27681" />
+          <entry key="PLAIN_TEXT" value="727" />
+          <entry key="Python" value="27725" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -269,11 +266,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/p1/sep_reabstract/estimator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
-              <caret line="195" selection-start-line="195" selection-end-line="195" />
+            <state relative-caret-position="400">
+              <caret line="194" column="107" lean-forward="true" selection-start-line="194" selection-start-column="107" selection-end-line="194" selection-end-column="107" />
               <folding>
                 <element signature="e#216#237#0" expanded="true" />
               </folding>
@@ -281,20 +278,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/p1/sep_reabstract/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="120" column="44" selection-start-line="120" selection-start-column="44" selection-end-line="120" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="692">
+              <caret line="130" column="25" lean-forward="true" selection-start-line="130" selection-start-column="25" selection-end-line="130" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -463,9 +451,9 @@
         <option value="$PROJECT_DIR$/p1/sep_reabstract/estimator_927.py" />
         <option value="$PROJECT_DIR$/p1/sep_reabstract/timelist.py" />
         <option value="$PROJECT_DIR$/p1/sep_reabstract/data.py" />
-        <option value="$PROJECT_DIR$/p1/sep_reabstract/estimator.py" />
-        <option value="$PROJECT_DIR$/p1/sep_reabstract/utils.py" />
         <option value="$PROJECT_DIR$/p1/sep_init/__generator.py" />
+        <option value="$PROJECT_DIR$/p1/sep_reabstract/utils.py" />
+        <option value="$PROJECT_DIR$/p1/sep_reabstract/estimator.py" />
       </list>
     </option>
   </component>
@@ -592,7 +580,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.utils">
+  <component name="RunManager" selected="Python.estimator">
     <configuration name="Unnamed" type="PythonConfigurationType" factoryName="Python">
       <module name="WXY_Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -778,8 +766,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.utils" />
         <item itemvalue="Python.estimator" />
+        <item itemvalue="Python.utils" />
         <item itemvalue="Python.data" />
         <item itemvalue="Python.timelist" />
         <item itemvalue="Python.var_data_test" />
@@ -1042,7 +1030,14 @@
       <option name="project" value="LOCAL" />
       <updated>1538111904208</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="928 night">
+      <created>1538129263141</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1538129263141</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1070,7 +1065,7 @@
       <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49761716" weight="0.32830188" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49928468" weight="0.540724" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49928468" weight="0.5403774" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5023828" side_tool="true" weight="0.32830188" />
       <window_info anchor="bottom" id="Python Console" order="11" sideWeight="0.49713877" weight="0.28528303" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3295626" />
@@ -1145,7 +1140,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="starting estimator" />
     <MESSAGE value="re_abstract" />
     <MESSAGE value="re_write by old notes" />
     <MESSAGE value="ai..." />
@@ -1170,7 +1164,8 @@
     <MESSAGE value="new function q_matrix" />
     <MESSAGE value="9_27 early night" />
     <MESSAGE value="add T0" />
-    <option name="LAST_COMMIT_MESSAGE" value="add T0" />
+    <MESSAGE value="928 night" />
+    <option name="LAST_COMMIT_MESSAGE" value="928 night" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1469,16 +1464,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/p1/sep_reabstract/estimator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="195" selection-start-line="195" selection-end-line="195" />
-          <folding>
-            <element signature="e#216#237#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/p1/sep_reabstract/data.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="426">
@@ -1496,17 +1481,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/p1/sep_reabstract/utils.py">
+    <entry file="file://$PROJECT_DIR$/p1/sep_init/__generator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="120" column="44" selection-start-line="120" selection-start-column="44" selection-end-line="120" selection-end-column="44" />
+        <state relative-caret-position="1257">
+          <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/p1/sep_init/__generator.py">
+    <entry file="file://$PROJECT_DIR$/p1/sep_reabstract/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="883">
-          <caret line="71" column="44" selection-start-line="71" selection-start-column="44" selection-end-line="71" selection-end-column="44" />
+        <state relative-caret-position="692">
+          <caret line="130" column="25" lean-forward="true" selection-start-line="130" selection-start-column="25" selection-end-line="130" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/p1/sep_reabstract/estimator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="194" column="107" lean-forward="true" selection-start-line="194" selection-start-column="107" selection-end-line="194" selection-end-column="107" />
+          <folding>
+            <element signature="e#216#237#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
