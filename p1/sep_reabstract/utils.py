@@ -14,7 +14,7 @@ import numpy as np
 
 def compare(v1, v2):
     assert len(v1.shape) in [0, 1] or v1.shape[1] == 1, f'v1 wrong shape {v1.shape}.'
-    assert len(v2.shape) == 1 or v2.shape[0] == 1, f'v2 wrong shape {v2.shape}.'
+    assert len(v2.shape) in [0, 1] or v2.shape[0] == 1, f'v2 wrong shape {v2.shape}.'
 
     return (v1.reshape([-1, 1]) <= v2.reshape([1, -1])).astype(np.int32)
 

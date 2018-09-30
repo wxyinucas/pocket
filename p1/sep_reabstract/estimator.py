@@ -10,7 +10,7 @@ __author__ = 'Xiaoyu Wang'
 
 """
 from data import Data
-from utils import compare, separate, flatten, r_mat
+from utils import compare, separate, flatten, r_i, r_mat
 from scipy.optimize import fsolve, root
 from tqdm import tqdm
 from time import time
@@ -24,7 +24,7 @@ class Estimator(Data):
     继承了data的结构，直接估计即可。
     """
 
-    def __init__(self, true_beta, true_gamma, n_sample=200, pr=0.8, source='random'):
+    def __init__(self, true_beta, true_gamma, n_sample=200, pr=0.1, source='random'):
         super(Estimator, self).__init__(true_beta, true_gamma, n_sample, pr, source)
 
         # 计算估计方差时被导入
@@ -138,6 +138,36 @@ class Estimator(Data):
 
     # Now variance
 
+    def mu(self, t):
+        """
+        Baseline hazard function of recurrent events.
+        """
+        t = np.array(t)
+        assert t.shape == ()
+        beta = self.hat_beta
+        gamma = self.hat_gamma
+        exp = np.exp(gamma * self.x)
+
+        # 计算dN
+        t_stack = self.t
+        T_stack = self.T_t
+        r_stack = self.r
+
+        tmp = 0
+        # tmp1 = 0
+        for ite in range(self.n):
+            # tmp += r_i(t_stack[ite], T_stack[ite], r_stack[ite]) / (compare(t_stack[ite], self.c) @ exp) @ compare(
+            #     t_stack[ite], t).reshape(-1)
+            tmp += 1 / (r_mat(t_stack[ite], T_stack[ite], r_stack[ite]) * compare(t_stack[ite], self.c) @ exp) @ compare(
+                t_stack[ite], t).reshape(-1)
+        dN = tmp
+
+        # 计算dt
+        dt = beta * (((r_mat(self.c, T_stack, r_stack) * compare(self.c, self.c).T) @ self.z) / (
+                    compare(self.c, self.c) @ exp)) @ (compare(self.c, t).reshape(-1) * self.dt)
+
+        return dN - dt
+
     def v_matrix(self):
         """
         估计矩阵V
@@ -238,7 +268,7 @@ if __name__ == '__main__':
         # np.random.seed(42)
 
         start_time = time()
-        for _ in tqdm(range(100)):
+        for _ in tqdm(range(10)):
             # bias
             est = Estimator(*true_values, n_sample=100)
             # sol = fsolve(est.cal_equation, true_values)
@@ -248,6 +278,11 @@ if __name__ == '__main__':
             # var
             hat_std_list.append(est.ase(sol))
             # hat_std_list.append(est.ase(true_values))  # 真值代入效果也不好
+
+            # mu
+            for i in range(5):
+                print('\n')
+                print(f'mu({i}) is {est.mu(i)}')
 
         # 处理估计结果, 两列
         hat_paras_arr = np.array(hat_paras_list)
@@ -281,5 +316,5 @@ if __name__ == '__main__':
         print('=======================================================\n')
 
 
-    for _ in range(5):
+    for _ in range(1):
         simulation()
