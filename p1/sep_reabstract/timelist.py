@@ -68,6 +68,10 @@ def change_time_list(t: np.array, T: np.array, r: np.array):
     if r[-1] == 0:
         T0_pairs = T0_pairs[:-1]
 
+    # 删除最后一个观测区间：除了r=1有意义，且已经被保留，剩下的无所谓了。
+    # T_pairs = T_pairs[:-1]
+    # r = r[:-1]
+
     return t_ob, T0_pairs, r, T_pairs
 
 
@@ -85,7 +89,8 @@ def change_time_matrix(t: np.array, T: np.array, r: np.array):
     for ite in range(len(t_list)):
         t_list[ite], T0_list[ite], r_list[ite], T_list[ite] = change_time_list(t_list[ite], T_list[ite], r_list[ite])
 
-    return np.array(t_list), np.array(T0_list), r, np.array(T_list)
+    t_arr, T0_arr, r_arr, T_arr = list(map(np.array, [t_list, T0_list, r_list, T_list]))
+    return  t_arr, T0_arr, r_arr, T_arr
 
 
 if __name__ == '__main__':
@@ -101,7 +106,7 @@ if __name__ == '__main__':
     assert (tt == np.array([0.5, 2.5, 3])).all()
     # assert TT == {2: 6}
     assert (TT0 == np.array([[2, 6]])).all()
-    assert (rr == [1, 0, 1, 0]).all()
+    # assert (rr == [1, 0, 1, 0]).all()
 
     # todo: 在project中设定全局常量。
 

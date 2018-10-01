@@ -150,23 +150,28 @@ class Estimator(Data):
 
         # 计算dN
         t_stack = self.t
+        time_arr = flatten(t_stack)
         T_stack = self.T_t
         r_stack = self.r
 
-        tmp = 0
-        # tmp1 = 0
-        for ite in range(self.n):
-            # tmp += r_i(t_stack[ite], T_stack[ite], r_stack[ite]) / (compare(t_stack[ite], self.c) @ exp) @ compare(
-            #     t_stack[ite], t).reshape(-1)
-            tmp += 1 / (r_mat(t_stack[ite], T_stack[ite], r_stack[ite]) * compare(t_stack[ite], self.c) @ exp) @ compare(
-                t_stack[ite], t).reshape(-1)
-        dN = tmp
+        # 计算dt_arr
+        dt_arr = np.array([0, *flatten(T_stack), *self.c])
+        dt_arr.sort()
+        dt_arr = dt_arr[dt_arr < 5]
+
+        dt = np.diff(dt_arr)
+        dt_arr = dt_arr[1:]
+
+        # 计算mu
+        mu_dN = np.sum(compare(time_arr, t).reshape(-1) / (
+                (r_mat(time_arr, T_stack, r_stack).T * compare(time_arr, self.c)) @ exp), axis=0)
 
         # 计算dt
-        dt = beta * (((r_mat(self.c, T_stack, r_stack) * compare(self.c, self.c).T) @ self.z) / (
-                    compare(self.c, self.c) @ exp)) @ (compare(self.c, t).reshape(-1) * self.dt)
+        mu_dt = beta * np.nansum((((r_mat(dt_arr, T_stack, r_stack).T * compare(dt_arr, self.c)) @ self.z) / (
+                (r_mat(dt_arr, T_stack, r_stack).T * compare(dt_arr, self.c)) @ exp)) * (
+                         compare(dt_arr, t).reshape(-1) * dt))
 
-        return dN - dt
+        return mu_dN - mu_dt
 
     def v_matrix(self):
         """
