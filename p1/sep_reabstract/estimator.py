@@ -24,7 +24,7 @@ class Estimator(Data):
     继承了data的结构，直接估计即可。
     """
 
-    def __init__(self, true_beta, true_gamma, n_sample=200, pr=0.1, source='random'):
+    def __init__(self, true_beta, true_gamma, n_sample=200, pr=1, source='random'):
         super(Estimator, self).__init__(true_beta, true_gamma, n_sample, pr, source)
 
         # 计算估计方差时被导入
@@ -241,6 +241,12 @@ class Estimator(Data):
         assert result.shape == ()
         return result
 
+    def a_tdlam(self, q1, q2):
+        gamma = self.hat_gamma
+        beta = self.hat_beta
+
+        exp = np.exp(gamma * self.x)
+
     def ase(self, hat_paras: np.array):
         # 载入估计量
         self.hat_beta = hat_paras[0]
@@ -273,9 +279,9 @@ if __name__ == '__main__':
         # np.random.seed(42)
 
         start_time = time()
-        for _ in tqdm(range(10)):
+        for _ in tqdm(range(200)):
             # bias
-            est = Estimator(*true_values, n_sample=100)
+            est = Estimator(*true_values, n_sample=200)
             # sol = fsolve(est.cal_equation, true_values)
             sol = root(est.cal_equation, true_values, method='Krylov').x
             hat_paras_list.append(sol)
@@ -284,10 +290,17 @@ if __name__ == '__main__':
             hat_std_list.append(est.ase(sol))
             # hat_std_list.append(est.ase(true_values))  # 真值代入效果也不好
 
-            # mu
-            for i in range(5):
-                print('\n')
-                print(f'mu({i}) is {est.mu(i)}')
+            # # mu
+            # for i in range(5):
+            #     print('\n')
+            #     print(f'mu({i}) is {est.mu(i)}')
+            # x = np.arange(0, 5, 0.1)
+            # y = []
+            # for i in x:
+            #     y.append(est.mu(i))
+            # plt.plot(x, y)
+            # plt.ylim(0, 6)
+            # plt.show()
 
         # 处理估计结果, 两列
         hat_paras_arr = np.array(hat_paras_list)

@@ -86,3 +86,4 @@ class Record(object):
         print('The parameter are beta = {}, gamma = {}'.format(self.beta, self.gamma))
         print('The covariant are z = {}, x = {}\n'.format(self.z, self.x))
         print('The time list is: \n {} \n'.format(self.time_list))
+#
