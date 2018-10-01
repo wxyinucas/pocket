@@ -24,7 +24,7 @@ class Estimator(Data):
     继承了data的结构，直接估计即可。
     """
 
-    def __init__(self, true_beta, true_gamma, n_sample=200, pr=1, source='random'):
+    def __init__(self, true_beta, true_gamma, n_sample=200, pr=0.8, source='random'):
         super(Estimator, self).__init__(true_beta, true_gamma, n_sample, pr, source)
 
         # 计算估计方差时被导入
@@ -169,7 +169,7 @@ class Estimator(Data):
         # 计算dt
         mu_dt = beta * np.nansum((((r_mat(dt_arr, T_stack, r_stack).T * compare(dt_arr, self.c)) @ self.z) / (
                 (r_mat(dt_arr, T_stack, r_stack).T * compare(dt_arr, self.c)) @ exp)) * (
-                         compare(dt_arr, t).reshape(-1) * dt))
+                                         compare(dt_arr, t).reshape(-1) * dt))
 
         return mu_dN - mu_dt
 
@@ -203,7 +203,7 @@ class Estimator(Data):
             assert x_pan_arr.shape == T0_stack[i].shape
             assert rec_arr.shape == (2, t_stack[i].shape[0])
             assert pan_arr.shape == (2, T0_stack[i].shape[0])
-            v_mat += rec_arr @ rec_arr.T + pan_arr @ pan_arr.T
+            v_mat += rec_arr @ rec_arr.T + 0.6 * pan_arr @ pan_arr.T
 
         assert v_mat.shape == (2, 2)
 
@@ -243,9 +243,25 @@ class Estimator(Data):
 
     def a_tdlam(self, q1, q2):
         gamma = self.hat_gamma
-        beta = self.hat_beta
 
         exp = np.exp(gamma * self.x)
+        T0_t = flatten(self.T0_t)
+
+        tmp = ((compare(T0_t, self.c).T * self.q_matrix(q1, T0_t, exp) * self.q_matrix(q2, T0_t, exp)) / (
+                compare(T0_t, self.c) @ exp)) @ T0_t
+        assert tmp.shape == self.c.shape
+        return np.sum(tmp)
+
+    def a_mudlam(self, q1, q2):
+        gamma = self.hat_gamma
+
+        exp = np.exp(gamma * self.x)
+        T0_t = flatten(self.T0_t)
+
+        tmp = ((exp @ (compare(T0_t, self.c).T * self.q_matrix(q1, T0_t, exp) * self.q_matrix(q2, T0_t, exp))) / (
+                compare(T0_t, self.c) @ exp)) @ T0_t
+        assert tmp.shape == ()
+        return tmp
 
     def ase(self, hat_paras: np.array):
         # 载入估计量
@@ -255,10 +271,10 @@ class Estimator(Data):
         # 分别计算V和A
         v_mat = self.v_matrix()
 
-        a11 = self.a_dt(self.z, self.z)
-        a12 = self.a_dmu(self.z, self.x)
-        a21 = self.a_dt(self.z, self.x)
-        a22 = self.a_dmu(self.x, self.x)
+        a11 = self.a_dt(self.z, self.z) + self.a_tdlam(self.z, self.z)
+        a12 = self.a_dmu(self.z, self.x) + self.a_mudlam(self.z, self.x)
+        a21 = self.a_dt(self.z, self.x) + self.a_tdlam(self.z, self.x)
+        a22 = self.a_dmu(self.x, self.x) + self.a_mudlam(self.x, self.x)
 
         a_mat = np.array([[a11, a12], [a21, a22]])
         a_inv = np.linalg.inv(a_mat)
@@ -281,7 +297,7 @@ if __name__ == '__main__':
         start_time = time()
         for _ in tqdm(range(200)):
             # bias
-            est = Estimator(*true_values, n_sample=200)
+            est = Estimator(*true_values, n_sample=100)
             # sol = fsolve(est.cal_equation, true_values)
             sol = root(est.cal_equation, true_values, method='Krylov').x
             hat_paras_list.append(sol)
@@ -301,6 +317,7 @@ if __name__ == '__main__':
             # plt.plot(x, y)
             # plt.ylim(0, 6)
             # plt.show()
+
 
         # 处理估计结果, 两列
         hat_paras_arr = np.array(hat_paras_list)
@@ -334,5 +351,5 @@ if __name__ == '__main__':
         print('=======================================================\n')
 
 
-    for _ in range(1):
+    for _ in range(10):
         simulation()
