@@ -14,7 +14,10 @@ from utils import compare, separate, flatten, r_i, r_mat
 from scipy.optimize import fsolve, root
 from tqdm import tqdm
 from time import time
+from itertools import product
 
+import sys
+import os
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -284,72 +287,92 @@ class Estimator(Data):
         return ase
 
 
+# 定义模拟主函数
+def simulation(beta, gamma, pr):
+    hat_paras_list = []
+    hat_std_list = []
+
+    true_values = np.array([beta, gamma])
+    # true_values = np.array([1, 1])
+    # np.random.seed(42)
+
+    start_time = time()
+    for _ in tqdm(range(200)):
+        # bias
+        est = Estimator(*true_values, pr=pr, n_sample=100)
+        # sol = fsolve(est.cal_equation, true_values)
+        sol = root(est.cal_equation, true_values, method='Krylov').x
+        hat_paras_list.append(sol)
+
+        # var
+        hat_std_list.append(est.ase(sol))
+        # hat_std_list.append(est.ase(true_values))  # 真值代入效果也不好
+
+        # # mu
+        # for i in range(5):
+        #     print('\n')
+        #     print(f'mu({i}) is {est.mu(i)}')
+        # x = np.arange(0, 5, 0.1)
+        # y = []
+        # for i in x:
+        #     y.append(est.mu(i))
+        # plt.plot(x, y)
+        # plt.ylim(0, 6)
+        # plt.show()
+
+    # 处理估计结果, 两列
+    hat_paras_arr = np.array(hat_paras_list)
+    hat_std_arr = np.array(hat_std_list)
+
+    # 计算bias
+    est_values = np.mean(hat_paras_arr, axis=0)
+    bias = true_values - est_values
+
+    # 计算ase & esd
+    ase = np.mean(hat_std_arr, axis=0)
+    esv = np.cov(hat_paras_arr, rowvar=False)
+    esd = np.sqrt(esv[[0, 1], [0, 1]])
+
+    # 计算cp
+    cp_beta_count = (est_values[0] - 1.96 * ase[0] <= hat_paras_arr[:, 0]) * (
+            hat_paras_arr[:, 0] <= est_values[0] + 1.96 * ase[0]
+    )
+    cp_gamma_count = (est_values[1] - 1.96 * ase[1] <= hat_paras_arr[:, 1]) * (
+            hat_paras_arr[:, 1] <= est_values[1] + 1.96 * ase[1])
+    cp_count = np.array([cp_beta_count, cp_gamma_count])
+
+    cp = np.mean(cp_count, axis=1)
+
+    print(f'running time is {time() - start_time:.2f}s.')
+    print('-------------------------------------------------------')
+    print(f'bias is {bias}.')
+    print(f'ase is {ase}; esd is {esd}')
+    print(f'cp is {cp}.')
+
+
 if __name__ == '__main__':
+    try:
+        os.remove('./output.txt')
+    except FileNotFoundError:
+        pass
 
-    def simulation():
-        hat_paras_list = []
-        hat_std_list = []
+    console = sys.stdout
+    total_start = time()
+    for ite in product([-1, 0, 1], [0, 1], [0.2, 0.5, 0.8]):
+        with open('./output.txt', 'a+') as f:
+            # 写入程序
+            sys.stdout = f
+            file_start = os.SEEK_CUR
+            print('\n=======================================================')
+            print(f'\nThe setting is beta:{ite[0]}, gamma:{ite[1]}, pr:{ite[2]}')
+            print('=======================================================\n')
 
-        true_values = np.array([1, 1])
+            for _ in range(3):
+                simulation(*ite)
 
-        # np.random.seed(42)
+            # 写入console
+            sys.stdout = console
+            f.seek(file_start)
+            print(f.read())
 
-        start_time = time()
-        for _ in tqdm(range(200)):
-            # bias
-            est = Estimator(*true_values, n_sample=100)
-            # sol = fsolve(est.cal_equation, true_values)
-            sol = root(est.cal_equation, true_values, method='Krylov').x
-            hat_paras_list.append(sol)
-
-            # var
-            hat_std_list.append(est.ase(sol))
-            # hat_std_list.append(est.ase(true_values))  # 真值代入效果也不好
-
-            # # mu
-            # for i in range(5):
-            #     print('\n')
-            #     print(f'mu({i}) is {est.mu(i)}')
-            # x = np.arange(0, 5, 0.1)
-            # y = []
-            # for i in x:
-            #     y.append(est.mu(i))
-            # plt.plot(x, y)
-            # plt.ylim(0, 6)
-            # plt.show()
-
-
-        # 处理估计结果, 两列
-        hat_paras_arr = np.array(hat_paras_list)
-        hat_std_arr = np.array(hat_std_list)
-
-        # 计算bias
-        est_values = np.mean(hat_paras_arr, axis=0)
-        bias = true_values - est_values
-
-        # 计算ase & esd
-        ase = np.mean(hat_std_arr, axis=0)
-        esv = np.cov(hat_paras_arr, rowvar=False)
-        esd = np.sqrt(esv[[0, 1], [0, 1]])
-
-        # 计算cp
-        cp_beta_count = (est_values[0] - 1.96 * ase[0] <= hat_paras_arr[:, 0]) * (
-                hat_paras_arr[:, 0] <= est_values[0] + 1.96 * ase[0]
-        )
-        cp_gamma_count = (est_values[1] - 1.96 * ase[1] <= hat_paras_arr[:, 1]) * (
-                hat_paras_arr[:, 1] <= est_values[1] + 1.96 * ase[1])
-        cp_count = np.array([cp_beta_count, cp_gamma_count])
-
-        cp = np.mean(cp_count, axis=1)
-
-        print('\n=======================================================')
-        print(f'running time is {time() - start_time:.2f}s.')
-        print('-------------------------------------------------------')
-        print(f'bias is {bias}.')
-        print(f'ase is {ase}; esd is {esd}')
-        print(f'cp is {cp}.')
-        print('=======================================================\n')
-
-
-    for _ in range(10):
-        simulation()
+    print(f'total time {time() - total_start}.')
