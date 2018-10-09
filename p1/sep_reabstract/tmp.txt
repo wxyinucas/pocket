@@ -36,3 +36,9 @@ cp is [0.939 0.913]
 =======================================================
 
 
+Sensedeal.ai is a talented company which tries to use NLP method analysing public company notice and financial announcement, in the aim to quantify investment risk.
+
+Take part in the main online service product FengMi, what I done was helping extracting key information from company announcement.
+At the beginning of my internship, I wrote labeling functions to auto-label data set. In the mean time, found the way to improve the process by experience, handle labeling functions faster in the group.
+Helping complete pledge information extraction part, which now is deployed online. As for this procedure was under construction then, choose which topic was a key decision. I made my suggestion with working experience.
+Study the algorithm behind, namely probability graph model, and optimize the procedure of  processing nlp data, making 40% time less to train a green hand, from 5 three days to 3. Firstly, I studied PGM in details, then write some code files to test my intuition whether agree with the engineering project. Then, I created series numerical experiments and put all these result together to identify  the most efficient settings. At last explicated the essence of the algorithm and made a speech to all group members.
