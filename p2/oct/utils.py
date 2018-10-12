@@ -90,7 +90,7 @@ def make_a_star(time_stack, cov1_arr):
     return tmp
 
 
-def find_loc(arr: np.array, num) -> int:
+def find_loc_scale(arr: np.array, num) -> int:
     """arr is sorted. Find the location of num in arr."""
     assert (np.sort(arr) == arr).all()
 
@@ -98,6 +98,13 @@ def find_loc(arr: np.array, num) -> int:
     tmp.sort()
     loc = np.where(tmp == num)
     return loc[0][0]
+
+
+def find_loc_arr(arr: np.array, nums) -> np.array:
+
+    vec_func = np.vectorize(find_loc_scale, signature='(n),()->()')
+
+    return vec_func(arr, nums)
 
 
 if __name__ == '__main__':
@@ -115,10 +122,14 @@ if __name__ == '__main__':
     d = np.array([4, 3])
     t = np.array([a, b, c, d])
     a1 = np.array([1, 1, 1, 1])
-    print(make_a_star(t, a1))
+    print(make_a_star(t, a1))  # the prints should be same
     print(np.array([a, b, c, d]))
 
-    # 测试find_loc
+    # 测试find_loc_scale
     arr = np.array([0, 0.03, 0.05, 1.4])
     num = 1.2
-    assert find_loc(arr, num) == 3
+    assert find_loc_scale(arr, num) == 3
+
+    # 测试find_loc_arr
+    nums = np.array([0.01, 1.2])
+    assert (find_loc_arr(arr, nums) == np.array([1, 3])).all()

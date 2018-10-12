@@ -47,7 +47,7 @@ class Data:
 
         # 观测时间 & delta
         self.y = np.minimum(self.c, self.d)
-        self.delta = (self.d <= self.c).astype('int')
+        self.delta = self.d <= self.c
 
         # 复发时间 l = t / 10
         r_lamb = 1 / 50 * self.z * np.exp(self.x * (self.true_alpha2 + self.true_alpha2)) * (self.y ** 2)
