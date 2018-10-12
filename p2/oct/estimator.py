@@ -143,10 +143,10 @@ if __name__ == '__main__':
 
     # testing rl_arr
     ta = np.array([1, 2, 3])
-    tb = np.array([3, 5, 7])
+    tb = np.array([3, 4, 5, 7])
     t_star = np.array([ta, tb])
     y_star = np.array([4, 8])
-    # print(est.rl_arr(t_star, y_star))  # result should be [1, 2, 4, 4, 2, 3]
+    print(est.rl_arr(t_star, y_star))  # result should be [1, 2, 4, 4, 5，2, 3]
 
     # testing lambda_arr
     # print(est.lambda_arr(t_star, y_star))  # result should be shape = 7, and values go up to 1
