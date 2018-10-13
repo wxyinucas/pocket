@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="60c4694b-06da-43a8-9d14-236c9f8b1baf" name="Default" comment="10.11 night">
-      <change afterPath="$PROJECT_DIR$/p2/oct/main.py" afterDir="false" />
+    <list default="true" id="60c4694b-06da-43a8-9d14-236c9f8b1baf" name="Default" comment="10.12 night">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/p2/oct/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/p2/oct/data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/p2/oct/estimator.py" beforeDir="false" afterPath="$PROJECT_DIR$/p2/oct/estimator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/p2/oct/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/p2/oct/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p2/oct/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/p2/oct/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,7 +16,7 @@
     <SUITE FILE_PATH="coverage/WXY_Project$main_test.coverage" NAME="main_test Coverage Results" MODIFIED="1532962726946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p2/Simulation_July" />
     <SUITE FILE_PATH="coverage/WXY_projects$data__1_.coverage" NAME="data (1) Coverage Results" MODIFIED="1539345047370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p2" />
     <SUITE FILE_PATH="coverage/WXY_projects$estimator_backup917.coverage" NAME="estimator_backup917 Coverage Results" MODIFIED="1537164189135" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p1/sep_reabstract" />
-    <SUITE FILE_PATH="coverage/WXY_projects$estimator__1_.coverage" NAME="estimator (1) Coverage Results" MODIFIED="1539336978085" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p2" />
+    <SUITE FILE_PATH="coverage/WXY_projects$estimator__1_.coverage" NAME="estimator (1) Coverage Results" MODIFIED="1539347692370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p2" />
     <SUITE FILE_PATH="coverage/WXY_Project$main.coverage" NAME="main Coverage Results" MODIFIED="1535378184645" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p2/Simulation_Aug_print" />
     <SUITE FILE_PATH="coverage/WXY_Projects$test.coverage" NAME="test Coverage Results" MODIFIED="1531308685675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytorch/60_minutes" />
     <SUITE FILE_PATH="coverage/WXY_projects$var_test.coverage" NAME="var_test Coverage Results" MODIFIED="1538016428898" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p1/sep_reabstract" />
@@ -29,7 +27,7 @@
     <SUITE FILE_PATH="coverage/WXY_Projects$warm_up_numpy.coverage" NAME="warm_up_numpy Coverage Results" MODIFIED="1531317202853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytorch/Learning_PyTorch_with_Examples" />
     <SUITE FILE_PATH="coverage/WXY_Project$time_re.coverage" NAME="time_re Coverage Results" MODIFIED="1532673215649" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/WXY_projects$estimator_925.coverage" NAME="estimator_925 Coverage Results" MODIFIED="1537928793914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p1/sep_reabstract" />
-    <SUITE FILE_PATH="coverage/WXY_projects$main.coverage" NAME="main Coverage Results" MODIFIED="1539346325618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p2" />
+    <SUITE FILE_PATH="coverage/WXY_projects$main.coverage" NAME="main Coverage Results" MODIFIED="1539398963344" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p2" />
     <SUITE FILE_PATH="coverage/WXY_projects$test_gen.coverage" NAME="test_gen Coverage Results" MODIFIED="1536911305787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p1/sep_reabstract" />
     <SUITE FILE_PATH="coverage/WXY_projects$utils.coverage" NAME="utils Coverage Results" MODIFIED="1539243635207" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p2/oct" />
     <SUITE FILE_PATH="coverage/WXY_projects$__estimator.coverage" NAME="__estimator Coverage Results" MODIFIED="1537951500901" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p1/sep_init" />
@@ -89,7 +87,7 @@
                 </provider>
               </entry>
             </file>
-            <file pinned="false" current-in-tab="false">
+            <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/p1/sep_reabstract/estimator.py">
                 <provider selected="true" editor-type-id="text-editor">
                   <state relative-caret-position="759">
@@ -99,15 +97,6 @@
                       <marker date="1538547522865" expanded="true" signature="3867:4836" ph="..." />
                       <marker date="1538547522865" expanded="true" signature="7913:8241" ph="..." />
                     </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file pinned="false" current-in-tab="true">
-              <entry file="file://$USER_HOME$/anaconda3/envs/wxy/lib/python3.7/site-packages/scipy/optimize/minpack.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="592">
-                    <caret line="226" selection-start-line="226" selection-end-line="226" />
                   </state>
                 </provider>
               </entry>
@@ -277,18 +266,18 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Python Console" value="8028" />
+          <entry key="Python Console" value="8204" />
           <entry key="dummy" value="46" />
-          <entry key="py" value="31663" />
-          <entry key="txt" value="846" />
+          <entry key="py" value="31682" />
+          <entry key="txt" value="859" />
           <entry key="utils" value="134" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="892" />
-          <entry key="Python" value="39825" />
+          <entry key="PLAIN_TEXT" value="905" />
+          <entry key="Python" value="40020" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -302,7 +291,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/p2/oct/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
+            <state relative-caret-position="-1743">
               <caret line="18" selection-start-line="18" selection-end-line="18" />
               <folding>
                 <marker date="1539305578011" expanded="true" signature="683:688" ph="..." />
@@ -316,7 +305,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/p2/oct/data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1388">
+            <state relative-caret-position="1584">
               <caret line="87" column="26" selection-start-line="87" selection-start-column="26" selection-end-line="87" selection-end-column="26" />
               <folding>
                 <element signature="e#212#230#0" expanded="true" />
@@ -331,11 +320,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/p2/oct/estimator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="657">
-              <caret line="73" selection-start-line="73" selection-end-line="74" selection-end-column="33" />
+            <state relative-caret-position="187">
+              <caret line="124" column="47" selection-start-line="124" selection-start-column="22" selection-end-line="124" selection-end-column="47" />
               <folding>
                 <element signature="e#217#235#0" expanded="true" />
-                <marker date="1539346325613" expanded="true" signature="3198:3234" ph="..." />
               </folding>
             </state>
           </provider>
@@ -344,11 +332,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/p2/oct/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="827">
-              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+            <state relative-caret-position="596">
+              <caret line="33" column="25" lean-forward="true" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
               <folding>
                 <element signature="e#212#230#0" expanded="true" />
-                <marker date="1539346142927" expanded="true" signature="385:970" ph="..." />
               </folding>
             </state>
           </provider>
@@ -365,7 +352,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>(?&lt;!\.)poisson</find>
       <find>tt</find>
       <find>i\+1</find>
       <find>(?&lt;!e)(?&lt;!a)x</find>
@@ -394,10 +380,10 @@
       <find>self.t</find>
       <find>a_</find>
       <find>a</find>
+      <find>redupicate</find>
       <find>x_mask</find>
     </findStrings>
     <replaceStrings>
-      <replace>poisson</replace>
       <replace>poisson_process</replace>
       <replace>T_list</replace>
       <replace>t_list</replace>
@@ -426,6 +412,7 @@
       <replace>b_</replace>
       <replace>b</replace>
       <replace>x_mask</replace>
+      <replace>reduplicate</replace>
       <replace>x</replace>
     </replaceStrings>
   </component>
@@ -583,7 +570,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/p1/sep_reabstract/estimator.py" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -818,8 +805,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.data (1)" />
         <item itemvalue="Python.estimator (1)" />
+        <item itemvalue="Python.data (1)" />
         <item itemvalue="Python.utils" />
         <item itemvalue="Python.data" />
       </list>
@@ -1165,7 +1152,21 @@
       <option name="project" value="LOCAL" />
       <updated>1539252295067</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="10.12 night">
+      <created>1539347454748</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1539347454748</updated>
+    </task>
+    <task id="LOCAL-00049" summary="10.12 night">
+      <created>1539347790811</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1539347790811</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1192,7 +1193,7 @@
       <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49761716" weight="0.32830188" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49928468" weight="0.5403774" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49928468" visible="true" weight="0.5403774" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5023828" side_tool="true" weight="0.32830188" />
       <window_info anchor="bottom" id="Python Console" order="11" sideWeight="0.49713877" weight="0.28528303" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3295626" />
@@ -1202,8 +1203,8 @@
       <window_info anchor="right" id="Remote Host" order="3" weight="0.32960597" />
       <window_info anchor="right" id="Database" order="4" sideWeight="0.49924585" weight="0.32962668" />
       <window_info anchor="right" x="0" y="0" width="430" height="858" id="Documentation" order="5" sideWeight="0.46113208" side_tool="true" weight="0.42891183" />
-      <window_info anchor="right" id="SciView" order="6" sideWeight="0.46339622" side_tool="true" visible="true" weight="0.42891183" />
-      <window_info active="true" anchor="right" id="Debug" order="7" sideWeight="0.53660375" visible="true" weight="0.42891183" />
+      <window_info anchor="right" id="SciView" order="6" sideWeight="0.46469623" side_tool="true" visible="true" weight="0.42891183" />
+      <window_info anchor="right" id="Debug" order="7" sideWeight="0.5353038" visible="true" weight="0.42891183" />
       <window_info anchor="right" id="Coverage" order="8" sideWeight="0.520362" side_tool="true" weight="0.41461477" />
     </layout>
     <layout-to-restore>
@@ -1267,7 +1268,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="replicate 1000&#10;bias is [-0.00470426  0.00234982]." />
     <MESSAGE value="re_def functions" />
     <MESSAGE value="q_bar" />
     <MESSAGE value="q_bar done" />
@@ -1292,7 +1292,8 @@
     <MESSAGE value="temp stop" />
     <MESSAGE value="10.10" />
     <MESSAGE value="10.11 night" />
-    <option name="LAST_COMMIT_MESSAGE" value="10.11 night" />
+    <MESSAGE value="10.12 night" />
+    <option name="LAST_COMMIT_MESSAGE" value="10.12 night" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1314,8 +1315,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/p2/oct/estimator.py</url>
-          <line>46</line>
-          <option name="timeStamp" value="30" />
+          <line>138</line>
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -1617,9 +1618,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/wxy/lib/python3.7/site-packages/scipy/optimize/minpack.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="592">
+          <caret line="226" selection-start-line="226" selection-end-line="226" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/p2/oct/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
+        <state relative-caret-position="-1743">
           <caret line="18" selection-start-line="18" selection-end-line="18" />
           <folding>
             <marker date="1539305578011" expanded="true" signature="683:688" ph="..." />
@@ -1631,13 +1639,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/p2/oct/data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1388">
+        <state relative-caret-position="1584">
           <caret line="87" column="26" selection-start-line="87" selection-start-column="26" selection-end-line="87" selection-end-column="26" />
           <folding>
             <element signature="e#212#230#0" expanded="true" />
             <marker date="1539337235463" expanded="true" signature="346:626" ph="..." />
             <marker date="1539337235463" expanded="true" signature="649:658" ph="..." />
             <marker date="1539337235463" expanded="true" signature="1541:1545" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/p2/oct/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="596">
+          <caret line="33" column="25" lean-forward="true" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+          <folding>
+            <element signature="e#212#230#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/p2/oct/estimator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="124" column="47" selection-start-line="124" selection-start-column="22" selection-end-line="124" selection-end-column="47" />
+          <folding>
+            <element signature="e#217#235#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1650,35 +1678,6 @@
             <element signature="e#216#237#0" expanded="true" />
             <marker date="1538547522865" expanded="true" signature="3867:4836" ph="..." />
             <marker date="1538547522865" expanded="true" signature="7913:8241" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda3/envs/wxy/lib/python3.7/site-packages/scipy/optimize/minpack.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="226" selection-start-line="226" selection-end-line="226" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/p2/oct/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="827">
-          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
-          <folding>
-            <element signature="e#212#230#0" expanded="true" />
-            <marker date="1539346142927" expanded="true" signature="385:970" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/p2/oct/estimator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="657">
-          <caret line="73" selection-start-line="73" selection-end-line="74" selection-end-column="33" />
-          <folding>
-            <element signature="e#217#235#0" expanded="true" />
-            <marker date="1539346325613" expanded="true" signature="3198:3234" ph="..." />
           </folding>
         </state>
       </provider>

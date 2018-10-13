@@ -22,7 +22,7 @@ class Estimator(Data):
     def __init__(self, parameters, n_samples=200):
         super(Estimator, self).__init__(parameters, n_samples)
 
-        self.lambda_y_a_hat = 0
+        self.lambda_y_a_hat = None
         # self.a_hat = root(self.equation_sn, parameters[:2]).x
 
         self.a_hat = np.array([-1, 1])  # 用于缩短测试时间
@@ -40,7 +40,11 @@ class Estimator(Data):
         exp = np.exp(self.x * (a1 - a2))
 
         lambda_y = self.lambda_y(t_star_a, y_star_a)
+        #
+        zero_loc = np.where(lambda_y == 0)
+        lambda_y[zero_loc] = 1
         self.lambda_y_a_hat = lambda_y
+        #
         mu = self.mu(exp, lambda_y)
 
         if (lambda_y == 0).any():
@@ -49,7 +53,7 @@ class Estimator(Data):
         s1 = self.x @ (exp * self.m * (1 / lambda_y) - mu)
         # s2 = (self.y * self.x) @ (exp * self.m * (1 / lambda_y) - mu)
 
-        s = np.array([s1, 0*s1])
+        s = np.array([s1, 0 * s1])
         return s / self.n_sam
 
     def rl_arr(self, t_star_a, y_star_a):
@@ -100,7 +104,7 @@ class Estimator(Data):
         a_hat = self.a_hat
         hat_z = self.hat_z(a_hat)
 
-        exp = np.exp(self.x * (b1 - b2))
+        exp = np.exp(self.x * (b2 - b1))
         assert exp.shape == self.x.shape
 
         y_star_b = (self.y * np.exp(self.x * b1))[self.delta]
@@ -109,7 +113,7 @@ class Estimator(Data):
         h1_arr = x_mask - self.q_bar(self.x, hat_z, y_star_b, exp)
         assert h1_arr.shape == (np.sum(self.delta),)
         h1 = np.sum(h1_arr)
-        h = np.array([h1, 0*h1])
+        h = np.array([h1, 0 * h1])
 
         return h / self.n_sam
 

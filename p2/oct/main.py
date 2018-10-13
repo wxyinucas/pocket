@@ -12,17 +12,20 @@ __author__ = 'Xiaoyu Wang'
 import numpy as np
 
 from oct.estimator import Estimator
-from scipy.optimize import fsolve, root
 from time import time
 from tqdm import tqdm
 
+if __name__ == '__main__':
+    start_time = time()
 
-def simulation(redupicates=10):
+    # simulation settings
+    reduplicates = 10
     true_parameters = np.array([-1, 1, -1, 1])
     a_hat_paras_list = []
     b_hat_paras_list = []
 
-    for _ in tqdm(range(redupicates)):
+    # reduplicate procedure
+    for _ in tqdm(range(reduplicates)):
         est = Estimator(true_parameters, n_samples=200)
 
         a_hat = est.a_hat
@@ -31,13 +34,12 @@ def simulation(redupicates=10):
         b_hat = est.b_hat
         b_hat_paras_list.append(b_hat)
 
+    # process outputs
     a_hat_paras = np.mean(np.array(a_hat_paras_list), axis=0)
     b_hat_paras = np.mean(np.array(b_hat_paras_list), axis=0)
+
+    # print outputs
     print(f'a :{a_hat_paras}')
     print(f'b :{b_hat_paras}')
 
-
-if __name__ == '__main__':
-    start_time = time()
-    simulation()
     print(f'running time: {time()-start_time:.2f}sec.')
