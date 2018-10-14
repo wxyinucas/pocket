@@ -23,18 +23,17 @@ class Estimator(Data):
         super(Estimator, self).__init__(parameters, n_samples)
 
         self.lambda_y_a_hat = None
-        self.a_hat = root(self.equation_sn, parameters[:2]).x
+        # self.a_hat = root(self.equation_sn, parameters[:2], method='lm').x
 
-        # self.a_hat = np.array([-1, 1])  # 用于缩短测试时间
-        # self.equation_sn(self.a_hat)  # 用于缩短测试时间
+        self.a_hat = np.array([-1, 1])  # 用于缩短测试时间
+        self.equation_sn(self.a_hat)  # 用于缩短测试时间
 
         self.b_hat = root(self.equation_hn, parameters[2:], method='lm').x
         # self.b_hat = 0  # 用于缩短测试时间
 
     def equation_sn(self, a):
         a1 = a[0]
-        a2 = self.true_alpha2
-        # a2 = a[1]
+        a2 = a[1]
 
         t_star_a = make_a_star(self.t, np.exp(self.x * a1))
         y_star_a = make_a_star(self.y, np.exp(self.x * a1))
@@ -51,9 +50,9 @@ class Estimator(Data):
         assert not (lambda_y == 0).any()
 
         s1 = self.x @ (exp * self.m * (1 / lambda_y) - mu)
-        # s2 = (self.y * self.x) @ (exp * self.m * (1 / lambda_y) - mu)
+        s2 = (self.y * self.x) @ (exp * self.m * (1 / lambda_y) - mu)
 
-        s = np.array([s1, 0 * s1])
+        s = np.array([s1, s2])
         return s / self.n_sam
 
     def rl_arr(self, t_star_a, y_star_a):
@@ -98,9 +97,7 @@ class Estimator(Data):
 
     def equation_hn(self, b):
         b1 = b[0]
-        # b1 = -1
-        b2 = self.true_beta2
-        # b2 = b[1]
+        b2 = b[1]
 
         a_hat = self.a_hat
         hat_z = self.hat_z(a_hat)
@@ -110,20 +107,19 @@ class Estimator(Data):
 
         y_star_b = self.y * np.exp(self.x * b1)
         assert y_star_b.shape == self.y.shape
-        # g2 = y_star_b * self.x
+        g2 = y_star_b * self.x
 
         y_star_b_filter = y_star_b[self.delta]
         x_filter = self.x[self.delta]
-        # g2_filter = g2[self.delta]
+        g2_filter = g2[self.delta]
 
         h1_arr = x_filter - self.q_bar(self.x, hat_z, y_star_b_filter, y_star_b, exp)
-        # h2_arr = g2_filter - self.q_bar(g2, hat_z, y_star_b_filter, y_star_b, exp)
+        h2_arr = g2_filter - self.q_bar(g2, hat_z, y_star_b_filter, y_star_b, exp)
 
-        # assert h1_arr.shape == h2_arr.shape == (np.sum(self.delta),) == x_filter.shape
+        assert h1_arr.shape == h2_arr.shape == (np.sum(self.delta),) == x_filter.shape
         h1 = np.sum(h1_arr)
-        # h2 = np.sum(h2_arr)
-        h2 = np.zeros_like(h1)
-        # h1 = np.zeros_like(h2)
+        h2 = np.sum(h2_arr)
+
         h = np.array([h1, h2])
 
         return h / self.n_sam

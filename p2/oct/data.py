@@ -51,6 +51,7 @@ class Data:
 
         # 复发时间 l = t / 10
         r_lamb = 1 / 50 * self.z * np.exp(self.x * (self.true_alpha2 + self.true_alpha2)) * (self.y ** 2)
+        # r_lamb = np.ones_like(self.z) * 10
         self.m = np.random.poisson(r_lamb)
         self.t = poisson_process(self.y, self.m)
 
@@ -91,3 +92,9 @@ if __name__ == '__main__':
     print('\n========Recurrent Time========')
     print('the average recurrent time times are:')
     print(np.mean(data.m))
+    print('In which the 0 times are:')
+    print(np.where(data.m == 0)[0].shape[0])
+    print(np.sum(data.m == 0))
+    plt.boxplot(data.m)
+    plt.title('recurrent times')
+    plt.show()

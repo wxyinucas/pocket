@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="60c4694b-06da-43a8-9d14-236c9f8b1baf" name="Default" comment="10.12 night">
+    <list default="true" id="60c4694b-06da-43a8-9d14-236c9f8b1baf" name="Default" comment="10.13 night">
+      <change afterPath="$PROJECT_DIR$/p2/oct/estimator_prototype.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p2/oct/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/p2/oct/data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/p2/oct/estimator.py" beforeDir="false" afterPath="$PROJECT_DIR$/p2/oct/estimator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/p2/oct/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/p2/oct/main.py" afterDir="false" />
     </list>
@@ -27,7 +29,7 @@
     <SUITE FILE_PATH="coverage/WXY_Projects$warm_up_numpy.coverage" NAME="warm_up_numpy Coverage Results" MODIFIED="1531317202853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytorch/Learning_PyTorch_with_Examples" />
     <SUITE FILE_PATH="coverage/WXY_Project$time_re.coverage" NAME="time_re Coverage Results" MODIFIED="1532673215649" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/WXY_projects$estimator_925.coverage" NAME="estimator_925 Coverage Results" MODIFIED="1537928793914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p1/sep_reabstract" />
-    <SUITE FILE_PATH="coverage/WXY_projects$main.coverage" NAME="main Coverage Results" MODIFIED="1539398963344" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p2" />
+    <SUITE FILE_PATH="coverage/WXY_projects$main.coverage" NAME="main Coverage Results" MODIFIED="1539507718485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p2" />
     <SUITE FILE_PATH="coverage/WXY_projects$test_gen.coverage" NAME="test_gen Coverage Results" MODIFIED="1536911305787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p1/sep_reabstract" />
     <SUITE FILE_PATH="coverage/WXY_projects$utils.coverage" NAME="utils Coverage Results" MODIFIED="1539243635207" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p2/oct" />
     <SUITE FILE_PATH="coverage/WXY_projects$__estimator.coverage" NAME="__estimator Coverage Results" MODIFIED="1537951500901" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p1/sep_init" />
@@ -90,8 +92,8 @@
             <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/p1/sep_reabstract/estimator.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="759">
-                    <caret line="43" column="4" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
+                  <state relative-caret-position="-5300">
+                    <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
                     <folding>
                       <element signature="e#216#237#0" expanded="true" />
                       <marker date="1538547522865" expanded="true" signature="3867:4836" ph="..." />
@@ -253,7 +255,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="csv" value="7" />
-          <entry key="py" value="167" />
+          <entry key="py" value="170" />
           <entry key="txt" value="6" />
         </counts>
       </usages-collector>
@@ -261,23 +263,23 @@
         <counts>
           <entry key="CSV" value="5" />
           <entry key="PLAIN_TEXT" value="8" />
-          <entry key="Python" value="167" />
+          <entry key="Python" value="170" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Python Console" value="8204" />
+          <entry key="Python Console" value="8936" />
           <entry key="dummy" value="46" />
-          <entry key="py" value="31682" />
-          <entry key="txt" value="859" />
+          <entry key="py" value="32445" />
+          <entry key="txt" value="860" />
           <entry key="utils" value="134" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="905" />
-          <entry key="Python" value="40020" />
+          <entry key="PLAIN_TEXT" value="906" />
+          <entry key="Python" value="41515" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -291,7 +293,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/p2/oct/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1743">
+            <state relative-caret-position="-1196">
               <caret line="18" selection-start-line="18" selection-end-line="18" />
               <folding>
                 <marker date="1539305578011" expanded="true" signature="683:688" ph="..." />
@@ -305,23 +307,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/p2/oct/data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1584">
-              <caret line="87" column="26" selection-start-line="87" selection-start-column="26" selection-end-line="87" selection-end-column="26" />
+            <state relative-caret-position="488">
+              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
               <folding>
                 <element signature="e#212#230#0" expanded="true" />
-                <marker date="1539337235463" expanded="true" signature="346:626" ph="..." />
-                <marker date="1539337235463" expanded="true" signature="649:658" ph="..." />
-                <marker date="1539337235463" expanded="true" signature="1541:1545" ph="..." />
+                <marker date="1539484175342" expanded="true" signature="346:626" ph="..." />
+                <marker date="1539484175342" expanded="true" signature="649:658" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/p2/oct/estimator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="124" column="47" selection-start-line="124" selection-start-column="22" selection-end-line="124" selection-end-column="47" />
+            <state relative-caret-position="292">
+              <caret line="35" column="29" lean-forward="true" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
               <folding>
                 <element signature="e#217#235#0" expanded="true" />
               </folding>
@@ -329,11 +330,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/p2/oct/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="596">
-              <caret line="33" column="25" lean-forward="true" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+            <state relative-caret-position="684">
+              <caret line="49" column="16" lean-forward="true" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
               <folding>
                 <element signature="e#212#230#0" expanded="true" />
               </folding>
@@ -352,8 +353,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tt</find>
-      <find>i\+1</find>
       <find>(?&lt;!e)(?&lt;!a)x</find>
       <find>test</find>
       <find>self.tri.T</find>
@@ -382,11 +381,10 @@
       <find>a</find>
       <find>redupicate</find>
       <find>x_mask</find>
+      <find>self.c</find>
+      <find>_list</find>
     </findStrings>
     <replaceStrings>
-      <replace>poisson_process</replace>
-      <replace>T_list</replace>
-      <replace>t_list</replace>
       <replace>est</replace>
       <replace>self.Y</replace>
       <replace>exp</replace>
@@ -414,6 +412,9 @@
       <replace>x_mask</replace>
       <replace>reduplicate</replace>
       <replace>x</replace>
+      <replace>x_filterd</replace>
+      <replace>c</replace>
+      <replace>_arr</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -427,7 +428,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/p2/Simulation_Aug_print/value_estimator.py" />
         <option value="$PROJECT_DIR$/examples/tmp.txt" />
         <option value="$PROJECT_DIR$/p2/Simulation_Aug_print/true_value.py" />
         <option value="$PROJECT_DIR$/p2/Simulation_Aug_print/value_change.py" />
@@ -476,8 +476,9 @@
         <option value="$PROJECT_DIR$/p1/sep_reabstract/utils.py" />
         <option value="$PROJECT_DIR$/p2/oct/utils.py" />
         <option value="$PROJECT_DIR$/p2/oct/data.py" />
-        <option value="$PROJECT_DIR$/p2/oct/main.py" />
+        <option value="$PROJECT_DIR$/p2/oct/estimator_prototype.py" />
         <option value="$PROJECT_DIR$/p2/oct/estimator.py" />
+        <option value="$PROJECT_DIR$/p2/oct/main.py" />
       </list>
     </option>
   </component>
@@ -590,17 +591,17 @@
     <option name="myAttachToSubprocess" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/p1/sep_init" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/examples" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/p2/oct" />
       <recent name="$PROJECT_DIR$/p1/sep_reabstract" />
       <recent name="$PROJECT_DIR$/p1" />
       <recent name="$PROJECT_DIR$/p1/sep_renew" />
       <recent name="$PROJECT_DIR$/p1/sep_class" />
-      <recent name="$PROJECT_DIR$/p2/Simulation_Aug_print" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/p1/sep_init" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/examples" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -822,13 +823,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1531105352828</updated>
-    </task>
-    <task id="LOCAL-00001" summary="7_30">
-      <created>1532919374966</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1532919374967</updated>
     </task>
     <task id="LOCAL-00002" summary="9_7 refactor p1">
       <created>1536306124678</created>
@@ -1166,7 +1160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1539347790811</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="10.13 night">
+      <created>1539434799865</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1539434799868</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1192,8 +1193,8 @@
       <window_info anchor="bottom" id="TODO" order="5" weight="0.32880846" />
       <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49761716" weight="0.32830188" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49928468" visible="true" weight="0.5403774" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="8" sideWeight="0.49761716" visible="true" weight="0.32830188" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49928468" weight="0.5403774" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5023828" side_tool="true" weight="0.32830188" />
       <window_info anchor="bottom" id="Python Console" order="11" sideWeight="0.49713877" weight="0.28528303" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3295626" />
@@ -1203,8 +1204,8 @@
       <window_info anchor="right" id="Remote Host" order="3" weight="0.32960597" />
       <window_info anchor="right" id="Database" order="4" sideWeight="0.49924585" weight="0.32962668" />
       <window_info anchor="right" x="0" y="0" width="430" height="858" id="Documentation" order="5" sideWeight="0.46113208" side_tool="true" weight="0.42891183" />
-      <window_info anchor="right" id="SciView" order="6" sideWeight="0.46469623" side_tool="true" visible="true" weight="0.42891183" />
-      <window_info anchor="right" id="Debug" order="7" sideWeight="0.5353038" visible="true" weight="0.42891183" />
+      <window_info anchor="right" id="SciView" order="6" sideWeight="0.46404496" side_tool="true" visible="true" weight="0.42891183" />
+      <window_info anchor="right" id="Debug" order="7" sideWeight="0.5359551" visible="true" weight="0.42891183" />
       <window_info anchor="right" id="Coverage" order="8" sideWeight="0.520362" side_tool="true" weight="0.41461477" />
     </layout>
     <layout-to-restore>
@@ -1268,7 +1269,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="re_def functions" />
     <MESSAGE value="q_bar" />
     <MESSAGE value="q_bar done" />
     <MESSAGE value="19 night" />
@@ -1293,7 +1293,8 @@
     <MESSAGE value="10.10" />
     <MESSAGE value="10.11 night" />
     <MESSAGE value="10.12 night" />
-    <option name="LAST_COMMIT_MESSAGE" value="10.12 night" />
+    <MESSAGE value="10.13 night" />
+    <option name="LAST_COMMIT_MESSAGE" value="10.13 night" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1312,11 +1313,6 @@
           <url>file://$PROJECT_DIR$/p1/sep_reabstract/estimator_925.py</url>
           <line>180</line>
           <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/p2/oct/estimator.py</url>
-          <line>138</line>
-          <option name="timeStamp" value="31" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -1339,13 +1335,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/p1/sep_renew/timelist.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="72" column="18" selection-start-line="72" selection-start-column="18" selection-end-line="72" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/p1/sep_renew/data.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
@@ -1477,13 +1466,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/p1/sep_reabstract/estimator_928.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda3/envs/wxy/lib/python3.7/site-packages/numpy/core/fromnumeric.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="688">
-          <caret line="82" selection-start-line="82" selection-end-line="82" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$USER_HOME$/anaconda3/envs/wxy/lib/python3.7/site-packages/numpy/linalg/linalg.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -1627,7 +1609,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/p2/oct/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1743">
+        <state relative-caret-position="-1196">
           <caret line="18" selection-start-line="18" selection-end-line="18" />
           <folding>
             <marker date="1539305578011" expanded="true" signature="683:688" ph="..." />
@@ -1639,31 +1621,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/p2/oct/data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1584">
-          <caret line="87" column="26" selection-start-line="87" selection-start-column="26" selection-end-line="87" selection-end-column="26" />
+        <state relative-caret-position="488">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
           <folding>
             <element signature="e#212#230#0" expanded="true" />
-            <marker date="1539337235463" expanded="true" signature="346:626" ph="..." />
-            <marker date="1539337235463" expanded="true" signature="649:658" ph="..." />
-            <marker date="1539337235463" expanded="true" signature="1541:1545" ph="..." />
+            <marker date="1539484175342" expanded="true" signature="346:626" ph="..." />
+            <marker date="1539484175342" expanded="true" signature="649:658" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/p2/oct/main.py">
+    <entry file="file://$PROJECT_DIR$/p2/oct/estimator_prototype.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="596">
-          <caret line="33" column="25" lean-forward="true" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
-          <folding>
-            <element signature="e#212#230#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="572">
+          <caret line="98" column="17" selection-start-line="98" selection-start-column="17" selection-end-line="98" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/wxy/lib/python3.7/site-packages/numpy/core/fromnumeric.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="987">
+          <caret line="281" column="4" selection-start-line="281" selection-start-column="4" selection-end-line="281" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/p2/oct/estimator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="124" column="47" selection-start-line="124" selection-start-column="22" selection-end-line="124" selection-end-column="47" />
+        <state relative-caret-position="292">
+          <caret line="35" column="29" lean-forward="true" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
           <folding>
             <element signature="e#217#235#0" expanded="true" />
           </folding>
@@ -1672,12 +1657,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/p1/sep_reabstract/estimator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="759">
-          <caret line="43" column="4" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
+        <state relative-caret-position="-5300">
+          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
           <folding>
             <element signature="e#216#237#0" expanded="true" />
             <marker date="1538547522865" expanded="true" signature="3867:4836" ph="..." />
             <marker date="1538547522865" expanded="true" signature="7913:8241" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/p2/oct/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="49" column="16" lean-forward="true" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+          <folding>
+            <element signature="e#212#230#0" expanded="true" />
           </folding>
         </state>
       </provider>
