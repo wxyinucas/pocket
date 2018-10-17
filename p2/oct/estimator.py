@@ -23,13 +23,16 @@ class Estimator(Data):
         super(Estimator, self).__init__(parameters, n_samples)
 
         self.lambda_y_a_hat = None
-        self.a_hat = root(self.equation_sn, parameters[:2]).x
+        # self.a_hat = root(self.equation_sn, parameters[:2]).x
 
         # self.a_hat = np.array([-1, 1])  # 用于缩短测试时间
         # self.equation_sn(self.a_hat)  # 用于缩短测试时间
 
-        self.b_hat = root(self.equation_hn, parameters[2:], method='lm').x
+        # self.b_hat = root(self.equation_hn, parameters[2:], method='lm').x
         # self.b_hat = 0  # 用于缩短测试时间
+
+        self.a_hat = np.array([-1, 1]) + np.random.normal(0, 1, 2)
+        self.b_hat = np.array([-1, 1]) + np.random.normal(0, 1, 2)
 
     def equation_sn(self, a):
         a1 = a[0]

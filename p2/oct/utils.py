@@ -58,7 +58,7 @@ def poisson_process(terminal, num) -> np.array:
     t_list = []
 
     for ite in range(len(num)):
-        tmp = np.random.uniform(0, terminal[ite], num[ite])
+        tmp = np.random.uniform(0, terminal[ite], num[ite].astype(int))
         tmp.sort()
         t_list.append(tmp)
 
@@ -68,7 +68,7 @@ def poisson_process(terminal, num) -> np.array:
 def proper_d(d_arr):
     def d_scale(d):
 
-        if d:
+        if d.size > 0:
             return d
         else:
             return np.array([11])
@@ -101,13 +101,39 @@ def find_loc_scale(arr: np.array, num) -> int:
 
 
 def find_loc_arr(arr: np.array, nums) -> np.array:
-
     vec_func = np.vectorize(find_loc_scale, signature='(n),()->()')
 
     return vec_func(arr, nums)
 
 
+def mean_std_cp(arr, ase):
+    assert len(arr.shape) == 1 or arr.shape[1] == 1
+    mean = np.mean(arr)
+
+    std = np.std(arr)
+
+    count = ((mean - 1.96 * ase) < arr) * (arr < (mean + 1.96 * ase))
+    return mean, std, np.mean(count)
+
+
+def cal_ase(arr):
+    assert len(arr.shape) == 1 or arr.shape[1] == 1
+    length = arr.shape[0]
+    index = np.random.choice(np.arange(length), size=length, replace=True)
+    index = np.arange(length)
+    return np.std(arr[index])
+
+
 if __name__ == '__main__':
+    # 测试 poisson_process
+    y = np.ones(10)
+    m1 = np.array([1, 0, 0, 1, 1, 1, 1, 1, 0, 0])
+    print('a:', poisson_process(y, m1))
+    m2 = np.ones(10)
+    print('b', poisson_process(y, m2))
+    m3 = np.zeros(10)
+    print('c', poisson_process(y, m3))
+
     # 修正死亡时间，将空缺的（未观测到的）用11替换（TAU=10）
     tmp_a = np.array([7])
     tmp_b = np.array([])
@@ -133,3 +159,9 @@ if __name__ == '__main__':
     # 测试find_loc_arr
     nums = np.array([0.01, 1.2])
     assert (find_loc_arr(arr, nums) == np.array([1, 3])).all()
+
+    # 测试cp_count
+    arr = np.random.exponential(1, 100)
+    ase = np.std(arr)
+    print(mean_std_cp(arr, ase))
+    print(cal_ase(arr))

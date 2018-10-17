@@ -11,7 +11,7 @@ __author__ = 'Xiaoyu Wang'
 """
 import numpy as np
 import matplotlib.pyplot as plt
-from oct.utils import c_generate, poisson_process, proper_d
+from oct.utils import c_generate, poisson_process, proper_d, flatten
 
 TAU = 10
 
@@ -44,6 +44,9 @@ class Data:
         m = (m_numerical > 0).astype('int')
         d = poisson_process(np.ones(self.n_sam) * TAU, m)
         self.d = proper_d(d)
+        if (m == 1).all():
+            self.d = flatten(self.d)
+
 
         # 观测时间 & delta
         self.y = np.minimum(self.c, self.d)
@@ -51,7 +54,6 @@ class Data:
 
         # 复发时间 l = t / 10
         r_lamb = 1 / 50 * self.z * np.exp(self.x * (self.true_alpha2 + self.true_alpha2)) * (self.y ** 2)
-        # r_lamb = np.ones_like(self.z) * 10
         self.m = np.random.poisson(r_lamb)
         self.t = poisson_process(self.y, self.m)
 
