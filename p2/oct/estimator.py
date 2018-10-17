@@ -23,20 +23,20 @@ class Estimator(Data):
         super(Estimator, self).__init__(parameters, n_samples)
 
         self.lambda_y_a_hat = None
-        # self.a_hat = root(self.equation_sn, parameters[:2]).x
+        self.a_hat = root(self.equation_sn, parameters[:2]).x
 
         # self.a_hat = np.array([-1, 1])  # 用于缩短测试时间
         # self.equation_sn(self.a_hat)  # 用于缩短测试时间
 
-        # self.b_hat = root(self.equation_hn, parameters[2:], method='lm').x
+        self.b_hat = root(self.equation_hn, parameters[2:], method='lm').x
         # self.b_hat = 0  # 用于缩短测试时间
 
-        self.a_hat = np.array([-1, 1]) + np.random.normal(0, 1, 2)
-        self.b_hat = np.array([-1, 1]) + np.random.normal(0, 1, 2)
+        # self.a_hat = np.array([-1, 1]) + np.random.normal(0, 1, 2)  # 用于测试
+        # self.b_hat = np.array([-1, 1]) + np.random.normal(0, 1, 2)  # 用于测试
 
     def equation_sn(self, a):
         a1 = a[0]
-        a2 = self.true_alpha2
+        a2 = self.true_alpha2 + np.random.normal(0, 1)
         # a2 = a[1]
 
         t_star_a = make_a_star(self.t, np.exp(self.x * a1))
@@ -102,7 +102,7 @@ class Estimator(Data):
     def equation_hn(self, b):
         b1 = b[0]
         # b1 = -1
-        b2 = self.true_beta2
+        b2 = self.true_beta2 + np.random.normal(0, 1)
         # b2 = b[1]
 
         a_hat = self.a_hat

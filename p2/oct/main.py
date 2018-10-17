@@ -20,7 +20,7 @@ if __name__ == '__main__':
     start_time = time()
 
     # simulation settings
-    reduplicates = 1000
+    reduplicates = 50
     true_parameters = np.array([-1, 1, -1, 1])
     a_hat_paras_list = []
     b_hat_paras_list = []
