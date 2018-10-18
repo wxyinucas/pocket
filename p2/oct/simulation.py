@@ -17,9 +17,10 @@ from oct.estimator import Estimator
 from time import time
 from tqdm import tqdm
 from oct.utils import mean_std_cp, cal_ase
+from itertools import product
 
 
-def simulation(true_parameters):
+def simulation(true_parameters, title=None):
     # simulation settings
     reduplicates = 100
 
@@ -73,7 +74,19 @@ def simulation(true_parameters):
     # print(f'b2 cp: {b2_cp}')
 
     # Latex
+    a1_bias = a1_mean - true_parameters[0]
+    a2_bias = a2_mean - true_parameters[1]
+    b1_bias = b1_mean - true_parameters[2]
+    b2_bias = b2_mean - true_parameters[3]
 
+    a1_str = f'& {a1_bias} & {a1_std} & {a1_ase} & {a1_cp} '
+    a2_str = f'& {a2_bias} & {a2_std} & {a2_ase} & {a2_cp} '
+    b1_str = f'& {b1_bias} & {b1_std} & {b1_ase} & {b1_cp} '
+    b2_str = f'& {b2_bias} & {b2_std} & {b2_ase} & {b2_cp} \\\\'
+
+    if not title:
+        title = ' & & & '
+    print(title + a1_str + a2_str + b1_str + b2_str)
 
 
 if __name__ == '__main__':
@@ -86,16 +99,25 @@ if __name__ == '__main__':
     except FileNotFoundError:
         pass
 
-    with open('./latex.txt', 'a+') as f:
-        sys.stdout = f
-        file_start = os.SEEK_CUR
-        print('\n================================================')
-        print(f'alpha1: {true_parameters[0]}，\t alpha2: {true_parameters[1]}, \t beta1: {true_parameters[2]}, \t'
-              f'beta2: {true_parameters[3]}')
+    # table title
+    first_part = '$\\alpha_1$ & $\\alpha_2$ & $\\beta_1$ & $\\beta_2$'
+    last_part = '& \multicolumn{4}{c}{$\\alpha_1$} & \multicolumn{4}{c}{$\\alpha_2$} & ' \
+                '\multicolumn{4}{c}{$\\beta_1$} & \multicolumn{4}{c}{$\\beta_2$} \\\\'
 
-        for _ in range(3):
-            simulation(true_parameters)
+    # table body
+    one = [-1, 0, 1]
+    two = [-1, 1]
 
+    for true_parameters in product(one, two, one, two):
+        with open('./latex.txt', 'a+') as f:
+            sys.stdout = f
+            file_start = os.SEEK_CUR
+            print('\n================================================')
+            new_para_title = f'{true_parameters[0]} & alpha2: {true_parameters[1]} &' \
+                             f' {true_parameters[2]} & {true_parameters[3]}'
 
+            simulation(true_parameters, new_para_title)
+            for _ in range(2):
+                simulation(true_parameters)
 
-    print(f'running time: {time()-start_time:.2f}sec.')
+print(f'running time: {time()-start_time:.2f}sec.')
