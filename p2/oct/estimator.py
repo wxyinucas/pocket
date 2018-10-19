@@ -30,10 +30,10 @@ class Estimator(Data):
         # self.a_hat = root(self.equation_sn, a_init).x
 
         self.a_hat = a_init  # 用于缩短测试时间
-        self.equation_sn(self.a_hat)  # 用于缩短测试时间
+        # self.equation_sn(self.a_hat)  # 用于缩短测试时间
 
-        self.b_hat = root(self.equation_hn, b_init, method='lm').x
-        # self.b_hat = 0  # 用于缩短测试时间
+        # self.b_hat = root(self.equation_hn, b_init, method='lm').x
+        self.b_hat = b_init  # 用于缩短测试时间
 
         # self.a_hat = np.array([-1, 1]) + np.random.normal(0, 1, 2)  # 用于测试
         # self.b_hat = np.array([-1, 1]) + np.random.normal(0, 1, 2)  # 用于测试
