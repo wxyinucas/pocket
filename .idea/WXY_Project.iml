@@ -2,8 +2,7 @@
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/p2" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/p1/sep_reabstract" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/p2/dec_re" isTestSource="false" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.7 (wxy)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -13,6 +13,7 @@ import numpy as np
 
 
 def compare(v1, v2):
+    """dim(v1) 行， dim(v2)列的矩阵"""
     assert len(v1.shape) in [0, 1] or v1.shape[1] == 1, f'v1 wrong shape.'
     assert len(v2.shape) in [0, 1] or v2.shape[0] == 1, f'v2 wrong shape.'
 

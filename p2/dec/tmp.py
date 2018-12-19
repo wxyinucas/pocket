@@ -20,7 +20,7 @@ from oct.utils import mean_std_cp, cal_ase
 from itertools import product
 
 
-def simulation(true_parameters, base, sigma,title=None, reduplicates=1000, n_samples=200):
+def simulation(true_parameters, title=None, reduplicates=1000, n_samples=200):
     # simulation settings
 
     a_hat_paras_list = []
@@ -28,7 +28,7 @@ def simulation(true_parameters, base, sigma,title=None, reduplicates=1000, n_sam
 
     # reduplicate procedure
     for _ in range(reduplicates):
-        est = Estimator(true_parameters, base, sigma, n_samples=n_samples)
+        est = Estimator(true_parameters, n_samples=n_samples)
 
         a_hat = est.a_hat
         a_hat_paras_list.append(a_hat)
@@ -79,13 +79,13 @@ def simulation(true_parameters, base, sigma,title=None, reduplicates=1000, n_sam
     b2_bias = b2_mean - true_parameters[3]
 
     a1_str = f'& {a1_bias:.3f} & {a1_std:.3f} & {a1_ase:.3f} & {a1_cp:.3f} '
-    a2_str = f'& {a2_bias:.3f} & {a2_std:.3f} & {a2_ase:.3f} & {a2_cp:.3f} \\\\ '
+    a2_str = f'& {a2_bias:.3f} & {a2_std:.3f} & {a2_ase:.3f} & {a2_cp:.3f} '
     b1_str = f'& {b1_bias:.3f} & {b1_std:.3f} & {b1_ase:.3f} & {b1_cp:.3f} '
     b2_str = f'& {b2_bias:.3f} & {b2_std:.3f} & {b2_ase:.3f} & {b2_cp:.3f} \\\\'
 
     if not title:
         title = ' & & & '
-    return (title + a1_str + a2_str), (title + b1_str + b2_str)
+    print(title + a1_str + a2_str + b1_str + b2_str)
 
 
 if __name__ == '__main__':
@@ -94,7 +94,7 @@ if __name__ == '__main__':
 
     console = sys.stdout
     try:
-        os.remove('./oct/latex.txt')
+        os.remove('latex.txt')
     except FileNotFoundError:
         pass
 
@@ -102,47 +102,29 @@ if __name__ == '__main__':
     first_part = '$\\alpha_1$ & $\\alpha_2$ & $\\beta_1$ & $\\beta_2$'
     last_part1 = '& \multicolumn{4}{c}{$\\alpha_1$} & \multicolumn{4}{c}{$\\alpha_2$} \\\\ '
     last_part2 = '& \multicolumn{4}{c}{$\\beta_1$} & \multicolumn{4}{c}{$\\beta_2$} \\\\'
-    separate_line = ' \cline{5-8}  \cline{9-14}  & & & & Value & ESD & ASE & CP & Value & ESD & ASE & CP\\\\ \n \hline'
+    separate_line = ''
+
+    # with open('./oct/latex.txt', 'w') as f:
+    #     print(first_part + last_part, file=f)
 
     # table body
     one = [-1, 0, 1]
     two = [-1, 1]
-    paras = list(product(one, two))
 
-    a_list = []
-    b_list = []
+    for true_parameters in tqdm(list(product(one, two, one, two))):
+        with open('./oct/latex.txt', 'a+') as f:
+            sys.stdout = f
+            file_start = f.tell()
+            print('\n================================================')
+            new_para_title = f'{true_parameters[0]} & {true_parameters[1]} &' \
+                             f' {true_parameters[2]} & {true_parameters[3]}'
 
-    for true_parameters in tqdm(list(zip(paras, paras))):
-        true_parameters = true_parameters[0] + true_parameters[1]
+            simulation(true_parameters, new_para_title)
+            for _ in range(2):
+                simulation(true_parameters)
 
-        new_para_title = f'{true_parameters[0]} & {true_parameters[1]} &' \
-                         f' {true_parameters[2]} & {true_parameters[3]}'
-
-        base = np.random.uniform(0.1, 0.4)
-        sigma = np.random.uniform(base - 0.05, base + 0.05)
-        strs = simulation(true_parameters, base, sigma, new_para_title)
-        a_list.append(strs[0])
-        b_list.append(strs[1])
-        # for _ in range(2):
-        #     strs = simulation(true_parameters)
-        #     a_list.append(strs[0])
-        #     b_list.append(strs[1])
-
-    with open('./oct/latex.txt', 'a+') as f:
-        sys.stdout = f
-        file_start = f.tell()
-
-        print(first_part+last_part1)
-        print(separate_line)
-        print(*a_list, sep='\n')
-
-        print(first_part + last_part2)
-        print(separate_line)
-        print(*b_list, sep='\n')
-
-        sys.stdout = console
-        f.seek(file_start)
-        print(f.read())
-
+            sys.stdout = console
+            f.seek(file_start)
+            print(f.read())
 
 print(f'running time: {time()-start_time:.2f}sec.')

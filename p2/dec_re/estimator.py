@@ -12,8 +12,8 @@ __author__ = 'Xiaoyu Wang'
 import numpy as np
 import matplotlib.pyplot as plt
 
-from oct.utils import make_a_star, flatten, find_loc_arr, compare
-from oct.data import Data
+from utils import make_a_star, flatten, find_loc_arr, compare
+from data import Data
 from scipy.optimize import root
 from numba import jit
 

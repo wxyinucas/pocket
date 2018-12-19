@@ -13,14 +13,14 @@ import numpy as np
 import os
 import sys
 
-from oct.estimator import Estimator
+from dec.estimator import Estimator
 from time import time
 from tqdm import tqdm
-from oct.utils import mean_std_cp, cal_ase
+from dec.utils import mean_std_cp, cal_ase
 from itertools import product
 
 
-def simulation(true_parameters, base, sigma,title=None, reduplicates=1000, n_samples=200):
+def simulation(true_parameters, base, sigma, title=None, reduplicates=1000, n_samples=200):
     # simulation settings
 
     a_hat_paras_list = []
@@ -94,7 +94,7 @@ if __name__ == '__main__':
 
     console = sys.stdout
     try:
-        os.remove('./oct/latex.txt')
+        os.remove('./dec/latex.txt')
     except FileNotFoundError:
         pass
 
@@ -107,16 +107,18 @@ if __name__ == '__main__':
     # table body
     one = [-1, 0, 1]
     two = [-1, 1]
-    paras = list(product(one, two))
+    paras = list(product(one, two, one, two))
 
     a_list = []
     b_list = []
 
-    for true_parameters in tqdm(list(zip(paras, paras))):
-        true_parameters = true_parameters[0] + true_parameters[1]
+    # for true_parameters in tqdm(list(zip(paras, paras))):
+    #     true_parameters = true_parameters[0] + true_parameters[1]
+    for true_parameters in tqdm(paras):
+
 
         new_para_title = f'{true_parameters[0]} & {true_parameters[1]} &' \
-                         f' {true_parameters[2]} & {true_parameters[3]}'
+            f' {true_parameters[2]} & {true_parameters[3]}'
 
         base = np.random.uniform(0.1, 0.4)
         sigma = np.random.uniform(base - 0.05, base + 0.05)
@@ -128,11 +130,11 @@ if __name__ == '__main__':
         #     a_list.append(strs[0])
         #     b_list.append(strs[1])
 
-    with open('./oct/latex.txt', 'a+') as f:
+    with open('./dec/latex.txt', 'a+') as f:
         sys.stdout = f
         file_start = f.tell()
 
-        print(first_part+last_part1)
+        print(first_part + last_part1)
         print(separate_line)
         print(*a_list, sep='\n')
 
@@ -144,5 +146,4 @@ if __name__ == '__main__':
         f.seek(file_start)
         print(f.read())
 
-
-print(f'running time: {time()-start_time:.2f}sec.')
+print(f'running time: {time() - start_time:.2f}sec.')
