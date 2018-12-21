@@ -91,20 +91,36 @@ def make_a_star(time_stack, cov1_arr):
     return tmp
 
 
-def find_loc_scale(arr: np.array, num) -> int:
-    """arr is sorted. Find the location of num in arr."""
-    assert (np.sort(arr) == arr).all()
+# def find_loc_scale(arr: np.array, num) -> int:
+#     """arr is sorted. Find the location of num in arr."""
+#     assert (np.sort(arr) == arr).all()
+#
+#     tmp = np.append(arr, num)
+#     tmp.sort()
+#     loc = np.where(tmp == num)
+#     return loc[0][0]
+#
+#
+# def find_loc_arr(arr: np.array, nums) -> np.array:
+#     vec_func = np.vectorize(find_loc_scale, signature='(n),()->()')
+#
+#     return vec_func(arr, nums)
+def bar(arr1, arr2):
+    """
+    TODO how to calculate q_bar
+    Suppose arr1's dim is (p,) and arr'2 is (p, q).
+    Regards arr2 as weights.
+    :return:  array of (q,) dimensions.
+    """
+    p, q = arr2.shape
+    assert (p,) == arr1.shape
 
-    tmp = np.append(arr, num)
-    tmp.sort()
-    loc = np.where(tmp == num)
-    return loc[0][0]
+    num = arr1 @ arr2
+    den = arr2.sum(axis=0)
+    res = num / den
+    assert res.shape == (q,)
 
-
-def find_loc_arr(arr: np.array, nums) -> np.array:
-    vec_func = np.vectorize(find_loc_scale, signature='(n),()->()')
-
-    return vec_func(arr, nums)
+    return res
 
 
 def mean_std_cp(arr, ase):

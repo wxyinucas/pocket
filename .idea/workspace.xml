@@ -2,30 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60c4694b-06da-43a8-9d14-236c9f8b1baf" name="Default" comment="10.20">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jupyter_test/test.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/p2/dec/data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/p2/dec/estimator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/p2/dec/estimator_prototype.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/p2/dec/latex.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/p2/dec/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/p2/dec/simulation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/p2/dec/tmp.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/p2/dec/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/p2/dec_re/data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/p2/dec_re/est_1218.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/p2/dec_re/estimator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/p2/dec_re/simulator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/p2/dec_re/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/p2/dec_re/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/WXY_Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/WXY_Project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/main__2_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/main_test.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/p2/dec_re/est_1220.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/p2/oct/estimator.py" beforeDir="false" afterPath="$PROJECT_DIR$/p2/oct/estimator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/p2/oct/simulation.py" beforeDir="false" afterPath="$PROJECT_DIR$/p2/oct/simulation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/p2/oct/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/p2/oct/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p2/dec_re/est_1218.py" beforeDir="false" afterPath="$PROJECT_DIR$/p2/dec_re/est_1218.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p2/dec_re/simulator.py" beforeDir="false" afterPath="$PROJECT_DIR$/p2/dec_re/simulator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p2/dec_re/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/p2/dec_re/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p2/dec_re/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/p2/dec_re/utils.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,6 +23,7 @@
     <SUITE FILE_PATH="coverage/pocket$main.coverage" NAME="main Coverage Results" MODIFIED="1535862238802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p2" />
     <SUITE FILE_PATH="coverage/WXY_projects$estimator_backup917.coverage" NAME="estimator_backup917 Coverage Results" MODIFIED="1537164189135" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p1/sep_reabstract" />
     <SUITE FILE_PATH="coverage/WXY_projects$utils.coverage" NAME="utils Coverage Results" MODIFIED="1539749502307" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p2/oct" />
+    <SUITE FILE_PATH="coverage/WXY_projects$test.coverage" NAME="test Coverage Results" MODIFIED="1545367118543" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p2/dec_re" />
     <SUITE FILE_PATH="coverage/WXY_Project$warm_up_numpy.coverage" NAME="warm_up_numpy Coverage Results" MODIFIED="1531905007895" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pytorch/Learning_PyTorch_with_Examples" />
     <SUITE FILE_PATH="coverage/WXY_Project$what_is_input.coverage" NAME="what_is_input Coverage Results" MODIFIED="1532962196961" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/WXY_projects$__estimator.coverage" NAME="__estimator Coverage Results" MODIFIED="1537951500901" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p1/sep_init" />
@@ -54,6 +37,7 @@
     <SUITE FILE_PATH="coverage/WXY_projects$estimator_test.coverage" NAME="estimator_test Coverage Results" MODIFIED="1536824522841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p1/sep_reabstract" />
     <SUITE FILE_PATH="coverage/WXY_Project$write_twice.coverage" NAME="write_twice Coverage Results" MODIFIED="1533089669308" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/pocket$save_df.coverage" NAME="save_df Coverage Results" MODIFIED="1535803900415" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
+    <SUITE FILE_PATH="coverage/WXY_projects$simulator.coverage" NAME="simulator Coverage Results" MODIFIED="1545293387487" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p2/dec_re" />
     <SUITE FILE_PATH="coverage/WXY_Project$main.coverage" NAME="main Coverage Results" MODIFIED="1535378184645" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p2/Simulation_Aug_print" />
     <SUITE FILE_PATH="coverage/WXY_projects$data.coverage" NAME="data Coverage Results" MODIFIED="1545113146123" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p2/dec_re" />
     <SUITE FILE_PATH="coverage/WXY_projects$var_test.coverage" NAME="var_test Coverage Results" MODIFIED="1538016428898" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/p1/sep_reabstract" />
@@ -89,11 +73,11 @@
       <content type="file-editors">
         <state>
           <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-            <file pinned="false" current-in-tab="true">
+            <file pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/p2/dec_re/estimator.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="548">
-                    <caret line="60" column="38" selection-start-line="60" selection-start-column="38" selection-end-line="60" selection-end-column="38" />
+                  <state relative-caret-position="3949">
+                    <caret line="193" selection-start-line="193" selection-end-line="193" />
                     <folding>
                       <element signature="e#217#235#0" expanded="true" />
                     </folding>
@@ -104,8 +88,8 @@
             <file pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/p2/dec_re/data.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="726">
-                    <caret line="33" column="22" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
+                  <state relative-caret-position="418">
+                    <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
                     <folding>
                       <element signature="e#212#230#0" expanded="true" />
                     </folding>
@@ -113,11 +97,11 @@
                 </provider>
               </entry>
             </file>
-            <file pinned="false" current-in-tab="false">
+            <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/p2/dec_re/utils.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="1782">
-                    <caret line="81" column="4" selection-start-line="81" selection-start-column="4" selection-end-line="81" selection-end-column="4" />
+                  <state relative-caret-position="592">
+                    <caret line="119" selection-start-line="119" selection-end-line="119" />
                   </state>
                 </provider>
               </entry>
@@ -131,33 +115,36 @@
         <state>
           <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
             <file pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/p2/dec_re/est_1218.py">
+              <entry file="file://$PROJECT_DIR$/p2/dec_re/est_1220.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="638">
-                    <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
+                  <state relative-caret-position="365">
+                    <caret line="172" column="81" selection-start-line="172" selection-start-column="81" selection-end-line="172" selection-end-column="81" />
                     <folding>
-                      <element signature="e#248#267#0" expanded="true" />
+                      <element signature="e#254#273#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/p2/dec_re/test.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="383">
+                    <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+                    <folding>
+                      <element signature="e#244#262#0" expanded="true" />
                     </folding>
                   </state>
                 </provider>
               </entry>
             </file>
             <file pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/p2/dec_re/test.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="484">
-                    <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/p2/dec_re/simulator.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="682">
-                    <caret line="31" column="12" lean-forward="true" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
+                  <state relative-caret-position="794">
+                    <caret line="49" selection-start-line="49" selection-end-line="49" />
                     <folding>
-                      <element signature="e#297#316#0" expanded="true" />
+                      <element signature="e#296#325#0" expanded="true" />
                     </folding>
                   </state>
                 </provider>
@@ -172,7 +159,17 @@
     <favorites_list name="WXY_projects" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$USER_HOME$/anaconda3/envs/wxy/lib/python3.7/site-packages/pandas/core/computation/expressions.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="433">
+              <caret line="64" selection-start-line="64" selection-end-line="64" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -184,8 +181,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>0</find>
-      <find>=</find>
       <find>cp</find>
       <find>array\(\[\]\)</find>
       <find>array\(\[\]\)esr</find>
@@ -214,10 +209,10 @@
       <find>\(\)</find>
       <find>self.t</find>
       <find>self.t\b</find>
+      <find>\best\b</find>
+      <find>true_parameter</find>
     </findStrings>
     <replaceStrings>
-      <replace>hat_var_arr</replace>
-      <replace>_list</replace>
       <replace>std</replace>
       <replace>self.t</replace>
       <replace>1</replace>
@@ -246,6 +241,8 @@
       <replace>dec</replace>
       <replace>t</replace>
       <replace>\(self\)</replace>
+      <replace>hat</replace>
+      <replace>t_param</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -259,8 +256,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/p1/sep_class/__estimator.py" />
-        <option value="$PROJECT_DIR$/p1/sep_class/mian.py" />
         <option value="$PROJECT_DIR$/p1/sep_class/generator.py" />
         <option value="$PROJECT_DIR$/p1/sep_init/main.py" />
         <option value="$PROJECT_DIR$/p1/sep_init/true_value.py" />
@@ -303,13 +298,15 @@
         <option value="$PROJECT_DIR$/p2/dec/simulation.py" />
         <option value="$PROJECT_DIR$/p2/dec_re/estimator.py" />
         <option value="$PROJECT_DIR$/p2/dec/data.py" />
-        <option value="$PROJECT_DIR$/p2/dec_re/utils.py" />
         <option value="$PROJECT_DIR$/p2/dec_re/a.py" />
         <option value="$PROJECT_DIR$/p2/dec_re/first.py" />
         <option value="$PROJECT_DIR$/p2/dec_re/data.py" />
-        <option value="$PROJECT_DIR$/p2/dec_re/test.py" />
+        <option value="$PROJECT_DIR$/p2/dec_re/est_1219.py" />
         <option value="$PROJECT_DIR$/p2/dec_re/est_1218.py" />
         <option value="$PROJECT_DIR$/p2/dec_re/simulator.py" />
+        <option value="$PROJECT_DIR$/p2/dec_re/utils.py" />
+        <option value="$PROJECT_DIR$/p2/dec_re/est_1220.py" />
+        <option value="$PROJECT_DIR$/p2/dec_re/test.py" />
       </list>
     </option>
   </component>
@@ -333,6 +330,33 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="WXY_projects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WXY_project" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WXY_projects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WXY_project" type="462c0819:PsiDirectoryNode" />
+              <item name="p1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WXY_projects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WXY_project" type="462c0819:PsiDirectoryNode" />
+              <item name="p2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WXY_projects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WXY_project" type="462c0819:PsiDirectoryNode" />
+              <item name="p2" type="462c0819:PsiDirectoryNode" />
+              <item name="dec_re" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Changed Files'; set:Changed Files; ALL; class com.intellij.packageDependencies.ChangeListScope">
           <expand>
@@ -364,33 +388,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="WXY_projects" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WXY_project" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="WXY_projects" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WXY_project" type="462c0819:PsiDirectoryNode" />
-              <item name="p1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="WXY_projects" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WXY_project" type="462c0819:PsiDirectoryNode" />
-              <item name="p2" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="WXY_projects" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WXY_project" type="462c0819:PsiDirectoryNode" />
-              <item name="p2" type="462c0819:PsiDirectoryNode" />
-              <item name="dec_re" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -404,7 +401,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Language Defaults" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/p1/sep_reabstract/estimator.py" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -451,7 +448,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.data">
+  <component name="RunManager" selected="Python.test">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="WXY_Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -540,8 +537,54 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="simulator" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="WXY_Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/anaconda3/envs/wxy/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/p2/dec_re" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/p2/dec_re/simulator.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="WXY_Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/anaconda3/envs/wxy/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/p2/dec_re" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/p2/dec_re/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.simulator" />
         <item itemvalue="Python.data" />
         <item itemvalue="Python.simulation" />
       </list>
@@ -573,7 +616,8 @@
       <workItem from="1544751056275" duration="922000" />
       <workItem from="1544762018329" duration="15645000" />
       <workItem from="1545187147119" duration="43000" />
-      <workItem from="1545187202984" duration="4049000" />
+      <workItem from="1545187202984" duration="21003000" />
+      <workItem from="1545349986217" duration="8978000" />
     </task>
     <task id="LOCAL-00009" summary="finished data structure">
       <created>1536638077749</created>
@@ -922,7 +966,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31850000" />
+    <option name="totallyTimeSpent" value="57782000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -935,11 +979,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="2207" y="23" width="1433" height="1417" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Structure" order="0" sideWeight="0.53132075" side_tool="true" visible="true" weight="0.20273185" />
+      <window_info id="Structure" order="0" sideWeight="0.5335849" side_tool="true" visible="true" weight="0.20560747" />
       <window_info id="Favorites" order="1" sideWeight="0.68226415" side_tool="true" weight="0.22132471" />
-      <window_info content_ui="combo" x="2822" y="23" width="257" height="742" id="Project" order="2" sideWeight="0.46867925" visible="true" weight="0.20273185" />
+      <window_info content_ui="combo" x="2822" y="23" width="257" height="742" id="Project" order="2" sideWeight="0.4664151" visible="true" weight="0.20560747" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32830188" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946752" weight="0.3122172" />
@@ -957,11 +1000,11 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Remote Host" order="3" weight="0.3292011" />
       <window_info anchor="right" id="Database" order="4" sideWeight="0.49924585" weight="0.3292011" />
-      <window_info anchor="right" x="0" y="0" width="430" height="858" id="Documentation" order="5" sideWeight="0.41283017" side_tool="true" visible="true" weight="0.7757009" />
+      <window_info anchor="right" x="0" y="0" width="430" height="858" id="Documentation" order="5" sideWeight="0.4271698" side_tool="true" visible="true" weight="0.7728253" />
       <window_info anchor="right" id="SciView" order="6" sideWeight="0.42264152" side_tool="true" weight="0.7423263" />
       <window_info anchor="right" id="Coverage" order="7" sideWeight="0.520362" side_tool="true" weight="0.41461477" />
-      <window_info anchor="right" id="Debug" order="8" sideWeight="0.5773585" weight="0.75444263" />
-      <window_info active="true" anchor="right" x="2443" y="789" width="1196" height="651" id="Python Console" order="9" sideWeight="0.5871698" visible="true" weight="0.7757009" />
+      <window_info active="true" anchor="right" id="Debug" order="8" sideWeight="0.5728302" visible="true" weight="0.7728253" />
+      <window_info anchor="right" x="2443" y="789" width="1196" height="651" id="Python Console" order="9" sideWeight="0.5849057" weight="0.7728253" />
       <window_info anchor="right" id="Scheme.REPL" order="10" sideWeight="0.40603775" side_tool="true" weight="0.78705794" />
     </layout>
   </component>
@@ -1082,30 +1125,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/p1/sep_reabstract/timelist.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1562">
-          <caret line="72" column="10" selection-start-line="71" selection-start-column="6" selection-end-line="72" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/p1/sep_init/__generator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1518">
-          <caret line="69" column="20" selection-start-line="69" selection-start-column="20" selection-end-line="69" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/p1/sep_init/__estimator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2926">
-          <caret line="136" column="49" selection-start-line="135" selection-start-column="19" selection-end-line="136" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/p1/sep_reabstract/timelist_928.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/p1/sep_reabstract/tmp.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="806">
@@ -1383,61 +1402,95 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/p2/dec_re/data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
-          <caret line="33" column="22" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
-          <folding>
-            <element signature="e#212#230#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/p2/dec_re/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1782">
-          <caret line="81" column="4" selection-start-line="81" selection-start-column="4" selection-end-line="81" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/p2/dec/tmp.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1643" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/p2/dec_re/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/p2/dec_re/est_1218.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
+        <state relative-caret-position="131">
+          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
           <folding>
             <element signature="e#248#267#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/p2/dec_re/simulator.py">
+    <entry file="file://$USER_HOME$/anaconda3/envs/wxy/lib/python3.7/site-packages/pandas/core/generic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="682">
-          <caret line="31" column="12" lean-forward="true" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
-          <folding>
-            <element signature="e#297#316#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="433">
+          <caret line="4375" selection-start-line="4375" selection-end-line="4375" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/p2/dec_re/estimator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="60" column="38" selection-start-line="60" selection-start-column="38" selection-end-line="60" selection-end-column="38" />
+        <state relative-caret-position="3949">
+          <caret line="193" selection-start-line="193" selection-end-line="193" />
           <folding>
             <element signature="e#217#235#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/p2/dec_re/data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+          <folding>
+            <element signature="e#212#230#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/wxy/lib/python3.7/site-packages/scipy/stats/stats.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="439">
+          <caret line="2824" selection-start-line="2824" selection-end-line="2824" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/wxy/lib/python3.7/site-packages/pandas/core/computation/expressions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/p2/dec_re/simulator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="794">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+          <folding>
+            <element signature="e#296#325#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/p2/dec_re/est_1220.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="172" column="81" selection-start-line="172" selection-start-column="81" selection-end-line="172" selection-end-column="81" />
+          <folding>
+            <element signature="e#254#273#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/p2/dec_re/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="592">
+          <caret line="119" selection-start-line="119" selection-end-line="119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/p2/dec_re/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+          <folding>
+            <element signature="e#244#262#0" expanded="true" />
           </folding>
         </state>
       </provider>
