@@ -27,7 +27,7 @@ class Estimator:
     def __init__(self, parameters, n_sample=200):
         gen_data = Data(parameters, n_sample)
 
-        self.raw_dt = gen_data.dt
+        self.raw_df = gen_data.df
         self.raw_t = gen_data.t  # stack r
         self.n_sam = n_sample
 
@@ -38,11 +38,11 @@ class Estimator:
 
         :return: est var
         """
-        sn = lambda a: self.sn_prototype(self.raw_dt, self.raw_t, [a, -1])[0]
-        a_hat = root(sn, [0]).x  # guess[:2] here
+        sn = lambda a: self.sn_prototype(self.raw_df, self.raw_t, [a, 1])[0]
+        a_hat = root(sn, [-1]).x  # guess[:2] here
         # a_hat = np.array([-1, 1])
 
-        # hn = lambda b: self.hn_prototype(self.raw_dt, self.raw_t, a_hat, b)
+        # hn = lambda b: self.hn_prototype(self.raw_df, self.raw_t, a_hat, b)
         # b_hat = root(hn, [0,0]).x   # guess[2:] here
         b_hat = np.array([0, 0])
 
@@ -106,13 +106,19 @@ class Estimator:
 
             rl, y_in_s = s2r()
 
+            # test
+            # y_in_s[y_in_s < 10] = 10
+
             factor = 1 - (1 / rl)
             factor = np.append(factor, 1)  # todo uncertain?
             assert factor.shape[0] == len(rl) + 1
 
             lam_arr = np.cumprod(factor[::-1])[::-1]
-            lam_arr[np.where(lam_arr == 0)] = 1
+            lam_arr[np.where(lam_arr == 0)] = np.min(lam_arr[lam_arr > 0])
             assert all(lam_arr > 0)
+            # if all(lam_arr[y_in_s] > 0.01):
+            #     for i, j, k in zip(y, df.m, df.x):
+            #         print(f'{i:.4f} + {j:.0f} + {k:.4f}')
 
             return lam_arr[y_in_s]  # todo 对应关系?
 
@@ -122,11 +128,13 @@ class Estimator:
             """
             res = (df.m * exp) @ (1 / l_arr)
             assert res.shape == ()
-            return res / n
+            # return res / n
+            return np.ones(n)
 
         # 初值设定
         a1, a2 = a
-        assert abs(a1) < 100 and abs(a2) < 100
+        if abs(a1) > 100 or abs(a2) > 100:
+            print('Warning: big a')
 
         exp = np.exp(df.x * (a1 - a2))
         n = self.n_sam
@@ -138,7 +146,10 @@ class Estimator:
 
         # 以(2, )向量作为结果输出
         sn1 = df.x @ (exp * df.m * (1 / l_arr) - uz)
-        sn2 = (y * df.x) @ (exp * df.m * (1 / l_arr) - uz) / n  # todo uncertain?
+        sn2 = (y * df.x) @ (exp * df.m * (1 / l_arr) - uz) / n  # todo wrong, delete later
+
+        # test
+        self.l_arr = l_arr
 
         if type == 0:
             return np.array([sn1, sn2]) / n
